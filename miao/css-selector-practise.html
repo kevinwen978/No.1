@@ -6,9 +6,13 @@
     <title>Document</title>
     <style>
       body>p:first-child{color: red;}
+      body>p:nth-child(2):hover{color: red;}
+      body>p:nth-child(2):active{color:green;}
       p>span:first-child{color: red;}
       p>span>span:first-child{color:green;}
       p>span>span:last-child{color:blue;}
+      div>a{color: pink;}
+      div>a:visited{color: orange;}
       div>a:nth-child(5){color: blue;}
       div>a:nth-child(6){color: blue;}
       div>a:nth-child(7){color: yellow;}
@@ -22,7 +26,14 @@
       .b ul>li:nth-child(-n+25){color: red;}
       .b ul>li:nth-child(n+65){color: green;}
       .b ul>li:nth-child(n+35):nth-child(-n+50){color:blue;}
-      .prime ul>li:nth-child()
+      .prime ul>li:nth-child(2n+4){color: blue;}
+      .prime ul>li:nth-child(3n+9){color: blue;}
+      .prime ul>li:nth-child(5n+25){color: blue;}
+      .prime ul>li:nth-child(7n+49){color: blue;}
+
+
+
+
 
 
 
