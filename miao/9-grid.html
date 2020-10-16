@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            margin: auto;
+
+        }
+
+        tr{
+            border: 10px solid blue;
+        }
+        col{
+            border: 10px solid blue;
+        }
+        td{
+            xborder: 10px solid blue;
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+        }
+        td:hover{
+            border: 10px solid red;
+        }
+        .a{
+            height: 400px;
+            width: 300px;
+            margin: auto;
+        }
+        .b{
+            height: 100px;
+            width: 100px;
+            border: 3px solid;
+            cursor: pointer;
+        }
+        .a>div:nth-child(n+4){
+            margin-left: 106px;
+        }
+        .a>div:nth-child(4){
+            margin-top: -318px;
+        }
+        .a>div:nth-child(n+7){
+            margin-left: 212px;
+        }
+        .a>div:nth-child(7){
+            margin-top: -318px;
+        }
+        .b:hover{
+            border: 3px solid red;
+        }
+    </style>
+</head>
+<body>
+   <table >
+       <colgroup>
+        <col>
+        <col>
+        <col>
+    </colgroup>
+       <tr>
+           <td></td>
+           <td></td>
+           <td></td>
+       </tr>
+       <tr>
+           <td></td>
+           <td></td>
+           <td></td>
+       </tr>
+       <tr>
+           <td></td>
+           <td></td>
+           <td></td>
+       </tr>
+   </table>
+   <hr>
+   <div class="a">
+       <div class="b"></div>
+       <div class="b"></div>
+       <div class="b"></div>
+       <div class="b"></div>
+       <div class="b"></div>
+       <div class="b"></div>
+       <div class="b"></div>
+       <div class="b"></div>
+       <div class="b"></div>
+   </div>
+</body>
+</html>
