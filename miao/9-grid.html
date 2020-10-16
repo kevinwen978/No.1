@@ -28,14 +28,17 @@
         }
         .a{
             height: 400px;
-            width: 300px;
+            width: 318px;
             margin: auto;
         }
         .b{
             height: 100px;
             width: 100px;
-            border: 3px solid;
+            border: 3px solid blue;
             cursor: pointer;
+        }
+        .a>div:nth-child(1){
+            bor
         }
         .a>div:nth-child(n+4){
             margin-left: 106px;
@@ -51,6 +54,35 @@
         }
         .b:hover{
             border: 3px solid red;
+        }
+        .c{
+            height: 400px;
+            width: 318px;
+            margin: auto;
+            position: relative;
+        }
+        p{
+            margin: 0;
+            width:100px ;
+            height: 100px;
+            border: 3px solid blue;
+            position: absolute;
+            cursor: pointer;
+        }
+        p:hover{
+            border: 3px solid red;
+        }
+        .e,.h,.k{
+            left: 106px;
+        }
+        .f,.i,.m{
+            left: 212px;
+        }
+        .g,.h,.i{
+            top:106px
+        }
+        .j,.k,.m{
+            top: 212px;
         }
     </style>
 </head>
@@ -88,6 +120,18 @@
        <div class="b"></div>
        <div class="b"></div>
        <div class="b"></div>
+   </div>
+   <hr>
+   <div class="c">
+       <p class="d"></p>
+       <p class="e"></p>
+       <p class="f"></p>
+       <p class="g"></p>
+       <p class="h"></p>
+       <p class="i"></p>
+       <p class="j"></p>
+       <p class="k"></p>
+       <p class="m"></p>
    </div>
 </body>
 </html>
