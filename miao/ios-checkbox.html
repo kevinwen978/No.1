@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .a{
+            width: 80px;
+            height: 40px;
+            border: 1px solid;
+            border-radius: 20px;
+            background-color:white;
+            position: relative;
+        }
+        .b{
+            width: 36px;
+            height: 36px;
+            border: 1px solid transparent;
+            border-radius: 18px;
+            background-color: white;
+            position: absolute;
+            box-shadow:0 0 2px black;
+            transition: 10s;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            z-index: 88;
+        }
+        input:checked+.a>.b{
+            right: 0;
+        }
+        input:checked+.a{
+            background-color:#30F34B;
+            border-color: #30F34B;
+        }
+        .c{
+            width: 100px;
+            height: 40px;
+            position: relative;
+            z-index: 11;
+        }
+    </style>
+</head>
+<body>
+    <input hidden type="checkbox" id="hua">
+    <div class="a">
+        <div class="b"><label for="hua"><div class="c"></div></label></div>
+        <label for="hua"><div class="c"></div></label>
+    </div>
+</body>
+</html>
