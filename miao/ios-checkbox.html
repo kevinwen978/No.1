@@ -6,40 +6,47 @@
     <title>Document</title>
     <style>
         *{
-            box-sizing: border-box;
+            xbox-sizing: border-box;
         }
         .a{
-            width: 80px;
-            height: 40px;
-            border: 1px solid;
-            border-radius: 20px;
+            width: 160px;
+            height: 80px;
+            border: 2px solid;
+            border-radius: 40px;
             background-color:white;
             position: relative;
+            transition: .5s;
         }
         .b{
-            width: 36px;
-            height: 36px;
-            border: 1px solid transparent;
-            border-radius: 18px;
+            width: 72px;
+            height: 72px;
+            border: 2px solid transparent;
+            border-radius: 80px;
             background-color: white;
             position: absolute;
-            box-shadow:0 0 2px black;
-            transition: 10s;
-            top: 0;
-            bottom: 0;
+            box-shadow:0 0 4px black;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
             margin: auto;
+            padding: 0px;
             z-index: 88;
+            transition: left .7s, padding .3s .2s, width .5s;
         }
         input:checked+.a>.b{
-            right: 0;
+            left:82px;
+            width:52px;
+            padding: 0 10px;
+            transition: left .7s, padding .5s, width .3s .2s;
         }
         input:checked+.a{
-            background-color:#30F34B;
+            xbackground-color:#30F34B;
             border-color: #30F34B;
+            box-shadow: 0 0 0 60px  #30f349 inset;
         }
         .c{
-            width: 100px;
-            height: 40px;
+            width: 200px;
+            height: 80px;
             position: relative;
             z-index: 11;
         }
