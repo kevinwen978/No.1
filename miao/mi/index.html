@@ -89,7 +89,8 @@
             text-align: center;
         }
         .header-menu>div>a:nth-last-child(7):hover>div{
-            height: 130px;
+            height: 140px;
+            color: black;
             z-index: 100;
             box-shadow: 0 0 5px rgba(0,0,0,0.2);
 
@@ -218,7 +219,7 @@
             overflow-y: hidden;
             background-color: white;
             xtransition: .5s .2s;
-            transition: .4s;
+            transition: .3s;
             z-index: 100;
         }
         .bottom-menu{
@@ -486,7 +487,68 @@
             right: 0;
             width: 80px;
             height: 455px;
-            background-color: blue;
+            background-color:white;
+        }
+        .small-block{
+            box-sizing: border-box;
+            width: 80px;
+            height: 91px;
+            border: 1px solid #F5F5F5;
+        }
+        .small-block>img{
+            display: block;
+            width: 30px;
+            height: 30px;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+        .small-block img:nth-child(2){
+            display: none;
+        }
+        .small-block div{
+            text-align: center;
+        }
+        .small-block:hover{
+            color: #FF6700;
+        }
+        .small-block:hover>img:nth-child(1){
+            display: none;
+        }
+        .small-block:hover img:nth-child(2){
+            display: block;
+        }
+        .qr-code{
+            box-sizing: border-box;
+            width: 130px;
+            height: 193;
+            position: absolute;
+            right: 105px;
+            top: 0;
+            color: black;
+            background-color: #fff;
+            border: 1px solid #F5F5F5;
+            display: none;
+        }
+        .qr-code img{
+            display: block;
+            width: 96px;
+            height: 96px;
+            margin: auto;
+        }
+        .small-block:first-child::before{
+            content:"";
+            border: 10px solid white;
+            border-color: transparent transparent transparent #F5F5F5 ;
+            position: absolute;
+            right: 85px;
+            top:20px;
+            display: none;   
+        }
+        .small-block:first-child:hover .qr-code{
+            display: block;
+        }
+        .small-block:first-child:hover::before{
+            display: block;
         }
         .small-menu{
             width: 1227px;
@@ -782,11 +844,36 @@
         </ul>
     </div>
     <div class="right-menu">
-        <div class="small-block"></div>
-        <div class="small-block"></div>
-        <div class="small-block"></div>
-        <div class="small-block"></div>
-        <div class="small-block"></div>
+        <div class="small-block">
+            <img src="https://i8.mifile.cn/b2c-mimall-media/98a23aae70f25798192693f21c4d4039.png" alt="">
+            <img src="https://i8.mifile.cn/b2c-mimall-media/74c4fcb4475af8308e9a670db9c01fdf.png" alt="">
+            <div>手机APP</div>
+            <div class="qr-code">
+                <img src="https://i8.mifile.cn/b2c-mimall-media/93650133310ec1c385487417a472a26c.png" alt="">
+                <div>扫码领取新</div>
+                <div>人百元礼包</div>
+            </div> 
+        </div>
+        <div class="small-block">
+            <img src="https://i8.mifile.cn/b2c-mimall-media/55cad219421bee03a801775e7309b920.png" alt="">
+            <img src="https://i8.mifile.cn/b2c-mimall-media/41f858550f42eb1770b97faf219ae215.png" alt="">
+            <div>个人中心</div>  
+        </div>
+        <div class="small-block">
+            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/12eb0965ab33dc8e05870911b90f3f13.png" alt="">
+            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/95fbf0081a06eec7be4d35e277faeca0.png" alt="">
+            <div>售后服务</div> 
+        </div>
+        <div class="small-block">
+            <img src="https://i8.mifile.cn/b2c-mimall-media/4f036ae4d45002b2a6fb6756cedebf02.png" alt="">
+            <img src="https://i8.mifile.cn/b2c-mimall-media/5e9f2b1b0da09ac3b3961378284ef2d4.png" alt="">
+            <div>人工客服</div> 
+        </div>
+        <div class="small-block">
+            <img src="https://i8.mifile.cn/b2c-mimall-media/d7db56d1d850113f016c95e289e36efa.png" alt="">
+            <img src="https://i8.mifile.cn/b2c-mimall-media/692a6c3b0a93a24f74a29c0f9d68ec71.png" alt="">
+            <div>购物车</div>
+        </div>
     </div>
     <div class="small-menu">
         <div class="abc"></div>
