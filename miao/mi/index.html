@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>小米首页</title>
+    <link rel="stylesheet" href="mi-icon.css">
     <style>
         html{
             position: relative;
@@ -11,7 +12,8 @@
         }
         * {
             xbackground-color: rgba(0,0,0,0.1);
-            xbox-shadow: 0 0 1px red;;
+            xbox-shadow: 0 0 1px red;
+            
         }
         body{
             margin: 0px;
@@ -102,17 +104,19 @@
             display: inline-block;
             xmargin-left: 35px;
             width: 103px;
+            text-align: center;
         }
+    
         .header-menu>div>a:last-child::before{
-            content: url(gwc.png);
+            content: "\E60C";
             position: relative;
-            top: 5px;
+            top: 0px;
             right: 0px;
         }
         .header-menu>div>a:last-child::after{
             content: "(0)";
         }
-        .header-menu>div>a:last-child>div{
+        .header-menu>div>a:last-child div{
             position: absolute;
             left:907px;
             width: 320px;
@@ -126,7 +130,7 @@
             color:#FA5744;
             background-color: white;
         }
-        .header-menu>div>a:last-child:hover>div{
+        .header-menu>div>a:last-child:hover div{
             height: 100px;
             line-height: 100px;
             color: black;
@@ -213,14 +217,17 @@
             box-shadow: 0 0 5px rgba(0,0,0,0.2);
             overflow-y: hidden;
             background-color: white;
-            transition: .5s .2s;
+            xtransition: .5s .2s;
+            transition: .4s;
             z-index: 100;
         }
         .bottom-menu{
             width: 1227px;
-            xheight: 230px;
+            xheight: 0px;
             margin: 0px auto;
             display: none;
+            
+            overflow: hidden;
         }
         .menu:hover{
             color: #FF6700;
@@ -259,47 +266,54 @@
         }
         .site-menu:hover .pull-down-menu{
             height: 230px;
-        }
-        .site-menu:hover .pull-down-menu .bottom-menu:nth-child(1){
-            xdisplay: block;
+            xtransition: .1s;
+            transition: .5s .2s;
         }
         .menu:nth-child(1):hover~.pull-down-menu .bottom-menu:nth-child(1){
             display: block;
+            xheight: 200px;
         }
         .menu:nth-child(2):hover~.pull-down-menu .bottom-menu:nth-child(2){
             display: block;
+            xheight: 200px;
         }
         .menu:nth-child(3):hover~.pull-down-menu .bottom-menu:nth-child(3){
             display: block;
+            xheight: 200px;
         }
         .pull-down-menu:hover{
             height: 230px;
-        }
-        .pull-down-menu:hover .bottom-menu:nth-child(4){
-            xdisplay: block;
         }
         .bottom-menu:hover{
             display: block;
         }
         /* 搜索框 */
-        .site-head input:nth-last-child(1){
+        form input:nth-last-child(1){
             margin-top: 25px;
             xmargin-left: 100px;
             height: 50px;
             width: 240px;
             float: right;
             border: 1px solid #e0e0e0;
-            background-color:white;
-            
+            background-color:white;   
         }
-        .site-head input:nth-last-child(2){
+        form input:nth-last-child(2){
             margin-top: 25px;
             margin-bottom: 0px;
             height: 50px;
             width: 50px;
             float: right;
-            border: 1px solid #e0e0e0
-            
+            font-size: 24px;
+            background-color: white;
+            border: 1px solid #e0e0e0;
+        }
+        form input:nth-last-child(2):hover{
+            background-color:#FF6700;
+            color: white;
+            border: #FF6700;
+        }
+        form input:nth-last-child(1):focus{
+            border: 1px solid #FF6700;
         }
         /* 主体-第一个菜单 */
         .main-first{
@@ -511,7 +525,7 @@
             <a href="#" target="_blank">登录</a>
             <a href="#" target="_blank">注册</a>
             <a href="#" target="_blank">消息通知</a>
-            <a href="#" target="_blank">购物车
+            <a  class="mi-icon-cart" href="#" target="_blank">&nbsp购物车
                 <div>购物车中还没有商品，赶紧选购吧！</div> 
             </a>
         </div>
@@ -617,7 +631,11 @@
                     </div>
                 </div>
             </div>
-            <input type="submit" name="" id=""><input type="search" value="">
+            <form action="">
+                <input class="mi-icon" type="submit" value="">
+                <input type="search" name="" id="">
+            </form>
+            
         </div>
     </div>
     <div class="main-first">
