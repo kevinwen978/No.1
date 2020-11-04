@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            xbackground-color: rgba(0,0,0,0.1);
+            xbox-shadow: 0 0 1px red;
+         }
+        @keyframes xzy{
+            from{
+                transform: rotateX(0) rotateY(0);
+            }
+            to{
+                transform:rotateX(720deg) rotateY(360deg);
+            }
+        }
+        @keyframes max{
+            from{
+                background-position: 0px 0px;
+            }
+            to{
+            background-position: -11200px 0px;
+            }
+        }
+        section{
+            width: 400px;
+            height: 400px;
+            margin:400px auto;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateY(200deg) rotateX(300deg);
+            transition: 3s;
+            animation: xzy 5s linear infinite;
+        }
+        div{
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            xtext-align: center;
+            xfont-size: 30px;
+            xline-height: 100px;
+            xbackground-image: url(https://www.css-tricks.com/wp-content/uploads/2016/06/web_heart_animation.png);
+            xbackground-size: cover;
+            xanimation: max 1s infinite;
+            xanimation-timing-function:steps(28);
+        }
+        .s1{
+            transform: rotateY(0) translateZ(200px);
+            xbackground-color: rgba(155,0,123,.7);
+        }
+        .s2{
+            transform: rotateY(180deg) translateZ(200px);
+            xbackground-color:rgba(23,233,3,.7);
+        }
+        .s3{
+            transform: rotateY(90deg) translateZ(200px);
+            background-color: rgba(223,23,123,.7);
+        }
+        .s4{
+            transform: rotateY(-90deg) translateZ(200px);
+            background-color:  rgba(3,23,123,.7);
+        }
+        .s5{
+            transform: rotatex(90deg) translateZ(200px);
+            background-color: rgba(49,126,243,.7);
+        }
+        .s6{
+            transform: rotatex(-90deg) translateZ(200px);
+            background-color:rgba(23,233,157,.7);
+        }
+        ul{
+            list-style: none;
+            display: flex;
+            flex-flow: row wrap;
+            padding: 0 0;
+            margin-top: 0;
+        }
+        li{
+            width: 100px;
+            height: 100px;
+        }
+        .s1{
+            background-image:linear-gradient(60deg,#f0f,#00f,#0ff), linear-gradient(45deg,#ffc,#0fa,#ff0);
+            xbackground-blend-mode: screen;
+        }
+        .s2{
+            background-image:linear-gradient(60deg,#f0f,#0df,#0ff), linear-gradient(45deg,#ffc,#0fa,#ff0);
+           xbackground-blend-mode: screen;
+        }
+        .s3{
+            background-image:linear-gradient(60deg,#f0f,#ffc,#0ff), linear-gradient(45deg,#ffc,#0fa,#ff0);
+            xbackground-blend-mode: screen;
+        }
+        .s4{
+            background-image:linear-gradient(60deg,#f0f,#a0f,#0ff), linear-gradient(45deg,#ffc,#0fa,#ff0);
+           xbackground-blend-mode: screen;
+        }
+        .s5{
+            background-image:linear-gradient(60deg,#f0f,#0df,#0ff), linear-gradient(45deg,#ffc,#0fa,#ff0);
+            xbackground-blend-mode: screen;
+        }
+        .s6{
+            background-image:linear-gradient(60deg,#f0f,#0af,#0ff), linear-gradient(45deg,#ffc,#0fa,#ff0);
+            xbackground-blend-mode: screen;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="s1"></div>
+        <div class="s2"></div>
+        <div class="s3"></div>
+        <div class="s4"></div>
+        <div class="s5"></div>
+        <div class="s6"></div>
+    </section>
+</body>
+</html>
