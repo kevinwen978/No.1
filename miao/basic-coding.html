@@ -23,7 +23,7 @@
     var a = +Number(prompt("请输入a的值"))
     var b = +Number(prompt("请输入b的值"))
     var c = +Number(prompt("请输入c的值"))
-    var d = (a + b) / c
+    var d = Math.floor((a + b) / c)
     if (-10000 < a && a < 10000 && -10000 < b && b < 10000 && -10000 < c &&  c< 10000 && c!=0){
         console.log(d)
     } else {
@@ -69,7 +69,7 @@
     var d = +Number(prompt("请输入d的值"))
     var x = +Number(prompt("请输入x的值"))
     var e = a * x * x * x +b * x * x + c *x + d
-    e =  e.toFixed(9)
+    e =  e.toFixed(7)
     if (-100 <= a &&  a <= 100 && -100 <= b &&  b <= 100 && -100 <= c &&  c <= 100 && -100 <= d &&  d <= 100 && -100 <= x &&  x <= 100){
         console.log(e)
     } else {
@@ -120,10 +120,9 @@
     var b = +Number(prompt("请输入b的值"))
     var c = a % b
     if (a > 0 && b > 0){
+        c = c.toFixed(4)
         console.log(c)
-    } else {
-        console.log("请输入正确的范围")
-    }
+    } 
     
 </script>
 
@@ -131,6 +130,7 @@
     var r = +Number(prompt("请输入r的值"))
     var V = 4 / 3 * 3.14 * r * r * r
     if (r > 0 && r <= 100){
+        V = V.toFixed(2)
         console.log(V)
     } else {
         console.log("请输入正确的范围")
@@ -140,9 +140,10 @@
 
 <script type="norun" id="ch0103/13">
     var a = prompt("请输入a的值")
-    var b = prompt("请输入b的值")
-    var c = prompt("请输入c的值")
-    console.log(c + b + a)  
+    var b = Math.floor(a / 100)
+    var c = Math.floor((a - 100 * b) / 10)
+    var d = a - 100 * b - 10 * c
+    console.log(""+d+c+b)  
 </script>
 
 <script type="norun" id="ch0103/14">
@@ -344,12 +345,15 @@
     var f = N
     if (N >= 0 && N < 5) {
         f = -N + 2.5
+        f = f.toFixed(3)
         console.log(f)
     } else if (5 <= N && N < 10) {
         f = 2 - 1.5 * (N - 3) * (N - 3)
+        f = f.toFixed(3)
         console.log(f)
     } else if (10 <= N && N < 20){
         f = N / 2 - 1.5
+        f = f.toFixed(3)
         console.log(f)
     }
 </script>
@@ -436,7 +440,7 @@
     }
 </script>
 
-<script type="norun" id="ch0104/20">
+<script xtype="norun" id="ch0104/20">
     var a = +Number(prompt("请输入a的值"))
     var b = +Number(prompt("请输入b的值"))
     var c = +Number(prompt("请输入c的值"))
@@ -457,7 +461,8 @@
         e = -b / (2 * a)
         e = e.toFixed(5)
         f = Math.sqrt(4 * a * c - b * b) / (2 * a)
-        console.log("x1="+e,"+"+f,"i","x2="+e,"-"+f,"i","即x1的虚部系数大于等于x2的虚部系数，实部为0时不可省略。实部 = -b / (2*a), 虚部 = sqrt(4*a*c-b*b) / (2*a)" )
+        f = f.toFixed(5)
+        console.log("x1="+e+"+"+f+"i"+";x2="+e+"-"+f+"i")
     }
 </script>
 
@@ -474,7 +479,7 @@
     }
 </script>
 
-<script xtype="norun" id="ch0105/01">
+<script type="norun" id="ch0105/01">
     var n = +Number(prompt("请输入学生数n的值"))
     var i = 1
     var y = 0
