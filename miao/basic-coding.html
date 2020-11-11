@@ -683,7 +683,7 @@
     var y = 0
     var z = 0
     while (M <= 20) {
-        x =  Math.pow((1 + K / 100),M)
+        x = Math.pow((1 + K / 100),M)
         y = M * N
         z = 200 * x
         if (y >= z) {
@@ -774,4 +774,28 @@
             N = N / 2
         }
     } console.log("End")
+  </script>
+
+  <script xtype="norun" id="ch0105/22">
+    var s = 0
+    var x = 0 
+    var z = 0
+    var y = 0
+    var m = 0
+    for (var i = 1; i <= 12; i ++){
+        x = Number(prompt("请输入"+i+"月的预算"))
+        if (s + 300 >= x) {
+            s += (300 - x)
+            if (s >= 100) {
+                z = Math.floor(s / 100)
+                y += z
+                s = s - z * 100
+            }
+        }else if (s + 300 < x){
+            m = - i
+            console.log(-i)
+        }
+    } if (m == 0) {
+        console.log(y * 120 + s )
+    }  
   </script>
