@@ -539,7 +539,7 @@
 </script>
 
 <script type="norun" id="ch0105/05">
-    var n = Number(prompt("请输入n的值"));
+    var n = Number(prompt("请输入n的值"))
     var max = 0;
     var i = 1
     while ( i <= n) {
@@ -550,7 +550,7 @@
   </script>
 
   <script type="norun" id="ch0105/06">
-    var n = Number(prompt("请输入n的值"));
+    var n = Number(prompt("请输入n的值"))
     var max = 0
     var min = 0
     var i = 1
@@ -563,6 +563,77 @@
     console.log(max - min)
   </script>
 
+  <script type="norun" id="ch0105/07">
+    var n = Number(prompt("请输入n的值"))
+    var g = 0
+    var s = 0
+    var c = 0
+    var i = 1
+    while ( i <= n) {
+        g += Number(prompt("请输入gold"+i+"的值"))
+        s += Number(prompt("请输入silver"+i+"的值"))
+        c += Number(prompt("请输入copper"+i+"的值"))
+        i ++
+    }
+    console.log(g, s, c, g + s + c)
+  </script>
 
+<script type="norun" id="ch0105/08">
+    var n = Number(prompt("请输入n的值"))
+    var c = 0
+    var i = 1
+    while ( i <= n - 1) {
+        c += Number(prompt("请输入第"+i+"个角的值"))
+        i ++
+    }
+    console.log(180 * (n-2) - c)
+  </script>
+
+  <script type="norun" id="ch0105/09">
+    var m = Number(prompt("请输入m的值"))
+    var n = Number(prompt("请输入n的值"))
+    var i = m
+    var s = 0
+    while ( i <= n) {
+        if (i % 2 != 0){
+            s += i
+        }
+        i ++
+    }
+    console.log(s)
+  </script>
+
+<script type="norun" id="ch0105/10">
+    var m = Number(prompt("请输入m的值"))
+    var n = Number(prompt("请输入n的值"))
+    var i = m
+    var s = 0
+    while ( i <= n) {
+        if (i % 17 == 0){
+            s += i
+        }
+        i ++
+    }
+    console.log(s)
+  </script>
+
+  <script xtype="norun" id="ch0105/10">
+    var k = Number(prompt("请输入k的值"))
+    var sum1 = 0
+    var sum5 = 0
+    var sum10 = 0
+    var x = 0
+    for ( var i = 1; i <= k;i ++) {
+        x = Number(prompt("请输入k"+i+"的值"))
+        if (x == 1 ){
+            sum1 ++
+        } else if ( x == 5 ){
+            sum5 ++
+        } else if (x ==10){
+            sum10 ++
+        }
+    }
+    console.log(sum1+"\n"+sum5+"\n"+sum10)
+  </script>
 
 
