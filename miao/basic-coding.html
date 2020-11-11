@@ -617,7 +617,7 @@
     console.log(s)
   </script>
 
-  <script xtype="norun" id="ch0105/10">
+  <script type="norun" id="ch0105/11">
     var k = Number(prompt("请输入k的值"))
     var sum1 = 0
     var sum5 = 0
@@ -636,4 +636,97 @@
     console.log(sum1+"\n"+sum5+"\n"+sum10)
   </script>
 
+  <script type="norun" id="ch0105/12">
+    var N = Number(prompt("请输入N的值"))
+    var m = Number(prompt("请输入m的值"))
+    var sum = 0
+    for ( var i = 1; i <= N;i ++) {
+        n = Number(prompt("请输入n"+i+"的值"))
+        if (n == m ){
+            sum ++
+        }
+    }
+    console.log(sum)
+  </script>
 
+  <script type="norun" id="ch0105/13">
+    var a = Number(prompt("请输入a的值"))
+    var n = Number(prompt("请输入n的值"))
+    var sum = Math.pow(a,n)
+    console.log(sum)
+  </script>
+
+  <script type="norun" id="ch0105/14">
+    var x = Number(prompt("请输入x的值"))
+    var n = Number(prompt("请输入n的值"))
+    var sum = Math.pow(1.001,n) * x
+    sum = sum.toFixed(4)
+    console.log(sum)
+  </script>
+
+  <script type="norun" id="ch0105/15">
+    var R = Number(prompt("请输入R的值"))
+    var M = Number(prompt("请输入M的值"))
+    var Y = Number(prompt("请输入Y的值"))
+    var sum = Math.pow((1 +R / 100),Y) * M
+    sum = Math.floor(sum)
+    console.log(sum)
+  </script>
+
+  <script type="norun" id="ch0105/16">
+    var N = Number(prompt("请输入N的值"))
+    var K = Number(prompt("请输入K的值"))
+    var M = 0
+    var x = 0
+    var y = 0
+    var z = 0
+    while (M <= 20) {
+        x =  Math.pow((1 + K / 100),M)
+        y = M * N
+        z = 200 * x
+        if (y >= z) {
+            console.log(M)
+        } 
+        M ++
+    } if (M > 20){
+        console.log("Impossible")
+    }
+  </script>
+
+<script xtype="norun" id="ch0105/17">
+    var K = Number(prompt("请输入K的值"))
+    var x1 = 1
+    var x2 = 1
+    var x3 =0
+    if (K == 1 || K == 2) {
+        console.log("1")
+    } else {
+        for (var i =1;i <= K - 2;i ++){
+            x3 = x1 + x2
+            x1 = x2
+            x2 = x3
+        } console.log(x3)
+    }
+  </script>
+
+  <script type="norun" id="ch0105/18">
+    var n = Number(prompt("请输入n的值"))
+    var y = Number(prompt("请输入临床实验的总病例数")) 
+    var x = Number(prompt("请输入疗效有效的病例数")) 
+    var z =  x / y * 100
+    var y1 = 0
+    var x1 = 0
+    var z1 =0
+    for (var i =1;i <= n - 1;i ++){
+        y1 = Number(prompt("请输入临床实验的总病例数")) 
+        x1 = Number(prompt("请输入疗效有效的病例数")) 
+        z1 = x1 / y1 * 100
+        if (z1 > z + 5) {
+            console.log("better")
+        } else if (z > z1 + 5) {
+            console.log("worse")
+        } else {
+            console.log("same")
+        }
+    } 
+  </script>
