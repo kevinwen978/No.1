@@ -693,7 +693,7 @@
     }
   </script>
 
-<script xtype="norun" id="ch0105/17">
+<script type="norun" id="ch0105/17">
     var K = Number(prompt("请输入K的值"))
     var x1 = 1
     var x2 = 1
@@ -730,3 +730,34 @@
         }
     } 
   </script>
+
+  <script type="norun" id="ch0105/19">
+    var n = Number(prompt("请输入n的值"))
+    var x = 0
+    var y = 0
+    var m = 0
+    var z = 0
+    var s = 0
+    for (var i =1;i <= n ;i ++){
+        x = Number(prompt("请输入x坐标轴数值")) 
+        y = Number(prompt("请输入x坐标轴数值")) 
+        m = Number(prompt("请输入需要救援的人数m")) 
+        z = Math.sqrt(x ** 2 + y ** 2)
+        s += 2 * z / 50 + 1.5 * m
+    } 
+    s = Math.ceil(s)
+    console.log (s)
+  </script>
+
+  <script type="norun" id="ch0105/20">
+    var h = Number(prompt("请输入h的值"))
+    var x = 0
+    var s = h
+    for (var i =2;i <= 10 ;i ++){
+        x = h * Math.pow(0.5,i - 2)
+        s += x
+    } 
+    console.log (s.toFixed(4))
+    console.log ((x / 4).toFixed(7))
+  </script>
+
