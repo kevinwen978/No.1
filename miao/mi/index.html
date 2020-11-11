@@ -698,7 +698,7 @@
             position: absolute;
             top:930px;
             width: 100%;
-            height: 6500px;
+            height: 6060px;
             background-color: #F5F5F5;
         }
         /* 小米闪购 */
@@ -1158,23 +1158,91 @@
             display: flex;
             flex-direction:row;
             justify-content:space-between;
+            
         }
         .video-4 a{
             display: block;
+            position: relative;
+            background-color: white;
         }
   
-        .video-4 a:hover img{
+        .video-4 a:hover{
             margin-top: -2px;
             box-shadow:0 0 10px rgba(0,0,0,0.2);
             transition: .2s;
         }
+        .video-4 a:hover span{
+            background-color: #FF6700;
+            border-color: #FF6700;
+        }
         .video-4 [class^="v-"] img{
-            height: 285px;
+            height: 180px;
             width: 297px;
+            margin-bottom: 32px;
         }
         .video-4 [class^="v-"]{
             height: 285px;
             width: 297px;
+        }
+        .video-4 span{
+            display: block;
+            position: absolute;
+            top: 150px;
+            left: 20px;
+            width: 32px;
+            height: 20px;
+            border-radius: 12px;
+            border:2px solid white;  
+        }
+        i{   
+            color: white;
+            font: 32px Helvetica Neue, Helvetica, Arial, Microsoft Yahei, sans-serif;
+            vertical-align:top;
+            line-height: 20px;
+        }
+        .mi-icon-play::before{
+            content: "\E601";
+        }
+        footer{
+            background-color: #FFFFFF;
+            width: 100%;
+            height: 330px;
+            position: absolute;
+            top: 7000px;
+            left: 0;
+        }
+        .footer{
+            width: 1227px;
+            margin: auto;
+            height: 70px;
+            border-bottom: 2px solid #E0E0E0;
+        }
+        .servise{
+            display: inline-block;
+            height: 25px;
+            margin-top: 19px;
+            
+        }
+        .servise:nth-child(-n+4){
+            border-right: 1px solid #E0E0E0;
+        }
+        .servise a{
+            display: block;
+            color: black;
+            font-size: 16px;
+            margin: 0px 55px;
+           
+        }
+        .servise i{
+            color: black;
+            font-size: 24px;
+            vertical-align: text-top;
+        }
+        .servise>a:hover i{
+            color: #ff6700;
+        }
+        .servise>a:hover{
+            color: #ff6700;
         }
     </style>
 </head>
@@ -3017,21 +3085,40 @@
                 <a href="https://www.mi.com/a/h/14933.html" class="all"><div>查看全部</div><div>></div></a>
             </div>
             <div class="video-4">
-                <a class="v-1" href="https://www.mi.com/buy/detail?product_id=12609"target="_blank">
-                    
+                <a class="v-1" href="" alt=""> 
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/96563e75833ba4563bd469dd28203b09.jpg?thumb=1&w=296&h=180&f=webp&q=90" alt=""> 
+                   <div class="big">Redmi 10X系列发布会</div>
+                   <div class="small">Redmi 10X系列发布会</div>
+                   <span title="点击播放视频"><i class="mi-icon-play"></i></span>
+
                 </a>
-                <a class="v-2" href="https://www.mi.com/buy/detail?product_id=12511"target="_blank">
-                    
+                <a class="v-2" href=""target="_blank">
+                   <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/101b19aca4bb489bcef0f503e44ec866.jpg?thumb=1&w=296&h=180&f=webp&q=90" alt=""> 
+                   <div class="big">小米10青春版发布会</div>
+                   <span title="点击播放视频"><i class="mi-icon-play"></i></span>
                 </a>
-                <a class="v-3" href="https://www.mi.com/buy?product_id=12982"target="_blank">
-                    
+                <a class="v-3" href=""target="_blank">
+                   <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2fd26bb99b723337a2f8eaba84f7d5bb.jpg?thumb=1&w=296&h=180&f=webp&q=90" alt=""> 
+                   <div class="big">小米10 8K手机拍大片</div>
+                   <span title="点击播放视频"><i class="mi-icon-play"></i></span>
                 </a>
-                <a class="v-4" href="https://www.mi.com/mi10youth"target="_blank">
-                    
+                <a class="v-4" href=""target="_blank">
+                   <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a8dd25cab48c60fc6387b9001eddc3f9.jpg?thumb=1&w=296&h=180&f=webp&q=90" alt="">
+                   <div class="big">小米10发布会</div>
+                   <span title="点击播放视频"><i class="mi-icon-play"></i></span>
                 </a>
                 </a>
             </div>
         </div>
     </div>
+    <footer>
+        <div class="footer">
+           <div class="servise"><a href="https://www.mi.com/service/quick-repair"><i class="mi-icon-tool"></i> 预约维修服务</a></div>
+           <div class="servise"><a href="https://www.mi.com/service/exchange#back"><i class="mi-icon-cir7"></i> 7天无理由退货</a></div>
+           <div class="servise"><a href="https://www.mi.com/service/exchange#back"><i class="mi-icon-cir15"></i> 15天免费换货</a></div>
+           <div class="servise"><a href="https://www.mi.com/service/buy/Postal%20policy"><i class="mi-icon-gift"></i> 满99元包邮</a></div>
+           <div class="servise"><a href="https://www.mi.com/service/sitelist"><i class="mi-icon-add"></i> 520余家售后网点</a></div>
+        </div>
+    </footer>
 </body>
 </html>
