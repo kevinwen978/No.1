@@ -485,7 +485,7 @@
     var y = 0
     var z = 0
     while (i <= n) {
-        var x = +Number(prompt("请输入x"+i))
+        var x = +Number(prompt("请输入x"+i+"的值"))
         y = y + x
         i ++
     }
@@ -494,6 +494,74 @@
     console.log(z)
 </script>
 
+<script type="norun" id="ch0105/02">
+    var i = 1
+    var y = 0
+    var z = 0
+    while (i <= 12) {
+        var x = +Number(prompt("请输入x"+i+"的值"))
+        y = y + x
+        i ++
+    }
+    z = y / 12
+    z = z.toFixed(2)                           
+    console.log("$"+z)
+</script>
+
+<script type="norun" id="ch0105/03">
+    var n = +Number(prompt("请输入n的值")) 
+    var i = 1
+    var y = 0
+    var z = 0
+    while (i <= n) {
+        var x = +Number(prompt("请输入x"+i+"的值"))
+        y = y + x
+        i ++
+    }
+    z = y / n
+    z = z.toFixed(4)                           
+    console.log(z)
+</script>
+
+<script type="norun" id="ch0105/04">
+    var n = +Number(prompt("请输入n的值")) 
+    var i = 1
+    var y = 0
+    var z = 0
+    while (i <= n) {
+        var x = +Number(prompt("请输入x"+i+"的值"))
+        y = y + x
+        i ++
+    }
+    z = y / n
+    z = z.toFixed(5)                           
+    console.log(y+" "+z)
+</script>
+
+<script type="norun" id="ch0105/05">
+    var n = Number(prompt("请输入n的值"));
+    var max = 0;
+    var i = 1
+    while ( i <= n) {
+      max = Math.max(Number(prompt("")), max)
+      i ++
+    }
+    console.log(max)
+  </script>
+
+  <script type="norun" id="ch0105/06">
+    var n = Number(prompt("请输入n的值"));
+    var max = 0
+    var min = 0
+    var i = 1
+    while ( i <= n) {
+        x = Number(prompt("请输入x"+i+"的值"))
+        max = Math.max(x, max)
+        min = Math.min(x, min)
+        i ++
+    }
+    console.log(max - min)
+  </script>
 
 
 
