@@ -814,22 +814,7 @@
         }
     } console.log (n - x)
   </script>
-
-  <script type="norun" id="ch0105/23">
-    var m = Number(prompt("请输入药品库存m"))
-    var n = Number(prompt("请输入取药人数n"))
-    var x = 0
-    var y = 0
-    for (var i = 1; i <= n; i++) {
-        y = Number(prompt("请输入病人希望取药的数量"))
-        m = m - y
-        if (m < 0) {
-            x ++
-            m = m + y
-        }
-    } console.log (x)
-  </script>
-
+  
   <script type="norun" id="ch0105/24">
     var n = Number(prompt("请输入量血压次数n"))
     var y = 0
@@ -869,39 +854,8 @@
         }
     }
   </script>
-  <script type="norun" id="ch0105/25">
-    var a = 0
-    var b = 0
-    var c = 0
-      for (var i = 49; i < 400; i ++) {
-          a = Math.floor(i / 81)
-          b = Math.floor((i - 81 * a) / 9)
-          c = Math.floor(i - 81 * a - 9 * b)
-          if (i == (c * 49 + b * 7 + a )) {
-              console.log(i)
-              console.log(""+c+b+a)
-              console.log(""+a+b+c)
-          }
-      }
-    </script>
 
-<script type="norun" id="ch0105/26">
-    var a = 0
-    var b = 0
-    var c = 0
-    for (var i = 49; i < 400; i ++) {
-        a = Math.floor(i / 81)
-        b = Math.floor((i - 81 * a) / 9)
-        c = i - 81 * a - 9 * b
-        if (i == (c * 49 + b * 7 + a )) {
-            console.log(i)
-            console.log(""+c+b+a)
-            console.log(""+a+b+c)
-        }
-    }
-</script>
-
-<script type="norun" id="ch0105/26">
+  <script type="norun" id="ch0105/26">
     var n = Number(prompt("请输入四位数的个数n"))
     var a = 0
     var b = 0
@@ -931,4 +885,23 @@
             break
         }
     } 
+</script>
+
+<script type="norun" id="ch0105/28">
+    var n = Number(prompt("请输入整数n"))
+    var a = 0
+    var b = 0
+    var c = 0
+    var d = 0
+    var e = 0
+    var f = 0
+    var g = 0
+        a = Math.floor(x / 10000000)
+        b = Math.floor((x - 10000000 * a) / 1000000)
+        c = Math.floor((x - 10000000 * a - 1000000 * b) / 100000)
+        d = x - a * 1000 - b * 100 - c * 10
+        if (d > a + b + c) {
+            s ++
+        }
+    } console.log(s)
 </script>
