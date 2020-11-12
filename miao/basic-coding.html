@@ -814,7 +814,7 @@
         }
     } console.log (n - x)
   </script>
-  
+
   <script type="norun" id="ch0105/24">
     var n = Number(prompt("请输入量血压次数n"))
     var y = 0
@@ -887,21 +887,21 @@
     } 
 </script>
 
-<script type="norun" id="ch0105/28">
+<script xtype="norun" id="ch0105/28">
     var n = Number(prompt("请输入整数n"))
     var a = 0
     var b = 0
     var c = 0
     var d = 0
-    var e = 0
-    var f = 0
-    var g = 0
-        a = Math.floor(x / 10000000)
-        b = Math.floor((x - 10000000 * a) / 1000000)
-        c = Math.floor((x - 10000000 * a - 1000000 * b) / 100000)
-        d = x - a * 1000 - b * 100 - c * 10
-        if (d > a + b + c) {
-            s ++
+    for (var i = 7; i >= 1; i--) {
+        a = Math.floor(n / Math.pow(10,i)) 
+        if (a > 0) {
+            b = i + 1
+            break
         }
-    } console.log(s)
+    } for (var i = 1; i <= b; i ++) {
+        c = n % Math.pow(10,i)
+        d = Math.floor(c / Math.pow(10,i-1))  
+        console.log(d)
+    }
 </script>
