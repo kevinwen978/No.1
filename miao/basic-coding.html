@@ -1049,7 +1049,7 @@
     } console.log(N)
 </script>
 
-<script xtype="norun" id="ch0105/38">
+<script type="norun" id="ch0105/38">
     var n = Number(prompt("请输入值最高次幂n"))
     var a = 0
     var s = 0
@@ -1072,4 +1072,79 @@
     }
 </script>
 
+<script type="norun" id="ch0105/39">
+    var n = Number(prompt("请输入正整数n"))
+    var a = 0
+    var b = 0
+    var s = 0
+    for (var i = n; i >= 1; i --){
+        if (i >= 10) {
+            a = Math.floor(i / 10)
+            b = i - a * 10
+        } else {
+            b = i 
+        } if (i % 7 != 0 && a / 7 != 1 && b / 7 != 1) {
+            s += i ** 2
+        }   
+    } console.log(s)
+</script>
 
+<script type="norun" id="ch0105/40">
+    var n = Number(prompt("请输入正整数n"))
+    var a = 0
+    var b = 0
+    var c = 0
+    var d = 0
+    var s = 0
+    for (var x = n; x >= 1; x --) {
+        for (var i = 4; i >= 0; i--) {
+            a = Math.floor(x / Math.pow(10,i)) 
+            if (a > 0) {
+                b = i + 1 
+                break
+            }
+        } for (var i = 1; i <= b; i ++) {
+            c = x % Math.pow(10,i)
+            d = Math.floor(c / Math.pow(10,i-1)) 
+            if (d == 1 || c == 1) {
+                s ++
+            } 
+        }
+    } console.log(s)
+</script>
+
+<script type="norun" id="ch0105/41">
+    var L = Number(prompt("请输入正整数L"))
+    var R = Number(prompt("请输入正整数R"))
+    var a = 0
+    var b = 0
+    var c = 0
+    var d = 0
+    var s = 0
+    var e = 0
+    var f = 0
+    var g = R
+    for (var i = 1; i > 0; i ++){
+        e = g / 10
+        if (e > 1) {
+            f ++
+        } else {
+            break
+        } g = g / 10
+    }
+    for (var x = L; x >= L, x <= R; x ++) {
+        for (var i = f; i >= 0; i--) {
+            a = Math.floor(x / Math.pow(10,i)) 
+            if (a > 0) {
+                b = i + 1 
+                break
+            }
+        } for (var i = 1; i <= b; i ++) {
+            c = x % Math.pow(10,i)
+            d = Math.floor(c / Math.pow(10,i-1)) 
+            if (d == 2 || c == 2) {
+                s ++
+            } 
+        }
+    } console.log(s)
+</script>
