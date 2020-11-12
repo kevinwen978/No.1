@@ -993,7 +993,7 @@
     } console.log(s.toFixed(4))
 </script>
 
-<script xtype="norun" id="ch0105/34">
+<script type="norun" id="ch0105/34">
     var n = Number(prompt("请输入正整数n"))
     var a = 1
     var s = 0
@@ -1007,3 +1007,69 @@
         } s += a; a = 1
     } console.log(s)
 </script>
+
+<script type="norun" id="ch0105/35">
+    var n = Number(prompt("请输入正整数n"))
+    var a = 1
+    var e = 1
+    for (var i = 1; i <= n; i ++) {
+        for (var x = i; x > 0; x --){
+            if (x >= 2){
+                a = a / x
+            } else {
+                a = a
+            } 
+        } e += a; a = 1
+    } console.log(e.toFixed(10))
+</script>
+
+<script type="norun" id="ch0105/36">
+    var x = Number(prompt("请输入x的值"))
+    var n = Number(prompt("请输入正整数n"))
+    var a = 1
+    var e = 1
+    for (var i = 1; i <= n; i ++) {
+        for (var y = i; y > 0; y --){
+            if (y >= 1){
+                a = a * x
+            } else {
+                a = a
+            } 
+        } e += a; a = 1
+    } console.log(e.toFixed(2))
+</script>
+
+<script type="norun" id="ch0105/37">
+    var M = Number(prompt("请输入体力最大值M的值"))
+    var N = Number(prompt("请输入战斗力N的值"))
+    var X = Number(prompt("请输入能量元素X的值"))
+    for (var i = X; i > 0; i --) {
+        a = Math.floor(M / N)
+        N += a
+    } console.log(N)
+</script>
+
+<script xtype="norun" id="ch0105/38">
+    var n = Number(prompt("请输入值最高次幂n"))
+    var a = 0
+    var s = 0
+    var b = 0
+    var c = 0
+    var d = ""
+    for (var i = n + 1; i >=  1; i --){
+         c = Number(prompt("请输入幂次为"+ (i - 1)+"的项的系数"))
+         if (i >= 2) {
+            a = c * (i - 1) + " * x^ "+(i - 2)
+            b = c * (i - 1)
+         } else {
+            a = 0 
+            b = ""
+         } s +=  a; d += " "+ b 
+    } if ( s == 0) {
+        console.log("0")
+    } else {
+        console.log (d)
+    }
+</script>
+
+
