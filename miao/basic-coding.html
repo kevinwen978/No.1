@@ -1150,7 +1150,39 @@
 </script>
 
 <script type="norun" id="ch0105/42">
-
+    var L = Number(prompt("请输入正整数L"))
+    var R = Number(prompt("请输入正整数R"))
+    var a = 0
+    var b = 0
+    var c = 0
+    var d = 0
+    var s = 0
+    var e = 0
+    var f = 0
+    var g = R
+    for (var i = 1; i > 0; i ++){
+        e = g / 10
+        if (e > 1) {
+            f ++
+        } else {
+            break
+        } g = g / 10
+    }
+    for (var x = L; x >= L, x <= R; x ++) {
+        for (var i = f; i >= 0; i--) {
+            a = Math.floor(x / Math.pow(10,i)) 
+            if (a > 0) {
+                b = i + 1 
+                break
+            }
+        } for (var i = 1; i <= b; i ++) {
+            c = x % Math.pow(10,i)
+            d = Math.floor(c / Math.pow(10,i-1)) 
+            if (d == 2 || c == 2) {
+                s ++
+            } 
+        }
+    } console.log(s)
 </script>
 
 <script type="norun" id="ch0105/43">
@@ -1179,7 +1211,7 @@
     }console.log(m)
 </script>
 
-<script ztype="norun" id="ch0105/44">
+<script type="norun" id="ch0105/44">
     var n = Number(prompt("请输入正整数n"))
     var s = 1 
     for (var i = 3 ; i <= 10000; i ++) {
@@ -1198,5 +1230,14 @@
 </script>
 
 <script xtype="norun" id="ch0105/45">
-
+    var n = Number(prompt("请输入天数n"))
+    var a = n
+    var s = 0
+    for (var i = 1; i <= n - 1; i ++) {
+        a = a - i 
+        s += i ** 2
+        if (a <= i + 1){
+            break
+        }
+    } console.log(s + a * (i + 1))
 </script>
