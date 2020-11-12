@@ -854,5 +854,81 @@
     } console.log(m)
   </script>
 
+  <script type="norun" id="ch0105/25">
+  var a = 0
+  var b = 0
+  var c = 0
+    for (var i = 49; i < 400; i ++) {
+        a = Math.floor(i / 81)
+        b = Math.floor((i - 81 * a) / 9)
+        c = Math.floor(i - 81 * a - 9 * b)
+        if (i == (c * 49 + b * 7 + a )) {
+            console.log(i)
+            console.log(""+c+b+a)
+            console.log(""+a+b+c)
+        }
+    }
+  </script>
+  <script type="norun" id="ch0105/25">
+    var a = 0
+    var b = 0
+    var c = 0
+      for (var i = 49; i < 400; i ++) {
+          a = Math.floor(i / 81)
+          b = Math.floor((i - 81 * a) / 9)
+          c = Math.floor(i - 81 * a - 9 * b)
+          if (i == (c * 49 + b * 7 + a )) {
+              console.log(i)
+              console.log(""+c+b+a)
+              console.log(""+a+b+c)
+          }
+      }
+    </script>
 
+<script type="norun" id="ch0105/26">
+    var a = 0
+    var b = 0
+    var c = 0
+    for (var i = 49; i < 400; i ++) {
+        a = Math.floor(i / 81)
+        b = Math.floor((i - 81 * a) / 9)
+        c = i - 81 * a - 9 * b
+        if (i == (c * 49 + b * 7 + a )) {
+            console.log(i)
+            console.log(""+c+b+a)
+            console.log(""+a+b+c)
+        }
+    }
+</script>
 
+<script type="norun" id="ch0105/26">
+    var n = Number(prompt("请输入四位数的个数n"))
+    var a = 0
+    var b = 0
+    var c = 0
+    var d = 0
+    var x = 0
+    var s = 0
+    for (var i = 1; i <= n; i ++) {
+        x = Number(prompt("请输入第"+i+"个四位数"))
+        a = Math.floor(x / 1000)
+        b = Math.floor((x - 1000 * a) / 100)
+        c = Math.floor((x - 1000 * a - 100 * b) / 10)
+        d = x - a * 1000 - b * 100 - c * 10
+        if (d > a + b + c) {
+            s ++
+        }
+    } console.log(s)
+</script>
+
+<script type="norun" id="ch0105/27">
+    var K = Number(prompt("请输入K"))
+    var Sn = 0
+    for (var n = 1; n > 0;n ++ ) {
+       Sn += 1 / n
+        if (Sn > K) {
+            console.log(n)
+            break
+        }
+    } 
+</script>
