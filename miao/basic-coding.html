@@ -894,8 +894,12 @@
         }
     } for (var i = 1; i <= b; i ++) {
         c = n % Math.pow(10,i)
-        d = Math.floor(c / Math.pow(10,i-1))  
-        e += " " + d    
+        d = Math.floor(c / Math.pow(10,i-1)) 
+        if (i == 1) {
+            e = d
+        } else {
+            e += " " + d 
+        }   
     } console.log(e)
 </script>
 
@@ -925,4 +929,29 @@
     } console.log(e)
 </script>
 
-
+<script type="norun" id="ch0105/30">
+    var m = Number(prompt("请输入整数m"))
+    var k = Number(prompt("请输入整数k"))
+    var a = 0
+    var b = 0
+    var c = 0
+    var d = 0
+    var e = 0
+    for (var i = 5; i >= 1; i--) {
+        a = Math.floor(m / Math.pow(10,i)) 
+        if (a > 0) {
+            b = i + 1
+            break
+        }
+    } for (var i = 1; i <= b; i ++) {
+        c = m % Math.pow(10,i)
+        d = Math.floor(c / Math.pow(10,i-1))
+        if (d == 3)  {
+            e ++
+        }     
+    } if (m % 19 == 0 && e == k) {
+        console.log("YES")
+    } else {
+        console.log("NO")
+    }
+</script>
