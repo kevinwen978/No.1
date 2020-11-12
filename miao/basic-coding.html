@@ -802,3 +802,57 @@
         console.log(y * 120 + s )
     }  
   </script>
+
+  <script type="norun" id="ch0105/23">
+    var m = Number(prompt("请输入药品库存m"))
+    var n = Number(prompt("请输入取药人数n"))
+    var x = 0
+    for (var i = 1; i <= n; i++) {
+        m = m - Number(prompt("请输入病人希望取药的数量"))
+        if (m < 0) {
+            x ++
+        }
+    } console.log (n - x)
+  </script>
+
+  <script type="norun" id="ch0105/23">
+    var m = Number(prompt("请输入药品库存m"))
+    var n = Number(prompt("请输入取药人数n"))
+    var x = 0
+    var y = 0
+    for (var i = 1; i <= n; i++) {
+        y = Number(prompt("请输入病人希望取药的数量"))
+        m = m - y
+        if (m < 0) {
+            x ++
+            m = m + y
+        }
+    } console.log (x)
+  </script>
+
+  <script type="norun" id="ch0105/24">
+    var n = Number(prompt("请输入量血压次数n"))
+    var y = 0
+    var x = 0
+    var z1 = 0
+    var z2 = 0
+    var s = 0
+    var m = 0
+    for (var i = 1; i <= n; i++) {
+         y = Number(prompt("请输入病人的收缩压"))
+         x = Number(prompt("请输入病人的舒张压"))
+        if ( y <= 140 && y >= 90 && x <= 90 && x >= 60) {
+            z1 = 1 
+            z2 = z1
+        } else {
+            z1 = 0
+        } if (z1 == z2 == 1){
+            s ++
+        } else {
+            s = 0
+        } m = Math.max(m,s)
+    } console.log(m)
+  </script>
+
+
+
