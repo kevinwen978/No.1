@@ -885,7 +885,7 @@
     var b = 0
     var c = 0
     var d = 0
-    var e = ""
+    var e = 0
     for (var i = 7; i >= 1; i--) {
         a = Math.floor(n / Math.pow(10,i)) 
         if (a > 0) {
@@ -954,4 +954,56 @@
     } else {
         console.log("NO")
     }
+</script>
+
+<script type="norun" id="ch0105/31">
+    var N = Number(prompt("请输入灯的数量N"))
+    var M = Number(prompt("请输入人的数量M"))
+    for (var z = N, i = 1; i <= M; i ++){
+        a = Math.floor(z/i)
+        if (i % 2 == 0){
+
+        }
+    }
+</script>
+
+<script type="norun" id="ch0105/32">
+    var n = Number(prompt("请输入正整数n"))
+    var x1 = 2
+    var x2 = 1
+    var m = 0
+    var s = 0
+    for (var i = 1; i <= n; i ++) {
+        s += x1 / x2 
+        m = x1 + x2
+        x2 = x1
+        x1 = m
+    } console.log(s.toFixed(4))
+</script>
+
+<script type="norun" id="ch0105/33">
+    var n = Number(prompt("请输入正整数n"))
+    var x = 0
+    var s = 0
+    for (var i = 1; i <= n; i ++ ) {
+        x = 1 / i
+        if (i % 2 == 0) {
+            x = - 1 / i
+        } s += x
+    } console.log(s.toFixed(4))
+</script>
+
+<script xtype="norun" id="ch0105/34">
+    var n = Number(prompt("请输入正整数n"))
+    var a = 1
+    var s = 0
+    for (var i = 1; i <= n; i ++) {
+        for (var e = i; e > 0; e --){
+            if (e >= 2){
+                a = a * e
+            } else {
+                a = a
+            } 
+        } s += a; a = 1
+    } console.log(s)
 </script>
