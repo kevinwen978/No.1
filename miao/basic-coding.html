@@ -1153,14 +1153,48 @@
 
 </script>
 
-<script xtype="norun" id="ch0105/43">
+<script type="norun" id="ch0105/43">
     var n = Number(prompt("请输入正整数n"))
-    for ()
-
+    var m = 0
+    for (var i = n ; i >= 1; i --) {
+        for (var x = 1 ; x <= n; x ++){
+            if ( i * x == n && i != n && x != n) {
+                var flag1 = true
+                var flag2 = true
+                for (var y = 2 ; y < i; y ++) {
+                    if (i % y == 0) {
+                        flag1 = false
+                    }
+                }
+                for (var y = 2 ; y < x; y ++) {
+                    if (x % y == 0) {
+                        flag2 = false
+                    }
+                } 
+                if ( flag2 == true && flag1 == true){
+                    m = Math.max(m,i,x)
+                }
+            }
+        }
+    }console.log(m)
 </script>
 
-<script xtype="norun" id="ch0105/44">
-
+<script ztype="norun" id="ch0105/44">
+    var n = Number(prompt("请输入正整数n"))
+    var s = 1 
+    for (var i = 3 ; i <= 10000; i ++) {
+        var flag = true
+        for (var y = 2 ; y < i; y ++) {
+            if (i % y == 0) {
+                flag = false
+            } 
+        } if (flag == true) {
+            s ++
+        }  if (s == n) {
+            console.log(i)
+            break
+        }
+    }
 </script>
 
 <script xtype="norun" id="ch0105/45">
