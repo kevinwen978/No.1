@@ -819,26 +819,18 @@
     var n = Number(prompt("请输入量血压次数n"))
     var y = 0
     var x = 0
-    var z1 = 0
-    var z2 = 0
     var s = 0
     var m = 0
     for (var i = 1; i <= n; i++) {
          y = Number(prompt("请输入病人的收缩压"))
          x = Number(prompt("请输入病人的舒张压"))
         if ( y <= 140 && y >= 90 && x <= 90 && x >= 60) {
-            z1 = 1 
-            z2 = z1
-        } else {
-            z1 = 0
-        } if (z1 == z2 == 1){
             s ++
         } else {
             s = 0
         } m = Math.max(m,s)
     } console.log(m)
   </script>
-
   <script type="norun" id="ch0105/25">
   var a = 0
   var b = 0
@@ -887,12 +879,13 @@
     } 
 </script>
 
-<script xtype="norun" id="ch0105/28">
+<script type="norun" id="ch0105/28">
     var n = Number(prompt("请输入整数n"))
     var a = 0
     var b = 0
     var c = 0
     var d = 0
+    var e = ""
     for (var i = 7; i >= 1; i--) {
         a = Math.floor(n / Math.pow(10,i)) 
         if (a > 0) {
@@ -902,6 +895,34 @@
     } for (var i = 1; i <= b; i ++) {
         c = n % Math.pow(10,i)
         d = Math.floor(c / Math.pow(10,i-1))  
-        console.log(d)
-    }
+        e += " " + d    
+    } console.log(e)
 </script>
+
+<script type="norun" id="ch0105/29">
+    var N = Number(prompt("请输入整数N"))
+    var a = 0
+    var b = 0
+    var c = 0
+    var d = 0
+    var e = ""
+    if (N < 0) {
+        e = "-"
+        N = - N
+    }
+    for (var i = 7; i >= 1; i--) {
+        a = Math.floor(N / Math.pow(10,i)) 
+        if (a > 0) {
+            b = i + 1
+            break
+        }
+    } for (var i = 1; i <= b; i ++) {
+        c = N % Math.pow(10,i)
+        d = Math.floor(c / Math.pow(10,i-1))
+        if (i == 1 && d == 0) {
+            d = ""
+        } e += d 
+    } console.log(e)
+</script>
+
+
