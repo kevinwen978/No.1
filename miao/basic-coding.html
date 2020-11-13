@@ -957,15 +957,18 @@
 </script>
 
 <script type="norun" id="ch0105/31">
-    var N = Number(prompt("请输入灯的数量N"))
-    var M = Number(prompt("请输入人的数量M"))
-    for (var z = N, i = 1; i <= M; i ++){
-        a = Math.floor(z/i)
-        if (i % 2 == 0){
-
-        }
+    var N = Number(prompt("请输入灯的数量N"));
+    var M = Number(prompt("请输入人的数量M"));
+    var off_light = [];
+    for(var i=1;i<=N;i++){
+      var count = 1; // 偶开奇灭
+      for(var j=2;j<=i;j++){
+        if(i%j == 0) count++;
+      }
+      if(count % 2 == 1) off_light.push(i);
     }
-</script>
+    console.log(off_light.join(","));
+  </script>
 
 <script type="norun" id="ch0105/32">
     var n = Number(prompt("请输入正整数n"))
@@ -1150,40 +1153,11 @@
 </script>
 
 <script type="norun" id="ch0105/42">
-    var L = Number(prompt("请输入正整数L"))
-    var R = Number(prompt("请输入正整数R"))
-    var a = 0
-    var b = 0
-    var c = 0
-    var d = 0
-    var s = 0
-    var e = 0
-    var f = 0
-    var g = R
-    for (var i = 1; i > 0; i ++){
-        e = g / 10
-        if (e > 1) {
-            f ++
-        } else {
-            break
-        } g = g / 10
-    }
-    for (var x = L; x >= L, x <= R; x ++) {
-        for (var i = f; i >= 0; i--) {
-            a = Math.floor(x / Math.pow(10,i)) 
-            if (a > 0) {
-                b = i + 1 
-                break
-            }
-        } for (var i = 1; i <= b; i ++) {
-            c = x % Math.pow(10,i)
-            d = Math.floor(c / Math.pow(10,i-1)) 
-            if (d == 2 || c == 2) {
-                s ++
-            } 
-        }
-    } console.log(s)
-</script>
+    var h = Number(prompt());
+    var w = Number(prompt());
+    var ch = prompt();
+    var solid = Number(prompt());
+  </script>
 
 <script type="norun" id="ch0105/43">
     var n = Number(prompt("请输入正整数n"))
@@ -1229,7 +1203,7 @@
     }
 </script>
 
-<script xtype="norun" id="ch0105/45">
+<script type="norun" id="ch0105/45">
     var n = Number(prompt("请输入天数n"))
     var a = n
     var s = 0
