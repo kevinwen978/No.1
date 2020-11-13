@@ -831,15 +831,15 @@
         } m = Math.max(m,s)
     } console.log(m)
   </script>
-  <script type="norun" id="ch0105/25">
-  var a = 0
-  var b = 0
-  var c = 0
+  <script xtype="norun" id="ch0105/25">
+    var a = 0
+    var b = 0
+    var c = 0
     for (var i = 49; i < 400; i ++) {
         a = Math.floor(i / 81)
         b = Math.floor((i - 81 * a) / 9)
         c = Math.floor(i - 81 * a - 9 * b)
-        if (i == (c * 49 + b * 7 + a )) {
+        if (i == (c * 49 + b * 7 + a ) && a < 7 && b < 7 && c < 7 ) {
             console.log(i)
             console.log(""+c+b+a)
             console.log(""+a+b+c)
