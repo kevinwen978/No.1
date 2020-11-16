@@ -959,15 +959,15 @@
 <script type="norun" id="ch0105/31">
     var N = Number(prompt("请输入灯的数量N"));
     var M = Number(prompt("请输入人的数量M"));
-    var off_light = [];
+    var offlight = [];
     for(var i=1;i<=N;i++){
       var count = 1; // 偶开奇灭
       for(var j=2;j<=i;j++){
         if(i%j == 0) count++;
       }
-      if(count % 2 == 1) off_light.push(i);
+      if(count % 2 == 1) offlight.push(i);
     }
-    console.log(off_light.join(","));
+    console.log(offlight.join(","));
   </script>
 
 <script type="norun" id="ch0105/32">
@@ -1152,11 +1152,29 @@
     } console.log(s)
 </script>
 
-<script type="norun" id="ch0105/42">
-    var h = Number(prompt());
-    var w = Number(prompt());
-    var ch = prompt();
-    var solid = Number(prompt());
+<script xtype="norun" id="ch0105/42">
+    var h = Number(prompt())
+    var w = Number(prompt())
+    var ch = prompt()
+    var fill = Number(prompt())
+    var a = ch
+    var b = ch
+    for (i = 2 ;i <= w ; i ++) {
+            a += ch
+        }
+    var c = a
+    if (fill == 1) {
+        for (var i = 1;i <= h;i ++) {
+            c += '\n' + a
+        }
+    } else if (fill == 0) {
+        for (i = 2 ; i < w; i ++) {
+            b += ' '
+        } b += ch
+        for (var i = 2;i <= h - 1;i ++) {
+            c += '\n' + b
+        } c += '\n' + a
+    } console.log(c)
   </script>
 
 <script type="norun" id="ch0105/43">
@@ -1169,7 +1187,7 @@
                 var flag2 = true
                 for (var y = 2 ; y < i; y ++) {
                     if (i % y == 0) {
-                        flag1 = false
+                        flag1 = false // 求质数
                     }
                 }
                 for (var y = 2 ; y < x; y ++) {
