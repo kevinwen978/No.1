@@ -1280,7 +1280,7 @@
     
     </script>
     
-    <script> //求阶乘
+    <script id ="sqrt" type="nonrun"> //求阶乘
      var s = 1
      var factorial = function(n) {
          for (var i = 1; i <= n; i ++) {
@@ -1289,7 +1289,7 @@
      }
      console.log(factorial(5))
     </script>
-    <script> //求一个数是否为完全数
+    <script id = "complete-number" type="nonrun"> //求一个数是否为完全数
         var completenumber = function(n) {
             var s = 1
             for (var i = 2; i < n ; i ++ ) {
@@ -1304,7 +1304,7 @@
         }
         console.log(completenumber(496))
     </script>
-    <script>
+    <script id = "complete-numbers" type="nonrun" >
         var s = 1
         var a = ''
         for (var n = 1 ; n < 1000; n ++) {
@@ -1319,7 +1319,7 @@
     
     </script>
     
-    <script> //两个数的最大公约数
+    <script id = "lcf&lcm" type="nonrun"> //两个数的最大公约数
         var lcf = function(x,y) {
             for (var i = x; i > 0 ; i --) {
                 if (x % i == 0 && y % i == 0) {
@@ -1330,9 +1330,7 @@
         x = Number(prompt())
         y = Number(prompt())
         console.log(lcf(x,y))
-    </script>
-    
-    <script> //两个数的最小公倍数
+  //两个数的最小公倍数
         var lcm = function(x,y) {
             for (var i = x; i > 0 ; i ++) {
                 if (i % x == 0 && i % y == 0) {
