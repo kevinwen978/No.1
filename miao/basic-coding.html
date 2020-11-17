@@ -1152,7 +1152,7 @@
     } console.log(s)
 </script>
 
-<script xtype="norun" id="ch0105/42">
+<script type="norun" id="ch0105/42">
     var h = Number(prompt())
     var w = Number(prompt())
     var ch = prompt()
@@ -1233,3 +1233,115 @@
         }
     } console.log(s + a * (i + 1))
 </script>
+
+<script>
+    var sqrt = function(x) {
+        y = Math.sqrt(x)
+        return y
+    }
+    </script>
+    
+    <script> // 判断一个数是否为水仙花数
+        var narcissistic = function(x) {
+            var a = Math.floor(x / 100)
+            var b = Math.floor((x - a * 100) / 10)
+            var c = x % 10
+            if (a ** 3 + b ** 3 + c ** 3  == x) {
+                return true
+            } else {
+                return false
+            }
+        }
+        console.log(narcissistic(153))
+    </script>
+    
+    <script> //10000以内的所有水仙花数
+        var f = ''
+        for (var x = 153; x < 10000 ; x ++) {
+            if (x <= 999) {
+                var a = Math.floor(x / 100)
+                var b = Math.floor((x - a * 100) / 10)
+                var c = x % 10
+                if (a ** 3 + b ** 3 + c ** 3  == x) {
+                    var e = x
+                    f +=  e + ' '
+                } 
+            } else if (x > 999) {
+                var a = Math.floor(x / 1000)
+                var b = Math.floor((x - a * 1000) / 100)
+                var c = Math.floor((x - a * 1000 - b * 100) / 10)
+                var d = x % 10
+                if (a ** 4 + b ** 4 + c ** 4 + d ** 4 == x) {
+                    var e = x
+                    f += e + ' '
+                } 
+              } 
+        } console.log(f)
+    
+    </script>
+    
+    <script> //求阶乘
+     var s = 1
+     var factorial = function(n) {
+         for (var i = 1; i <= n; i ++) {
+              s *= i
+         } return s
+     }
+     console.log(factorial(5))
+    </script>
+    <script> //求一个数是否为完全数
+        var completenumber = function(n) {
+            var s = 1
+            for (var i = 2; i < n ; i ++ ) {
+                if (n % i == 0) {
+                    s += i
+                } 
+            } if (s == n) {
+                return true
+            } else {
+                return false
+            }
+        }
+        console.log(completenumber(496))
+    </script>
+    <script>
+        var s = 1
+        var a = ''
+        for (var n = 1 ; n < 1000; n ++) {
+            for (var i = 2; i < n ; i ++ ) {
+                if (n % i == 0) {
+                    s += i
+                }
+            } if (s == n) {
+                a += s + ' '
+            } s = 1
+        } console.log(a)
+    
+    </script>
+    
+    <script> //两个数的最大公约数
+        var lcf = function(x,y) {
+            for (var i = x; i > 0 ; i --) {
+                if (x % i == 0 && y % i == 0) {
+                    return i
+                }
+            }
+        }
+        x = Number(prompt())
+        y = Number(prompt())
+        console.log(lcf(x,y))
+    </script>
+    
+    <script> //两个数的最小公倍数
+        var lcm = function(x,y) {
+            for (var i = x; i > 0 ; i ++) {
+                if (i % x == 0 && i % y == 0) {
+                    return i
+                }
+            }
+        }
+        x = Number(prompt())
+        y = Number(prompt())
+        console.log(lcm(x,y)) 
+    </script>
+    
