@@ -26,14 +26,11 @@ var kevinwen978 = function () {
     }
     // 排除数组特定的值  
     function difference(ary, ...values) {
-        var a = concat([], ...values)
-        var res = []
-        for (var i = 0; i < ary.length; i++) {
-            if (a.indexOf(ary[i]) == -1) {
-                res.push(ary[i])
-            }
+        var result = new Set()
+        for (var  val of values) {
+            for (var res of val) result.add(res)
         }
-        return res
+        return ary.filter(res => !result.has(res))
     }
     //删除数组前面n个元素
     function drop (arr,n = 1) {
