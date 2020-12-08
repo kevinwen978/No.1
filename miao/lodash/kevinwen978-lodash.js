@@ -8,7 +8,7 @@ var kevinwen978 = function () {
             }
         }
         return result
-    }
+    };
     // 将数组分块
     function chunk(ary, size) {
         if (ary.length < 1) return []
@@ -23,9 +23,9 @@ var kevinwen978 = function () {
           res[resL] = ary.slice(resL * size)
         }
         return res
-    }
+    };
     // 排除数组特定的值  
-    function difference (arr,values) {
+    function difference(arr,values) {
         var result = []
         for (var i = 0; i < arr.length; i++) {
             var p = false
@@ -34,7 +34,7 @@ var kevinwen978 = function () {
             }
             if (p == false) result.push(arr[i])
         } return result
-    }                                                                                                                                                                                                                )
+    };                                                                                                                                                                                                                )
     return {
         chunk,
         compact,
