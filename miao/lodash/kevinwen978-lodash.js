@@ -84,6 +84,18 @@ var kevinwen978 = function () {
         return result
 
     }
+    // 减少depth个array嵌套深度
+    function flattenDepth(ary, depth = 1) {
+        var res = []
+        for (var i = 0; i < ary.length; i++) {
+            if (ary[i] instanceof Array && depth > 0) {
+                res.push(...flattenDepth(ary[i], depth - 1))
+            } else {
+                res.push(ary[i])
+            }
+        }
+        return res
+    }
     //返回一个由键值对pairs构成的对象
     function fromPairs(pairs) {
        var res = {}
