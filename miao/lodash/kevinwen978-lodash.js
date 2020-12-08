@@ -71,6 +71,7 @@ var kevinwen978 = function () {
         }
         return result
     } 
+    // 减少所有array嵌套深度
     function flattenDeep (ary) {
         var result = []
         for (var i = 0; i < ary.length; i++) {
@@ -88,11 +89,11 @@ var kevinwen978 = function () {
        var res = {}
        for (var i = 0; i < pairs.length; i ++) {
            for (var j = 0; j < pairs[i].length; j += 2) {
-                if (!res[pairs[i][j]]) res[pairs[i][j]] = res[pairs[i][j + 1]]
+                if (!res[pairs[i][j]]) res[pairs[i][j]] = pairs[i][j + 1]
            }
        } return res
     }
-
+    
 
 
     return {
