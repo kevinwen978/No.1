@@ -11,4 +11,4 @@ var kevinwen978 = function () {
     return {
         compact,
     }
-}
+}()
