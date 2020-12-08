@@ -139,7 +139,17 @@ var kevinwen978 = function () {
             if (ary[i] == value) return  i
         } return -1
     }
-     
+    //移除数组array中所有和给定值相等的元素
+    function pull (ary,...value) {
+
+    }
+    //反转array
+    function reverse (ary) {
+        var n = ary.length
+        for (var i = n - 1; i >= 0 ; i --) {
+            ary.push(ary[i])
+        } return ary.slice(n)
+    }
 
     return {
         chunk,
@@ -157,7 +167,8 @@ var kevinwen978 = function () {
         initial,
         join,
         last,
-        lastIndexOf，
+        lastIndexOf,
+        reverse,
     }
 
 } ();
