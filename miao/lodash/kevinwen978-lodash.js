@@ -125,7 +125,8 @@ var kevinwen978 = function () {
     function join (ary,separator = ',') {
         var str = '' + ary[0]
         for (var i = 1; i < ary.length; i++) {
-            str += separator + ary[i]
+            str += separator 
+            str += ary[i]
         } return str
     }
     //返回array中的最后一个元素
