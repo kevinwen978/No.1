@@ -36,8 +36,8 @@ var kevinwen978 = function () {
         } return result
     };                                                                                                                                                                                                                )
     return {
-        chunk,
         compact,
+        chunk,
         difference,
     }
 
