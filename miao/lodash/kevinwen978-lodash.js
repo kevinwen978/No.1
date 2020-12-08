@@ -16,7 +16,7 @@ var kevinwen978 = function () {
     }
     //过滤数组非真的值
     function compact(ary) {
-        var result = [];
+        var result = []
         for (var i = 0; i < ary.length; i++) {
             if (ary[i]) {
                 result.push(ary[i])
@@ -25,16 +25,16 @@ var kevinwen978 = function () {
         return result
     }
     // 排除数组特定的值  
-    function difference(arr, values) {
+    function difference(ary, values) {
         var result = []
-        for (var i = 0; i < arr.length; i++) {
+        for (var i = 0; i < ary.length; i++) {
             var p = false
             for (var j = 0; j < values.length; j++) {
-                if (arr[i] == values[j])
+                if (ary[i] == values[j])
                     p = true
             }
             if (p == false)
-                result.push(arr[i])
+                result.push(ary[i])
         } return result
     }
     return {
