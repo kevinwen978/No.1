@@ -40,7 +40,7 @@ var kevinwen978 = function () {
         } return result
     }
     //删除数组前面n个元素
-    function drop (arr,n) {
+    function drop (arr,n = 1) {
         var m = arr.length
         if (n >= m) return []
         var result = arr.slice(n)
