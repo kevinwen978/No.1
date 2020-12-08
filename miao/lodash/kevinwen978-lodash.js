@@ -110,6 +110,12 @@ var kevinwen978 = function () {
         if (ary.length < 1) return undefined
         return ary[0]
     }
+    //返回value在数组array中被找到的索引值
+    function indexOf (ary, value, fromIndex = 0) {
+         for (var i = fromIndex;i < ary.length; i ++) {
+             if (ary[i] == value) return i
+         } return -1
+    }
     
 
 
@@ -125,6 +131,7 @@ var kevinwen978 = function () {
         flattenDepth,
         fromPairs,
         head,
+        indexOf,
     }
 
 } ();
