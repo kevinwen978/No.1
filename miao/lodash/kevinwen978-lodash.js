@@ -89,6 +89,7 @@ var kevinwen978 = function () {
         difference,
         drop,
         dropRight,
+        fill,
         flatten,
         flattenDeep,
     }
