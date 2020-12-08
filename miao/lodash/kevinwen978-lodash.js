@@ -1,14 +1,4 @@
 var kevinwen978 = function () {
-    //过滤数组非真的值
-    function compact(ary) {
-        var result = []
-        for (var i = 0;i < ary.length; i++) {
-            if (ary[i]) {
-                result.push(ary[i])
-            }
-        }
-        return result
-    };
     // 将数组分块
     function chunk(ary, size) {
         if (ary.length < 1) return []
@@ -23,7 +13,17 @@ var kevinwen978 = function () {
           res[resL] = ary.slice(resL * size)
         }
         return res
-    };
+    }
+    //过滤数组非真的值
+    function compact(ary) {
+        var result = []
+        for (var i = 0;i < ary.length; i++) {
+            if (ary[i]) {
+                result.push(ary[i])
+            }
+        }
+        return result
+    }
     // 排除数组特定的值  
     function difference(arr,values) {
         var result = []
@@ -34,10 +34,10 @@ var kevinwen978 = function () {
             }
             if (p == false) result.push(arr[i])
         } return result
-    };                                                                                                                                                                                                                )
+    }                                                                                                                                                                                                               )
     return {
-        compact,
         chunk,
+        compact,
         difference,
     }
 
