@@ -25,13 +25,14 @@ var kevinwen978 = function () {
         return result
     }
     // 排除数组特定的值  
-    function difference(ary, values) {
+    function difference(ary, ...values) {
         var result = []
         for (var i = 0; i < ary.length; i++) {
             var p = false
             for (var j = 0; j < values.length; j++) {
-                  if (ary[i] == values[j])
-                    p = true
+                for (var m = 0; m < values[j].length; m++) {
+                  if (ary[i] == values[j])  p = true
+                }
             }
             if (p == false)
                 result.push(ary[i])
@@ -49,8 +50,7 @@ var kevinwen978 = function () {
         var m = arr.length
         if (n >= m) return []
         var result = arr.slice(0,m - n)
-        return result
-        
+        return result    
     }
     return {
         chunk,
