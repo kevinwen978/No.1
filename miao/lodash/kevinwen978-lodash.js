@@ -75,9 +75,9 @@ var kevinwen978 = function () {
         var result = []
         for (var i = 0; i < ary.length; i++) {
             if (ary[i] instanceof Array) {
-                result.push(...ary[i])
+                return flattenDeep (...ary[i])
             } else {
-                result.push(flattenDeep (...ary[i]))
+                result.push(ary[i])
             }
         }
         return result
