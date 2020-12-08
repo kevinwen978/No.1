@@ -110,7 +110,7 @@ var kevinwen978 = function () {
         if (ary.length < 1) return undefined
         return ary[0]
     }
-    //返回value在数组array中被找到的索引值
+    //返回valuey从前往后在数组array中被找到的索引值
     function indexOf (ary, value, fromIndex = 0) {
          for (var i = fromIndex;i < ary.length; i ++) {
              if (ary[i] == value) return i
@@ -127,6 +127,16 @@ var kevinwen978 = function () {
         for (var i = 1; i < ary.length; i++) {
             str += separator + ary[i]
         } return str
+    }
+    //返回array中的最后一个元素
+    function last (ary) {
+        return ary[ary.length -1]
+    }
+    //返回valuey从后往前在数组array中被找到的索引值
+    function lastIndexOf(ary, value,fromIndex=array.length-1) {
+        for (var i = fromIndex; i >=0; i --) {
+            if (ary[i] == value) return  i
+        } return -1
     }
      
 
@@ -145,6 +155,8 @@ var kevinwen978 = function () {
         indexOf,
         initial,
         join,
+        last,
+        lastIndexOf，
     }
 
 } ();
