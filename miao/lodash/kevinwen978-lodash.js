@@ -116,8 +116,19 @@ var kevinwen978 = function () {
              if (ary[i] == value) return i
          } return -1
     }
-    
-
+    //去除数组array中的最后一个元素
+    function initial(ary) {
+        if (ary.length < 1 ) return []
+        return ary.slice(0,ary.length - 1)
+    }
+    //将 array 中的所有元素转换为由 separator 分隔的字符串
+    function join (ary,separator = ',') {
+        var str = '' + ary[0]
+        for (var i = 1; i < ary.length; i++) {
+            str += separator + ary[i]
+        } return str
+    }
+     
 
     return {
         chunk,
@@ -132,6 +143,8 @@ var kevinwen978 = function () {
         fromPairs,
         head,
         indexOf,
+        initial,
+        join,
     }
 
 } ();
