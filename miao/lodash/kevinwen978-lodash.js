@@ -25,15 +25,13 @@ var kevinwen978 = function () {
         return result
     }
     // 排除数组特定的值  
-    function difference(ary, [values]) {
+    function difference(ary, values) {
         var result = []
         for (var i = 0; i < ary.length; i++) {
             var p = false
             for (var j = 0; j < values.length; j++) {
-                for (var m = 0; m < values[j].length; m++) {
-                  if (ary[i] == values[j][m])
+                  if (ary[i] == values[j])
                     p = true
-                }
             }
             if (p == false)
                 result.push(ary[i])
@@ -46,11 +44,20 @@ var kevinwen978 = function () {
         var result = arr.slice(n)
         return result
     }
+    //删除数组后面n个元素
+    function dropRight (arr,n = 1) {
+        var m = arr.length
+        if (n >= m) return []
+        var result = arr.slice(0,m - n)
+        return result
+        
+    }
     return {
         chunk,
         compact,
         difference,
         drop,
+        dropRight,
     }
 
 } ();
