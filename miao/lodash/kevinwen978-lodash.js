@@ -1,6 +1,6 @@
 var kevinwen978 = function () {
     // 将数组分块
-    function chunk(ary, size) {
+    function chunk(ary, size = 1) {
         if (ary.length < 1) return []
         size = size > 0 ? size : 1
         let res = []
