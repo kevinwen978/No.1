@@ -85,7 +85,12 @@ var kevinwen978 = function () {
     }
     //返回一个由键值对pairs构成的对象
     function fromPairs(pairs) {
-
+       var res = {}
+       for (var i = 0; i < pairs.length; i ++) {
+           for (var j = 0; j < pairs[i].length; j += 2) {
+                if (!res[pairs[i][j]]) res[pairs[i][j]] = res[pairs[i][j + 1]]
+           }
+       } return res
     }
 
 
@@ -99,6 +104,7 @@ var kevinwen978 = function () {
         fill,
         flatten,
         flattenDeep,
+        fromPairs,
     }
 
 } ();
