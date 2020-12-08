@@ -58,13 +58,39 @@ var kevinwen978 = function () {
             arr[i] = value
         }
         return arr
+    }
+    // 减少一级array嵌套深度
+    function flatten(ary) {
+        var result = []
+        for (var i = 0; i < ary.length; i++) {
+            if (ary[i] instanceof Array) {
+                result.push(...ary[i])
+            } else {
+                result.push(ary[i])
+            }
+        }
+        return result
     } 
+    function flattenDeep (ary) {
+        var result = []
+        for (var i = 0; i < ary.length; i++) {
+            if (ary[i] instanceof Array) {
+                result.push(...ary[i])
+            } else {
+                result.push(flattenDeep (...ary[i]))
+            }
+        }
+        return result
+
+    }
     return {
         chunk,
         compact,
         difference,
         drop,
         dropRight,
+        flatten,
+        flattenDeep,
     }
 
 } ();
