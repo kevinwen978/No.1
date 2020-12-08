@@ -52,6 +52,13 @@ var kevinwen978 = function () {
         var result = arr.slice(0,m - n)
         return result    
     }
+    //替换数组连续几个值
+    function fill (arr,value,start = 0, end = arr.length) {
+        for (var i = start; i < end ;i++) {
+            arr[i] = value
+        }
+        return arr
+    } 
     return {
         chunk,
         compact,
