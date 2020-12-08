@@ -75,7 +75,7 @@ var kevinwen978 = function () {
         var result = []
         for (var i = 0; i < ary.length; i++) {
             if (ary[i] instanceof Array) {
-                return flattenDeep (...ary[i])
+                result.push(...flattenDeep(ary[i]))
             } else {
                 result.push(ary[i])
             }
@@ -83,6 +83,13 @@ var kevinwen978 = function () {
         return result
 
     }
+    //返回一个由键值对pairs构成的对象
+    function fromPairs(pairs) {
+
+    }
+
+
+
     return {
         chunk,
         compact,
