@@ -105,6 +105,11 @@ var kevinwen978 = function () {
            }
        } return res
     }
+    //返回数组第一个值
+    function head (ary) {
+        if (ary.length < 1) return undefined
+        return ary[0]
+    }
     
 
 
@@ -119,6 +124,7 @@ var kevinwen978 = function () {
         flattenDeep,
         flattenDepth,
         fromPairs,
+        head,
     }
 
 } ();
