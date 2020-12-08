@@ -134,7 +134,7 @@ var kevinwen978 = function () {
         return ary[ary.length -1]
     }
     //返回valuey从后往前在数组array中被找到的索引值
-    function lastIndexOf(ary, value,fromIndex=array.length-1) {
+    function lastIndexOf(ary, value,fromIndex = arr.length - 1) {
         for (var i = fromIndex; i >=0; i --) {
             if (ary[i] == value) return  i
         } return -1
@@ -149,6 +149,12 @@ var kevinwen978 = function () {
         for (var i = n - 1; i >= 0 ; i --) {
             ary.push(ary[i])
         } return ary.slice(n)
+    }
+    //  value值插入到数组中尽可能小的索引位置
+    function sortedIndex(ary, value) {
+        for (var i = 0; i < ary.length; i++) {
+            if (value <= ary[i]) return i
+        }
     }
 
     return {
@@ -169,6 +175,7 @@ var kevinwen978 = function () {
         last,
         lastIndexOf,
         reverse,
+        sortedIndex,
     }
 
 } ();
