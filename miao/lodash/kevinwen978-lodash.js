@@ -117,6 +117,7 @@ var kevinwen978 = function () {
         fill,
         flatten,
         flattenDeep,
+        flattenDepth,
         fromPairs,
     }
 
