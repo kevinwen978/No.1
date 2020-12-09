@@ -174,6 +174,14 @@ var kevinwen978 = function () {
         }
         return res
     }
+    //计算 array 中的最大值
+    function max (ary) {
+        if (!ary || ary.length < 1) return undefined
+        var max = ary[0]
+        for (var i = 1; i < ary.length; i++) {
+            max = Math.max(max,ary[i])
+        } return max
+    }
 
 
     return {
@@ -197,6 +205,7 @@ var kevinwen978 = function () {
         reverse,
         sortedIndex,
         toArray,
+        max,
     }
 
 } ();
