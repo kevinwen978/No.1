@@ -128,7 +128,7 @@ var kevinwen978 = function () {
         return ary[ary.length -1]
     }
     //返回valuey从后往前在数组array中被找到的索引值
-    function lastIndexOf(ary, value,fromIndex = arr.length - 1) {
+    function lastIndexOf(ary, value,fromIndex = ary.length - 1) {
         for (var i = fromIndex; i >=0; i --) {
             if (ary[i] == value) return  i
         } return -1
