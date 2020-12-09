@@ -187,7 +187,7 @@ var kevinwen978 = function () {
         if (!ary || ary.length < 1) return undefined
         var min = ary[0]
         for (var i = 1; i < ary.length; i++) {
-            min = Math.min(max,ary[i])
+            min = Math.min(min,ary[i])
         } return min
     }
     // 计算array的总和
@@ -196,6 +196,18 @@ var kevinwen978 = function () {
         for (var i = 0; i < ary.length; i++) {
             sum += ary[i]
         } return sum
+    }
+    // 将array与任何数组 或 值连接在一起
+    function concat(ary, ...values) {
+        let res = ary
+        for (let i = 0; i < values.length; i++) {
+            if (Array.isArray(values[i])) {
+                res.push(...values[i])
+            } else {
+                res.push(values[i])
+            }
+        }
+        return res
     }
 
     return {
@@ -222,6 +234,7 @@ var kevinwen978 = function () {
         max,
         min,
         sum,
+        concat,
     }
 
 } ();
