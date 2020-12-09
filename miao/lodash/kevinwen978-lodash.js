@@ -115,7 +115,7 @@ var kevinwen978 = function () {
         if (n >= 0) {
             return ary[n-1]
         } else {
-            return ary[ary.length - n]
+            return ary[ary.length + n]
         }
     }
     //去除数组array中的最后一个元素
@@ -158,6 +158,18 @@ var kevinwen978 = function () {
             if (value <= ary[i]) return i
         }
     }
+    // 转化为数组
+    function toArray (value) {
+        if (value instanceof Number || value == null) return []
+        if (value instanceof String) return value.split(',')
+        if (value instanceof Object) {
+            var res = []
+            for (var p of value) {
+                res.push(value[p])
+            }
+            return res
+        }
+    }
 
 
     return {
@@ -180,6 +192,7 @@ var kevinwen978 = function () {
         lastIndexOf,
         reverse,
         sortedIndex,
+        toArray,
     }
 
 } ();
