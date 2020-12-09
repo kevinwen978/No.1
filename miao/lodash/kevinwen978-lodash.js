@@ -113,7 +113,7 @@ var kevinwen978 = function () {
     //获取array数组的第n个元素
     function nth (ary,n = 0) {
         if (n >= 0) {
-            return ary[n-1]
+            return ary[n]
         } else {
             return ary[ary.length + n]
         }
@@ -159,16 +159,20 @@ var kevinwen978 = function () {
         }
     }
     // 转化为数组
-    function toArray (value) {
-        if (value instanceof Number || value == null) return []
-        if (value instanceof String) return value.split(',')
-        if (value instanceof Object) {
-            var res = []
-            for (var p of value) {
-                res.push(value[p])
-            }
-            return res
+    function toArray(val) {
+        if (typeof val == "array") {
+            return val
         }
+        var  res = []
+        if (typeof val == "object" || typeof val == "string") {
+            for (p in val) {
+                res.push(val[p])
+            }
+        }
+        if (typeof val == "number" || !val) {
+            return []
+        }
+        return res
     }
 
 
