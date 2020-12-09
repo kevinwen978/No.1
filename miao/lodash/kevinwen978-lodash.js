@@ -190,6 +190,13 @@ var kevinwen978 = function () {
             min = Math.min(max,ary[i])
         } return min
     }
+    // 计算array的总和
+    function sum(ary) {
+        var sum = 0
+        for (var i = 0; i < ary.length; i++) {
+            sum += ary[i]
+        } return sum
+    }
 
     return {
         chunk,
@@ -214,6 +221,7 @@ var kevinwen978 = function () {
         toArray,
         max,
         min,
+        sum,
     }
 
 } ();
