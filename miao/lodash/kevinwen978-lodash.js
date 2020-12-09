@@ -110,6 +110,14 @@ var kevinwen978 = function () {
              if (ary[i] == value) return i
          } return -1
     }
+    //获取array数组的第n个元素
+    function nth (ary,n = 0) {
+        if (n >= 0) {
+            return ary[n-1]
+        } else {
+            return ary[ary.length - n]
+        }
+    }
     //去除数组array中的最后一个元素
     function initial(ary) {
         if (ary.length < 1 ) return []
@@ -151,6 +159,7 @@ var kevinwen978 = function () {
         }
     }
 
+
     return {
         chunk,
         compact,
@@ -164,6 +173,7 @@ var kevinwen978 = function () {
         fromPairs,
         head,
         indexOf,
+        nth,
         initial,
         join,
         last,
