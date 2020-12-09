@@ -182,7 +182,14 @@ var kevinwen978 = function () {
             max = Math.max(max,ary[i])
         } return max
     }
-
+    //计算 array 中的最小值
+    function min (ary) {
+        if (!ary || ary.length < 1) return undefined
+        var min = ary[0]
+        for (var i = 1; i < ary.length; i++) {
+            min = Math.min(max,ary[i])
+        } return min
+    }
 
     return {
         chunk,
@@ -206,6 +213,7 @@ var kevinwen978 = function () {
         sortedIndex,
         toArray,
         max,
+        min,
     }
 
 } ();
