@@ -32,6 +32,16 @@ var kevinwen978 = function () {
         }
         return ary.filter(res => !result.has(res))
     }
+    //返回一个过滤值后的新数组
+    function differenceWith	(ary,value,comparator) {
+        var res = []
+        for (var a in ary) {
+            for (var v in value) {
+                if (!comparator(a,v)) res.push(a)
+            }
+        }
+        return res
+    }
     //删除数组前面n个元素
     function drop (arr,n = 1) {
         var m = arr.length
@@ -214,6 +224,7 @@ var kevinwen978 = function () {
         chunk,
         compact,
         difference,
+        differenceWith,
         drop,
         dropRight,
         fill,
