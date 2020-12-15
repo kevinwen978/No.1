@@ -35,8 +35,8 @@ var kevinwen978 = function () {
     //返回一个过滤值后的新数组
     function differenceWith	(ary,value,comparator) {
         var res = []
-        for (var a in ary) {
-            for (var v in value) {
+        for (var a of ary) {
+            for (var v of value) {
                 if (!comparator(a,v)) res.push(a)
             }
         }
