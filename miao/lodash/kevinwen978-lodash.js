@@ -128,6 +128,14 @@ var kevinwen978 = function () {
             return ary[ary.length + n]
         }
     }
+    //移除数组array中所有和给定值相等的元素
+    function pull (ary,...values) {
+        for (var i = 0; i < ary.length; i ++) {
+            for (var j = 0; j < argument.length; j ++) {
+                if (ary[i] == argument[j]) ary.splice(i,1)
+            }
+        } return ary
+    }
     //去除数组array中的最后一个元素
     function initial(ary) {
         if (ary.length < 1 ) return []
@@ -235,6 +243,7 @@ var kevinwen978 = function () {
         head,
         indexOf,
         nth,
+        pull,
         initial,
         join,
         last,
