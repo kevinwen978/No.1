@@ -63,6 +63,29 @@ var kevinwen978 = function () {
         }
         return arr
     }
+    //返回找到元素的索引值
+    function findIndex(arr, predicate, fromIndex = 0) {
+        predicate = func(predicate)
+        for (let i = fromIndex; i < arr.length; i++) {
+            if (predicate(arr[i])) {
+                return i
+            }
+        }
+    
+        return -1
+    }
+    //从后往前返回找到元素的索引值
+    function findLastIndex(arr, predicate, fromIndex = arr.length - 1) {
+        predicate = func(predicate)
+    
+        for (let i = fromIndex; i >= 0; i--) {
+            if (predicate(arr[i])) {
+                return i
+            }
+        }
+    
+        return -1
+    }
     // 减少一级array嵌套深度
     function flatten(ary) {
         var result = []
@@ -256,6 +279,8 @@ var kevinwen978 = function () {
         drop,
         dropRight,
         fill,
+        findIndex,
+        findLastIndex,
         flatten,
         flattenDeep,
         flattenDepth,
