@@ -65,7 +65,7 @@ var kevinwen978 = function () {
     }
     //返回找到元素的索引值
     function findIndex(arr, predicate, fromIndex = 0) {
-        predicate = func(predicate)
+        predicate = targFunc(predicate)
         for (let i = fromIndex; i < arr.length; i++) {
             if (predicate(arr[i])) {
                 return i
@@ -76,8 +76,7 @@ var kevinwen978 = function () {
     }
     //从后往前返回找到元素的索引值
     function findLastIndex(arr, predicate, fromIndex = arr.length - 1) {
-        predicate = func(predicate)
-    
+        predicate = targFunc(predicate)
         for (let i = fromIndex; i >= 0; i--) {
             if (predicate(arr[i])) {
                 return i
@@ -133,7 +132,7 @@ var kevinwen978 = function () {
        } return res
     }
     //返回数组第一个值
-    function head (ary) {
+    function head(ary) {
         if (ary.length < 1) return undefined
         return ary[0]
     }
@@ -152,7 +151,7 @@ var kevinwen978 = function () {
         }
     }
     //移除数组array中所有和给定值相等的元素
-    function pull (ary,...values) {
+    function pull(ary,...values) {
        var res = []
        for (var i = 0; i < ary.length; i ++) {
            if (!values.includes(ary[i])) res.push(ary[i])
