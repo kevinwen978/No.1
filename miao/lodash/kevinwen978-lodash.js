@@ -130,11 +130,11 @@ var kevinwen978 = function () {
     }
     //移除数组array中所有和给定值相等的元素
     function pull (ary,...values) {
-        for (var i = 0; i < ary.length; i ++) {
-            for (var j = 0; j < argument.length; j ++) {
-                if (ary[i] == argument[j]) ary.splice(i,1)
-            }
-        } return ary
+       var res = []
+       for (var i = 0; i < ary.length; i ++) {
+           if (!values.includes(ary[i])) res.push(ary[i])
+       }
+       return res
     }
     //去除数组array中的最后一个元素
     function initial(ary) {
@@ -227,6 +227,10 @@ var kevinwen978 = function () {
         }
         return res
     }
+    //判断输入是否为数组
+    function isArray (value) {
+        return typeof value == Array 
+    }
 
     return {
         chunk,
@@ -255,6 +259,7 @@ var kevinwen978 = function () {
         min,
         sum,
         concat,
+        isArray,
     }
 
 } ();
