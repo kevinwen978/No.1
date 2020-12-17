@@ -65,7 +65,6 @@ var kevinwen978 = function () {
     }
     //返回找到元素的索引值
     function findIndex(arr, predicate, fromIndex = 0) {
-        predicate = targFunc(predicate)
         for (let i = fromIndex; i < arr.length; i++) {
             if (predicate(arr[i])) {
                 return i
@@ -76,7 +75,6 @@ var kevinwen978 = function () {
     }
     //从后往前返回找到元素的索引值
     function findLastIndex(arr, predicate, fromIndex = arr.length - 1) {
-        predicate = targFunc(predicate)
         for (let i = fromIndex; i >= 0; i--) {
             if (predicate(arr[i])) {
                 return i
@@ -197,10 +195,6 @@ var kevinwen978 = function () {
             if (ary[i] == value) return  i
         } return -1
     }
-    //移除数组array中所有和给定值相等的元素
-    function pull (ary,...value) {
-
-    }
     //反转array
     function reverse (ary) {
         var n = ary.length
@@ -213,6 +207,14 @@ var kevinwen978 = function () {
         for (var i = 0; i < ary.length; i++) {
             if (value <= ary[i]) return i
         }
+    }
+    //返回新的去重后的数组
+    function uniq(ary) {
+        var res = []
+        for (var i = 0; i < ary.length; i ++) {
+            if (!res[ary[i]]) res.push(ary[i])
+        }
+        return res
     }
     // 转化为数组
     function toArray(val) {
@@ -267,7 +269,7 @@ var kevinwen978 = function () {
     }
     //判断输入是否为数组
     function isArray (value) {
-        return typeof value == Array 
+        return Object.prototype.toString.call(value) == '[object Array]'
     }
 
     return {
@@ -295,6 +297,7 @@ var kevinwen978 = function () {
         lastIndexOf,
         reverse,
         sortedIndex,
+        uniq,
         toArray,
         max,
         min,
