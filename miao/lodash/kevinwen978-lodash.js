@@ -212,7 +212,7 @@ var kevinwen978 = function () {
     function uniq(ary) {
         var res = []
         for (var i = 0; i < ary.length; i ++) {
-            if (!res[ary[i]]) res.push(ary[i])
+            if (!res.includes(ary[i])) res.push(ary[i])
         }
         return res
     }
