@@ -266,6 +266,29 @@ var kevinwen978 = function () {
         }
         return -1  
     }
+    //此方法类似于_.sortedIndex，除了它返回value值
+    //在array中尽可能大的索引位置（index）
+    function sortedLastIndex(ary,val)  {
+        if (val != val) {
+            for (var i = ary.length - 1; i >= 0;i --) {
+                if (ary[i] != ary[i]) return i
+            }
+            return -1
+        }
+        for (var i = ary.length - 1; i >= 0;i --) {
+            if (ary[i] == val) return i
+        }
+        return -1  
+    }
+    //返回value值应该在数组array中插入的索引位置index
+    function sortedLastIndexBy(ary, val, iteratee) {
+        iteratee = processJudge(iteratee)
+        for (let i = ary.length - 1; i >= 0; i--) {
+            if (iteratee(ary[i]) <= iteratee(val))
+                return i + 1
+        }
+        return -1
+    }
     //返回新的去重后的数组
     function uniq(ary) {
         var res = []
