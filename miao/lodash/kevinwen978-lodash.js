@@ -1,4 +1,36 @@
 var kevinwen978 = function () {
+     // 类型检测工具集
+    const types = ["Null", "Undefined", "Boolean",
+    "Number", "String", "Object", "Array",
+    "Function"]
+    const typeUtils = {}
+
+    types.forEach(type => {typeUtils["is" + type] = function(obj) {
+    return Object.prototype.toString.call(obj) === "[object " + type + "]";
+    }
+    })
+
+    // <= iteratee 可以迭代的结构
+    // => function
+    function processJudge(iteratee) {
+        if (typeUtils.isFunction(iteratee)) return iteratee;
+
+        if (typeUtils.isObject(iteratee))  return matches(iteratee);
+
+        if (typeUtils.isArray(iteratee))  return obj => obj[iteratee[0]] === iteratee[1];
+
+        if (typeUtils.isNull(iteratee) ||typeUtils.isUndefined(iteratee))   return val => val;
+
+        if (typeUtils.isString(iteratee)) {
+            strArr = iteratee.split('.')
+            if (strArr.length == 1)  return obj => obj[iteratee]
+        }
+    }
+
+/** ----------------以下为函数实现----------------------**/ 
+
+
+
     function chunk(ary, size ) {
         if (ary.length < 1)
             return []
@@ -65,6 +97,7 @@ var kevinwen978 = function () {
     }
     //返回找到元素的索引值
     function findIndex(arr, predicate, fromIndex = 0) {
+        predicate = processJudge(predicate)
         for (let i = fromIndex; i < arr.length; i++) {
             if (predicate(arr[i])) {
                 return i
@@ -75,6 +108,7 @@ var kevinwen978 = function () {
     }
     //从后往前返回找到元素的索引值
     function findLastIndex(arr, predicate, fromIndex = arr.length - 1) {
+        predicate = processJudge(predicate)
         for (let i = fromIndex; i >= 0; i--) {
             if (predicate(arr[i])) {
                 return i
