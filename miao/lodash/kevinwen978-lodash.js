@@ -348,9 +348,38 @@ var kevinwen978 = function () {
         }
         return res
     }
+    //创建一个深比较的方法来比较给定的对象和 source 对象。 如果给定的对象拥有相同的属性值返回 true，
+    //否则返回 false
+    function matches(val) {
+        return (val1) => isEqual(val, val1);
+    }
     //判断输入是否为数组
     function isArray (value) {
         return Object.prototype.toString.call(value) == '[object Array]'
+    }
+    //判断两者是否完全相等
+    function isEqual(x, y) {
+        // 判断string,number,boolean
+        if (x === y) {
+            return true
+        }
+        // 判断NaN
+        if (x !== x && y !== y) {
+            return true
+        }
+        if (x === null || y === null || typeof x !== 'object' || typeof y !== 'object') {
+            return false
+        }
+        // 只枚举自身属性
+        if (Object.keys(x).length !== Object.keys(y).length) {
+            return false
+        }
+        for (let key in x) {
+            if (!(key in y) || !isEqual(x[key], y[key])) {
+                return false
+            }
+        }
+        return true
     }
 
     return {
@@ -378,13 +407,20 @@ var kevinwen978 = function () {
         lastIndexOf,
         reverse,
         sortedIndex,
+        sortedIndexBy,
+        sortedIndexOf,
+        sortedLastIndex,
+        sortedLastIndexBy,
         uniq,
         toArray,
         max,
         min,
         sum,
         concat,
+        matches,
         isArray,
+        isEqual,
+
     }
 
 } ();
