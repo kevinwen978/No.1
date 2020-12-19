@@ -242,6 +242,30 @@ var kevinwen978 = function () {
             if (value <= ary[i]) return i
         }
     }
+    //这个方法类似_.sortedIndex ，除了它接受一个 iteratee（迭代函数），
+    //调用每一个数组（array）元素，返回结果和value 值比较来计算排序。iteratee 会传入一个参数：(value)。
+    function sortedIndexBy(ary, val, iteratee) {
+        iteratee = processJudge(iteratee)
+        for (let i = 0; i < ary.length; i++) {
+            if (iteratee(ary[i]) >= iteratee(val))
+                return i
+        }
+        return ary.length
+    }
+    //这个方法类似_.indexOf，除了它是在已经排序的数组array上
+    //执行二进制检索
+    function sortedIndexOf(ary,val)  {
+        if (val != val) {
+            for (var i = 0; i < ary.length;i ++) {
+                if (ary[i] != ary[i]) return i
+            }
+            return -1
+        }
+        for (var i = 0; i < ary.length;i ++) {
+            if (ary[i] == val) return i
+        }
+        return -1  
+    }
     //返回新的去重后的数组
     function uniq(ary) {
         var res = []
