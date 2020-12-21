@@ -199,7 +199,7 @@ var kevinwen978 = function () {
         for (var i = 0; i < val.length; i ++) {
             for (var j = 0; j < ary.length; j ++) {
                 if (val[i] == ary[j]) {
-                    val.splice(j,1)
+                    ary.splice(j,1)
                     j --
                 }
             }
@@ -375,6 +375,10 @@ var kevinwen978 = function () {
         }
         return undefined
     }
+    function flatMap(col, iteratee) {
+        iteratee = processJudge(iteratee)
+        return flatten(col.map(it => iteratee(it)))
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -507,6 +511,7 @@ var kevinwen978 = function () {
         filter,
         find,
         findLast,
+        flatMap,
 
     }
 
