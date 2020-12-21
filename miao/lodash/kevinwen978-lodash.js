@@ -65,6 +65,10 @@ var kevinwen978 = function () {
         return ary.filter(res => !result.has(res))
     }
     //返回一个过滤值后的新数组
+    function differenceBy(ary,ary2,iteratee) {
+
+    }
+    //返回一个过滤值后的新数组
     function differenceWith	(ary,value,comparator) {
         var res = []
         for (var a of ary) {
@@ -190,6 +194,18 @@ var kevinwen978 = function () {
        }
        return res
     }
+    //这个方法类似_.pull，区别是这个方法接收一个要移除值的数组
+    function pullAll (ary,val) {
+        for (var i = 0; i < val.length; i ++) {
+            for (var j = 0; j < ary.length; j ++) {
+                if (val[i] == val[j]) {
+                    val.splice(j,1)
+                    j --
+                }
+            }
+        }
+        return ary
+    }
     //去除数组array中的最后一个元素
     function initial(ary) {
         if (ary.length < 1 ) return []
@@ -241,6 +257,29 @@ var kevinwen978 = function () {
         for (var i = 0; i < ary.length; i++) {
             if (value <= ary[i]) return i
         }
+    }
+    //返回数组第一个以外的数组
+    function tail (ary) {
+        if (ary.length == 0) return ary
+        return  ary.slice(1)
+    }
+    //返回 array 数组的切片（从起始元素开始n个元素
+    function take (ary,n = 1) {
+        if (n == 0) return []
+        if (n >= ary.length) {
+            return ary
+        } else {
+            return ary.slice(0,n)
+        }
+    }
+    //返回 array 数组的切片（从结尾元素开始n个元素）
+    function takeRight(ary,n) {
+        if (n == 0) return []
+        if (n >= ary.length) {
+            return ary
+        } else {
+            return ary.slice(ary.length - n)
+        }        
     }
     //这个方法类似_.sortedIndex ，除了它接受一个 iteratee（迭代函数），
     //调用每一个数组（array）元素，返回结果和value 值比较来计算排序。iteratee 会传入一个参数：(value)。
@@ -417,6 +456,10 @@ var kevinwen978 = function () {
         matches,
         isArray,
         isEqual,
+        pullAll,
+        tail,
+        take,
+        takeRight,
 
     }
 
