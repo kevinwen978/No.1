@@ -363,7 +363,14 @@ var kevinwen978 = function () {
     //遍历 collection（集合）元素，返回 predicate（断言函数）第一个返回真值的第一个元素
     function find (ary,predicate,fromIndex=0) {
         predicate = processJudge(predicate)
-        for (var i = 0; i < ary.length; i ++) {
+        for (var i = fromIndex; i < ary.length; i ++) {
+            if (predicate(ary[i])) return ary[i]
+        }
+        return undefined
+    }
+    function findLast (ary,predicate,fromIndex= ary.length -1) {
+        predicate = processJudge(predicate)
+        for (var i = fromIndex; i >= 0; i --) {
             if (predicate(ary[i])) return ary[i]
         }
         return undefined
@@ -499,6 +506,7 @@ var kevinwen978 = function () {
         every,
         filter,
         find,
+        findLast,
 
     }
 
