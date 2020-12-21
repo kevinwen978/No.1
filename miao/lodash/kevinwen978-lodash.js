@@ -269,15 +269,12 @@ var kevinwen978 = function () {
     //此方法类似于_.sortedIndex，除了它返回value值
     //在array中尽可能大的索引位置（index）
     function sortedLastIndex(ary,val)  {
-        if (val != val) {
-            for (var i = ary.length - 1; i >= 0;i --) {
-                if (ary[i] != ary[i]) return i
-            }
-            return -1
+        var n = ary.length
+        if (val >= ary[n-1]) return n
+        for (var i = n - 2; i >= 0;i --) {
+            if (ary[i+1] >= val && ary[i] <= val) return i + 1
         }
-        for (var i = ary.length - 1; i >= 0;i --) {
-            if (ary[i] == val) return i
-        }
+        if (val < ary[0]) return 0
         return -1  
     }
     //返回value值应该在数组array中插入的索引位置index
