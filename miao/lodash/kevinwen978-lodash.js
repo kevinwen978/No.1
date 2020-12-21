@@ -23,7 +23,11 @@ var kevinwen978 = function () {
 
         if (typeUtils.isString(iteratee)) {
             strArr = iteratee.split('.')
-            if (strArr.length == 1)  return obj => obj[iteratee]
+            if (strArr.length == 1)  {
+                return obj => obj[iteratee]
+            } else {
+                return obj => pathArr.reduce((prev, cur) => prev[cur] , obj)
+            }
         }
     }
 
