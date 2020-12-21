@@ -343,6 +343,31 @@ var kevinwen978 = function () {
         }
         return res
     }
+    function every (ary,predicate) {
+        predicate = processJudge(predicate)
+        for (var val of ary) {
+            if (!predicate(val)) return false
+        }
+        return true
+    }
+    //遍历 collection（集合）元素，返回 predicate（断言函数）
+    //返回真值 的所有元素的数组
+    function filter (ary,predicate) {
+        var res =[]
+        predicate = processJudge(predicate)
+        for (var val of ary) {
+            if (predicate(val)) res.push(val)
+        }
+        return res
+    }
+    //遍历 collection（集合）元素，返回 predicate（断言函数）第一个返回真值的第一个元素
+    function find (ary,predicate,fromIndex=0) {
+        predicate = processJudge(predicate)
+        for (var i = 0; i < ary.length; i ++) {
+            if (predicate(ary[i])) return ary[i]
+        }
+        return undefined
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -471,6 +496,9 @@ var kevinwen978 = function () {
         take,
         takeRight,
         union,
+        every,
+        filter,
+        find,
 
     }
 
