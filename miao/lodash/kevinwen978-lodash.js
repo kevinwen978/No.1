@@ -198,7 +198,7 @@ var kevinwen978 = function () {
     function pullAll (ary,val) {
         for (var i = 0; i < val.length; i ++) {
             for (var j = 0; j < ary.length; j ++) {
-                if (val[i] == val[j]) {
+                if (val[i] == ary[j]) {
                     val.splice(j,1)
                     j --
                 }
@@ -273,13 +273,23 @@ var kevinwen978 = function () {
         }
     }
     //返回 array 数组的切片（从结尾元素开始n个元素）
-    function takeRight(ary,n) {
+    function takeRight(ary,n = 1) {
         if (n == 0) return []
         if (n >= ary.length) {
             return ary
         } else {
             return ary.slice(ary.length - n)
         }        
+    }
+    //创建一个按顺序排列的唯一值的数组
+    function union(...arys) {
+        var res = []
+        for (var a of arys) {
+            for (var b of a) {
+                if (!res.includes(b)) res.push(b)
+            }
+        }
+        return res
     }
     //这个方法类似_.sortedIndex ，除了它接受一个 iteratee（迭代函数），
     //调用每一个数组（array）元素，返回结果和value 值比较来计算排序。iteratee 会传入一个参数：(value)。
@@ -460,6 +470,7 @@ var kevinwen978 = function () {
         tail,
         take,
         takeRight,
+        union,
 
     }
 
