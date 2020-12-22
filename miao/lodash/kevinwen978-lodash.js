@@ -74,6 +74,7 @@ var kevinwen978 = function () {
         } else {
             ary2.pop()
         }
+        iteratee = processJudge(iteratee)
         if (Array.isArray(ary2[0])) {
             ary2 = flatten(ary2)
         }
