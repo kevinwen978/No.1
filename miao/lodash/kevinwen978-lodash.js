@@ -4,14 +4,12 @@ var kevinwen978 = function () {
     "Number", "String", "Object", "Array",
     "Function"]
     const typeUtils = {}
-
+    //增加对象属性对应的类型判断
     types.forEach(type => {typeUtils["is" + type] = function(obj) {
     return Object.prototype.toString.call(obj) === "[object " + type + "]";
     }
     })
-
-    // <= iteratee 可以迭代的结构
-    // => function
+    //判断迭代器类型
     function processJudge(iteratee) {
         if (typeUtils.isFunction(iteratee)) return iteratee;
 
@@ -26,7 +24,7 @@ var kevinwen978 = function () {
             if (strArr.length == 1)  {
                 return obj => obj[iteratee]
             } else {
-                return obj => pathArr.reduce((prev, cur) => prev[cur] , obj)
+                return obj => strArr.reduce((prev, cur) => prev[cur] , obj)
             }
         }
     }
@@ -70,7 +68,16 @@ var kevinwen978 = function () {
     }
     //返回一个过滤值后的新数组
     function differenceBy(ary,ary2,iteratee) {
-
+        var iteratee = processJudge(iteratee)
+        for (var i = 0;i < ary2.length;i++) {
+            for (var j = 0; j < ary.length; j ++) {
+                if (iteratee(ary2[i]) == iteratee(ary[j])) {
+                    ary.splice(j,1)
+                    j --
+                }
+            }
+        }
+        return ary
     }
     //返回一个过滤值后的新数组
     function differenceWith	(ary,value,comparator) {
@@ -531,6 +538,7 @@ var kevinwen978 = function () {
         find,
         findLast,
         flatMap,
+        differenceBy,
 
     }
 
