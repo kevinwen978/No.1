@@ -443,6 +443,12 @@ var kevinwen978 = function () {
         }
         return -1
     }
+    function sortedLastIndexOf (ary,val) {
+        for (var i = ary.length -1 ; i --) {
+            if (ary[i] == val) return i
+        }
+        return -1
+    }
     //返回新的去重后的数组
     function uniq(ary) {
         var res = []
@@ -616,6 +622,7 @@ var kevinwen978 = function () {
         sortedIndexOf,
         sortedLastIndex,
         sortedLastIndexBy,
+        sortedLastIndexOf,	
         uniq,
         toArray,
         max,
