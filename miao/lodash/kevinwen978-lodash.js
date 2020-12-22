@@ -247,6 +247,32 @@ var kevinwen978 = function () {
         }
         return ary
     }
+    function pullAllBy(ary,val,iteratee) {
+        iteratee = processJudge(iteratee)
+        val = val.filter(it => iteratee(it))
+        var res = [] 
+        for (var a of ary) {
+            if (!val.includes(iteratee(a))) res.push(a)
+        }
+        return res
+    }
+    function pullAllWith(ary,val,comparator) {
+        comparator = processJudge(comparator)
+        var n = val.length
+        var judge = new Array(n).fill(0)
+        var res = []
+        for (var i = 0; i < ary.length; i ++) {
+            var count = 0
+            for (var a of val) {
+                if (!comparator(ary[i],a)) count ++
+            }
+            if (count == n) judge[i] = 1
+        }
+        for (var i = 0; i < n; i ++) {
+            if (judge[i] == 1) res.push(ary[i])
+        }
+        return res
+    }
     //去除数组array中的最后一个元素
     function initial(ary) {
         if (ary.length < 1 ) return []
@@ -614,6 +640,8 @@ var kevinwen978 = function () {
         dropWhile,
         intersectionBy,
         intersectionWith,
+        pullAllBy,
+        pullAllWith,
 
     }
 
