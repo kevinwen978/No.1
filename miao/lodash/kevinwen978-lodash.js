@@ -115,9 +115,9 @@ var kevinwen978 = function () {
     //去除array中从 predicate 返回假值开始到尾部的部分
     function dropRightWhile(ary,predicate) {
         predicate = processJudge(predicate)
-        for (var i = 0; i < ary.length; i ++) {
-            if (!predicate(ary[i],i,ary)) {
-                var x = i 
+        for (var i = ary.length -1; i >= 0 ; i --) {
+            if (!predicate(ary[i])) {
+                var x = i + 1 
                 break
             }
         }
