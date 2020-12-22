@@ -295,6 +295,20 @@ var kevinwen978 = function () {
         return res
     
     }
+    //返回一个包含所有传入数组交集元素的新数组
+    function intersectionWith(...arys) {
+        var comparator = arys.pop()
+        comparator = processJudge(comparator)
+        var ary = arys[0]
+        var res = []
+        for (var a of ary) {
+            for (var b of arys[1]) {
+                if (comparator(a,b)) res.push(a)
+            }
+        }
+        return res
+
+    }
     //将 array 中的所有元素转换为由 separator 分隔的字符串
     function join (ary,separator = ',') {
         var str = '' + ary[0]
@@ -599,6 +613,7 @@ var kevinwen978 = function () {
         dropRightWhile,
         dropWhile,
         intersectionBy,
+        intersectionWith,
 
     }
 
