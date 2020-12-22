@@ -268,6 +268,26 @@ var kevinwen978 = function () {
         return res
 
     }
+    //返回一个包含所有传入数组交集元素的新数组
+    function intersectionBy	(...ary) {
+        var iteratee = ary[ary.length - 1]
+        iteratee = processJudge(iteratee)
+        ary.pop()
+        var map = {}
+        var n = ary.length
+        var res = []
+        var ary1 = ary[0]
+        for (var i = 0; i < n; i++) {
+            for (var j = 0; j < ary[i].length; j++) {
+                map[iteratee(ary[i][j])] ? map[iteratee(ary[i][j])]++ : map[iteratee(ary[i][j])] = 1
+            }
+        }
+        for (var key in map) {
+            if (map[key] == n) res.push(ary1[ary1.indexOf(Number(key))])
+        }
+        return res
+    
+    }
     //将 array 中的所有元素转换为由 separator 分隔的字符串
     function join (ary,separator = ',') {
         var str = '' + ary[0]
@@ -571,6 +591,7 @@ var kevinwen978 = function () {
         differenceBy,
         dropRightWhile,
         dropWhile,
+        intersectionBy,
 
     }
 
