@@ -249,7 +249,7 @@ var kevinwen978 = function () {
     }
     function pullAllBy(ary,val,iteratee) {
         iteratee = processJudge(iteratee)
-        val = val.filter(it => iteratee(it))
+        val = val.map(it => iteratee(it))
         var res = [] 
         for (var a of ary) {
             if (!val.includes(iteratee(a))) res.push(a)
@@ -263,8 +263,8 @@ var kevinwen978 = function () {
         var res = []
         for (var i = 0; i < ary.length; i ++) {
             var count = 0
-            for (var a of val) {
-                if (!comparator(ary[i],a)) count ++
+            for (var j = 0; j < n; j ++) {
+                if (!comparator(ary[i],val[j])) count ++
             }
             if (count == n) judge[i] = 1
         }
