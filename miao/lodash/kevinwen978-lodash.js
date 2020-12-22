@@ -283,7 +283,14 @@ var kevinwen978 = function () {
             }
         }
         for (var key in map) {
-            if (map[key] == n) res.push(ary1[ary1.indexOf(Number(key))])
+            if (map[key] == n) {
+                for (var i = 0; i <ary1.length; i ++) {
+                    if (iteratee(ary1[i]) == Number(key)) {
+                        res.push(ary1[i])
+                        break
+                    }
+                }
+            }
         }
         return res
     
