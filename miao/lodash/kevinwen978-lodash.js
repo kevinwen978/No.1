@@ -121,7 +121,7 @@ var kevinwen978 = function () {
                 break
             }
         }
-        return ary.slice(0,x+1)
+        return ary.slice(0,x)
     }
     //替换数组连续几个值
     function fill (arr,value,start = 0, end = arr.length) {
