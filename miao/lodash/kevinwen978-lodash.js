@@ -436,8 +436,8 @@ var kevinwen978 = function () {
     }
     //创建一个深比较的方法来比较给定的对象和 source 对象。 如果给定的对象拥有相同的属性值返回 true，
     //否则返回 false
-    function matches(val) {
-        return (val1) => isEqual(val, val1);
+    function matches(obj) {
+        return partialDeepEqual.bind(null, obj)
     }
     //判断输入是否为数组
     function isArray (value) {
@@ -467,6 +467,21 @@ var kevinwen978 = function () {
         }
         return true
     }
+    //deepequal
+    function partialDeepEqual(s, t) {
+        if (s === t) return true;
+    
+        if (s == null || typeof s != "object" ||
+            t == null || typeof t != "object")
+          return false;
+    
+        for (var prop in s) {
+          if (!(prop in t) || !partialDeepEqual(s[prop], t[prop]))
+            return false;
+        }
+    
+        return true;
+      }
 
     return {
         chunk,
