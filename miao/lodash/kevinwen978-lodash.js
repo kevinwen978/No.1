@@ -127,7 +127,7 @@ var kevinwen978 = function () {
     function dropWhile(ary,predicate) {
         predicate = processJudge(predicate)
         for (var i = 0; i < ary.length -1 ; i ++) {
-            if (predicate(ary[i])) {
+            if (!predicate(ary[i])) {
                 break
             }
         }
