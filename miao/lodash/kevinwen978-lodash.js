@@ -112,6 +112,17 @@ var kevinwen978 = function () {
         var result = arr.slice(0,m - n)
         return result    
     }
+    //去除array中从 predicate 返回假值开始到尾部的部分
+    function dropRightWhile(ary,predicate) {
+        predicate = processJudge(predicate)
+        for (var i = 0; i < ary.length; i ++) {
+            if (!predicate(ary[i])) {
+                var x = i 
+                break
+            }
+        }
+        return ary.slice(0,x+1)
+    }
     //替换数组连续几个值
     function fill (arr,value,start = 0, end = arr.length) {
         for (var i = start; i < end ;i++) {
@@ -548,6 +559,7 @@ var kevinwen978 = function () {
         findLast,
         flatMap,
         differenceBy,
+        dropRightWhile,
 
     }
 
