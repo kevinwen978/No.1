@@ -116,7 +116,7 @@ var kevinwen978 = function () {
     function dropRightWhile(ary,predicate) {
         predicate = processJudge(predicate)
         for (var i = 0; i < ary.length; i ++) {
-            if (!predicate(ary[i])) {
+            if (!predicate(ary[i],i,ary)) {
                 var x = i 
                 break
             }
