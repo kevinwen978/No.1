@@ -123,6 +123,16 @@ var kevinwen978 = function () {
         }
         return ary.slice(0,x)
     }
+    //去除array中从起点开始到 predicate 返回假值结束部分
+    function dropWhile(ary,predicate) {
+        predicate = processJudge(predicate)
+        for (var i = 0; i < ary.length -1 ; i ++) {
+            if (predicate(ary[i])) {
+                break
+            }
+        }
+        return ary.slice(i)
+    }       
     //替换数组连续几个值
     function fill (arr,value,start = 0, end = arr.length) {
         for (var i = start; i < end ;i++) {
@@ -560,6 +570,7 @@ var kevinwen978 = function () {
         flatMap,
         differenceBy,
         dropRightWhile,
+        dropWhile,
 
     }
 
