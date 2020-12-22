@@ -67,8 +67,16 @@ var kevinwen978 = function () {
         return ary.filter(res => !result.has(res))
     }
     //返回一个过滤值后的新数组
-    function differenceBy(ary,...ary2,iteratee = null) {
-        var iteratee = processJudge(iteratee)
+    function differenceBy(ary,...ary2) {
+        var iteratee = ary2[ary2.length -1]
+        if (Array.isArray(iteratee)) {
+            iteratee = null
+        } else {
+            ary2.pop()
+        }
+        if (Array.isArray(ary2[0])) {
+            ary2 = flatten(ary2)
+        }
         for (var i = 0;i < ary2.length;i++) {
             for (var j = 0; j < ary.length; j ++) {
                 if (iteratee(ary2[i]) == iteratee(ary[j])) {
