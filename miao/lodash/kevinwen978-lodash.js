@@ -444,7 +444,7 @@ var kevinwen978 = function () {
         return -1
     }
     function sortedLastIndexOf (ary,val) {
-        for (var i = ary.length -1 ; i --) {
+        for (var i = ary.length -1 ;i >= 0; i --) {
             if (ary[i] == val) return i
         }
         return -1
