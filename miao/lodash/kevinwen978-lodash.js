@@ -258,15 +258,15 @@ var kevinwen978 = function () {
     }
     function pullAllWith(ary,val,comparator) {
         comparator = processJudge(comparator)
-        var n = val.length
+        var n = ary.length
         var judge = new Array(n).fill(0)
         var res = []
-        for (var i = 0; i < ary.length; i ++) {
+        for (var i = 0; i < n; i ++) {
             var count = 0
-            for (var j = 0; j < n; j ++) {
+            for (var j = 0; j < val.length; j ++) {
                 if (!comparator(ary[i],val[j])) count ++
             }
-            if (count == n) judge[i] = 1
+            if (count == val.length) judge[i] = 1
         }
         for (var i = 0; i < n; i ++) {
             if (judge[i] == 1) res.push(ary[i])
@@ -555,18 +555,15 @@ var kevinwen978 = function () {
     }
     //判断两者是否完全相等
     function isEqual(x, y) {
-        // 判断string,number,boolean
         if (x === y) {
             return true
         }
-        // 判断NaN
         if (x !== x && y !== y) {
             return true
         }
         if (x === null || y === null || typeof x !== 'object' || typeof y !== 'object') {
             return false
         }
-        // 只枚举自身属性
         if (Object.keys(x).length !== Object.keys(y).length) {
             return false
         }
