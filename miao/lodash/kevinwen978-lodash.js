@@ -812,6 +812,7 @@ var kevinwen978 = function () {
         unzipWith,
         without,
         xor,
+        xorBy,
 
     }
 
