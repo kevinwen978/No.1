@@ -419,6 +419,7 @@ var kevinwen978 = function () {
         }
         return res
     }
+    //
     function unionBy(...arys) {
         var predicate = processJudge(arys.pop())
         var res = []
@@ -432,6 +433,17 @@ var kevinwen978 = function () {
             }
         }
         return res
+    }
+    //
+    function unionWith(...arys) {
+        var comparator = processJudge(arys.pop())
+        var a = arys.shift()
+        var b = [].concat(...arys)
+        for (var c of a) {
+            var d = b.filter(num => !comparator(num,c))
+        }
+        return a.concat(d)
+
     }
     //这个方法类似_.sortedIndex ，除了它接受一个 iteratee（迭代函数），
     //调用每一个数组（array）元素，返回结果和value 值比较来计算排序。iteratee 会传入一个参数：(value)。
@@ -705,6 +717,7 @@ var kevinwen978 = function () {
         takeRightWhile,
         takeWhile,
         unionBy,
+        unionWith,
 
     }
 
