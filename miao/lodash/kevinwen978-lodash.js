@@ -389,6 +389,22 @@ var kevinwen978 = function () {
             return ary.slice(ary.length - n)
         }        
     }
+    //从array数组的最后一个元素开始提取元素，直到 predicate 返回假值。
+    function takeRightWhile(ary,predicate) {
+        predicate = processJudge(predicate)
+        for (var i = ary.length - 1; i >=0; i --) {
+            if (!predicate(ary[i])) return ary.slice(i+1)
+        }
+        return []
+    }
+    //
+    function takeWhile(ary,predicate) {
+        predicate = processJudge(predicate)
+        for (var i = 0; i < ary.length - 1; i ++) {
+            if (!predicate(ary[i])) return ary.slice(0,i)
+        }
+        return []
+    }
     //创建一个按顺序排列的唯一值的数组
     function union(...arys) {
         var res = []
@@ -668,6 +684,8 @@ var kevinwen978 = function () {
         pullAllWith,
         sortedUniq,
         sortedUniqBy,
+        takeRightWhile,
+        takeWhile,
 
     }
 
