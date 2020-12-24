@@ -539,38 +539,21 @@ var kevinwen978 = function () {
     }
     //
     function uniqWith(ary,comparator) {
-        var res = ary.shift()
-        for (var i =0; i < ary.length; i++) {
-            var count = 0
-            for (var j = 0; j < res.length; j ++) {
-                if (!comparator(ary[i],res[j])) count ++
-            }
-            if (count == res.length) {
-                res.push(ary[i])
-            }
-        }
+        var res = []
+        ary.forEach(it => {
+            if (res.every(a => !comparator(a, it))) res.push(it)
+        })
         return res
     }
     //
     function unzip(...arys) {
-        let a = arys[0].length
-        let b = arys.length
-        let res = []
-        for (let i = 0;i < a ; i ++) {
-            res.push([])
-        }
-        for (let i = 0 ; i <b; i ++) {
-            for (let j = 0; j < a;j ++) {
-                res[j][i] = arys[i][j]
-            }
-        }
-        return res
+        return zip(flatten(arys))
     }
     //
-    function unzipWith(...arys) {
-        var predicate = processJudge(arys.pop())
-        arys = zip(arys)
-        var res = arys.map((it) => predicate(...it));
+    function unzipWith(ary,predicate) {
+        predicate = processJudge(predicate)
+        ary = zip(ary)
+        var res = ary.map((it) => predicate(...it));
         return res;
     }
     //返回过滤值后的新数组
