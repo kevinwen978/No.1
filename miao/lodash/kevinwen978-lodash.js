@@ -553,25 +553,26 @@ var kevinwen978 = function () {
     }
     //
     function unzip(...arys) {
-        let n = arys[0].length
-        let m = arys.length
+        let a = arys[0].length
+        let b = arys.length
         let res = []
-        for (let i = 0;i < n ; i ++) {
+        for (let i = 0;i < a ; i ++) {
             res.push([])
         }
-        for (let i = 0 ; i <m; i ++) {
-            for (let j = 0; j < n;j ++) {
+        for (let i = 0 ; i <b; i ++) {
+            for (let j = 0; j < a;j ++) {
                 res[j][i] = arys[i][j]
             }
         }
         return res
     }
     //
-    // function unzipWith(...arys) {
-    //     var predicate = processJudge(arys.pop())
-    //     arys = zip(arys)
-
-    // }
+    function unzipWith(...arys) {
+        var predicate = processJudge(arys.pop())
+        arys = zip(arys)
+        var res = arys.map((it) => predicate(...it));
+        return res;
+    }
     //创建一个分组元素的数组，数组的第一个元素包含所有给定数组的第一个元素，
     //数组的第二个元素包含所有给定数组的第二个元素，以此类推。
     function zip(...arys) {
@@ -787,6 +788,7 @@ var kevinwen978 = function () {
         uniqWith,
         zip,
         unzip,
+        unzipWith,
 
     }
 
