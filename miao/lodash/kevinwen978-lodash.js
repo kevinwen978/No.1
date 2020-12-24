@@ -421,11 +421,12 @@ var kevinwen978 = function () {
     }
     //
     function unionBy(...arys) {
-        let predicate = processJudge(arys.pop())
+        let predicate = arys.pop()
+        predicate = processJudge(predicate)
         let res = []
         let map = []
-        for (let i = 0; i < arys.length -1; i ++) {
-            for (let j = 0; j <arys[i].length -1; j++) {
+        for (let i = 0; i < arys.length ; i ++) {
+            for (let j = 0; j <arys[i].length ; j++) {
                 if (!map.includes(predicate(arys[i][j]))) {
                     res.push(arys[i][j])
                     map.push(predicate(arys[i][j]))
