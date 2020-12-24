@@ -543,7 +543,7 @@ var kevinwen978 = function () {
         for (var i =0; i < ary.length; i++) {
             var count = 0
             for (var j = 0; j < res.length; j ++) {
-                if (comparator(ary[i],res[j])) count ++
+                if (!comparator(ary[i],res[j])) count ++
             }
             if (count == res.length) {
                 res.push(ary[i])
