@@ -537,6 +537,35 @@ var kevinwen978 = function () {
         }
         return res
     }
+    //
+    function uniqWith(ary,predicate) {
+        let res = []
+        let map =[]
+        predicate = processJudge(predicate)
+        for (let i =0; i < ary.length; i++) {
+            if (!map.includes(predicate(ary[i]))) {
+                res.push(ary[i])
+                map.push(predicate(ary[i]))
+            }
+        }
+        return res
+    }
+    //创建一个分组元素的数组，数组的第一个元素包含所有给定数组的第一个元素，
+    //数组的第二个元素包含所有给定数组的第二个元素，以此类推。
+    function zip(...arys) {
+        var n = arys[0].length
+        var m = arys.length
+        var res = []
+        for (var i = 0;i < n ; i ++) {
+            res.push([])
+        }
+        for (var i = 0 ; i <arys.length; i ++) {
+            for (var j = 0; j < n;j ++) {
+                res[j][i]= arys[i][j]
+            }
+        }
+        return res
+    }
     function every (ary,predicate) {
         predicate = processJudge(predicate)
         for (var val of ary) {
@@ -733,6 +762,8 @@ var kevinwen978 = function () {
         unionBy,
         unionWith,
         uniqBy,
+        uniqWith,
+        zip,
 
     }
 
