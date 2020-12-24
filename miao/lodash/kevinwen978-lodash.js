@@ -425,9 +425,10 @@ var kevinwen978 = function () {
         var map = []
         for (var i = 0; i < arys.length -1; i ++) {
             for (var j = 0; j <arys[i].length -1; j++)
-            if (!map.includes(predicate(arys[i][j]))) {
-                res.push(arys[i][j])
-                map.push(predicate(arys[i][j]))
+                if (!map.includes(predicate(arys[i][j]))) {
+                    res.push(arys[i][j])
+                    map.push(predicate(arys[i][j]))
+                }
             }
         }
         return res
