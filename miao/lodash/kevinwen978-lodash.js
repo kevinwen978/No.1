@@ -577,6 +577,19 @@ var kevinwen978 = function () {
     function without(ary,...val) {
         return ary.filter(it => !val.includes(it))
     }
+    //返回所有数组都不重复的值的数组
+    function xor(...ary) {
+        ary = flatten(ary)
+        var map = {}
+        var res = []
+        for (var i = 0; i < ary.length; i ++ ) {
+            map[ary[i]] ? map[ary[i]] ++ : map[ary[i]] = 1
+        }
+        for (var key in map) {
+            if (map[key] == 1) res.push(+key)
+        }
+        return res
+    }
     //创建一个分组元素的数组，数组的第一个元素包含所有给定数组的第一个元素，
     //数组的第二个元素包含所有给定数组的第二个元素，以此类推。
     function zip(...arys) {
@@ -793,6 +806,8 @@ var kevinwen978 = function () {
         zip,
         unzip,
         unzipWith,
+        without,
+        xor,
 
     }
 
