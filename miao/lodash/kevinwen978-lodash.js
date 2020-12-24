@@ -523,6 +523,19 @@ var kevinwen978 = function () {
         }
         return res
     }
+    //
+    function uniqBy(ary,predicate) {
+        var res = []
+        var map =[]
+        predicate = processJudge(predicate)
+        for (var i =0; i < ary.length; i++) {
+            if (!map.includes(predicate(ary[i]))) {
+                res.push(ary[i])
+                map.push(predicate(ary[i]))
+            }
+        }
+        return res
+    }
     function every (ary,predicate) {
         predicate = processJudge(predicate)
         for (var val of ary) {
@@ -718,6 +731,7 @@ var kevinwen978 = function () {
         takeWhile,
         unionBy,
         unionWith,
+        uniqBy,
 
     }
 
