@@ -573,6 +573,27 @@ var kevinwen978 = function () {
         }
         return res
     }
+    //
+    function xorBy(...ary) {
+        var predicate = processJudge(ary.pop())
+        ary = flatten(ary)
+        var map = {}
+        var res = []
+        for (var i = 0; i < ary.length; i ++ ) {
+            map[predicate(ary[i])] ? map[predicate(ary[i])] ++ : map[predicate(ary[i])] = 1
+        }
+        for (var key in map) {
+            if (map[key] == 1) {
+                for (var i = 0; i < ary.length; i ++) {
+                    if ((+key) == ary[i]) {
+                        res.push(ary[i])
+                        break
+                    }
+                }
+            }
+        }
+        return res
+    }
     //创建一个分组元素的数组，数组的第一个元素包含所有给定数组的第一个元素，
     //数组的第二个元素包含所有给定数组的第二个元素，以此类推。
     function zip(...arys) {
