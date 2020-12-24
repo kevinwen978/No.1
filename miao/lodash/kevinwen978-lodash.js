@@ -573,6 +573,10 @@ var kevinwen978 = function () {
         var res = arys.map((it) => predicate(...it));
         return res;
     }
+    //返回过滤值后的新数组
+    function without(ary,...val) {
+        return ary.filter(it => !val.includes(it))
+    }
     //创建一个分组元素的数组，数组的第一个元素包含所有给定数组的第一个元素，
     //数组的第二个元素包含所有给定数组的第二个元素，以此类推。
     function zip(...arys) {
