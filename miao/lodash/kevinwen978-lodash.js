@@ -401,9 +401,10 @@ var kevinwen978 = function () {
     function takeWhile(ary,predicate) {
         predicate = processJudge(predicate)
         for (var i = 0; i < ary.length - 1; i ++) {
-            if (!predicate(ary[i],i,ary)) return ary.slice(0,i)
+            if (!predicate(ary[i],i,ary)) {
+                return ary.slice(0,i)
+            }
         }
-        return ary
     }
     //创建一个按顺序排列的唯一值的数组
     function union(...arys) {
