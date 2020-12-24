@@ -421,11 +421,11 @@ var kevinwen978 = function () {
     }
     //
     function unionBy(...arys) {
-        var predicate = processJudge(arys.pop())
-        var res = []
-        var map = []
-        for (var i = 0; i < arys.length -1; i ++) {
-            for (var j = 0; j <arys[i].length -1; j++) {
+        let predicate = processJudge(arys.pop())
+        let res = []
+        let map = []
+        for (let i = 0; i < arys.length -1; i ++) {
+            for (let j = 0; j <arys[i].length -1; j++) {
                 if (!map.includes(predicate(arys[i][j]))) {
                     res.push(arys[i][j])
                     map.push(predicate(arys[i][j]))
@@ -436,13 +436,13 @@ var kevinwen978 = function () {
     }
     //
     function unionWith(...arys) {
-        var comparator = processJudge(arys.pop())
-        var a = arys.shift()
-        var b = [].concat(...arys)
-        for (var c of a) {
-            var d = b.filter(num => !comparator(num,c))
+        let comparator = processJudge(arys.pop())
+        let a = arys.shift()
+        let b = [].concat(...arys)
+        for (let c of a) {
+             b = b.filter(num => !comparator(num,c))
         }
-        return a.concat(d)
+        return a.concat(b)
 
     }
     //这个方法类似_.sortedIndex ，除了它接受一个 iteratee（迭代函数），
@@ -525,10 +525,10 @@ var kevinwen978 = function () {
     }
     //
     function uniqBy(ary,predicate) {
-        var res = []
-        var map =[]
+        let res = []
+        let map =[]
         predicate = processJudge(predicate)
-        for (var i =0; i < ary.length; i++) {
+        for (let i =0; i < ary.length; i++) {
             if (!map.includes(predicate(ary[i]))) {
                 res.push(ary[i])
                 map.push(predicate(ary[i]))
