@@ -449,6 +449,26 @@ var kevinwen978 = function () {
         }
         return -1
     }
+    //返回一个新的不重复排序的数组
+    function sortedUniq(ary) {
+        var res = []
+        for (var i = 0; i < ary.length; i ++) {
+            if (!res.includes(ary[i])) res.push(ary[i])
+        }
+        return res      
+    }
+    //
+    function sortedUniqBy(ary,iteratee) {
+        var res = []
+        var map = []
+        for (var i = 0; i < ary.length; i ++) {
+            if (!map.includes(iteratee(ary[i]))) {
+                res.push(ary[i])
+                map.push(iteratee(ary[i]))
+            }
+        }
+        return res   
+    }
     //返回新的去重后的数组
     function uniq(ary) {
         var res = []
@@ -646,6 +666,8 @@ var kevinwen978 = function () {
         intersectionWith,
         pullAllBy,
         pullAllWith,
+        sortedUniq,
+        sortedUniqBy,
 
     }
 
