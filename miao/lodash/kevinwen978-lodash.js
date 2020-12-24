@@ -538,29 +538,30 @@ var kevinwen978 = function () {
         return res
     }
     //
-    function uniqWith(ary,predicate) {
-        let res = []
-        let map =[]
-        predicate = processJudge(predicate)
-        for (let i =0; i < ary.length; i++) {
-            if (!map.includes(predicate(ary[i]))) {
+    function uniqWith(ary,comparator) {
+        var res = ary.shift()
+        for (var i =0; i < ary.length; i++) {
+            var count = 0
+            for (var j = 0; j < res.length; j ++) {
+                if (comparator(ary[i],res[j])) count ++
+            }
+            if (count == res.length) {
                 res.push(ary[i])
-                map.push(predicate(ary[i]))
             }
         }
         return res
     }
     //
     function unzip(...arys) {
-        var n = arys[0].length
-        var m = arys.length
-        var res = []
-        for (var i = 0;i < n ; i ++) {
+        let n = arys[0].length
+        let m = arys.length
+        let res = []
+        for (let i = 0;i < n ; i ++) {
             res.push([])
         }
-        for (var i = 0 ; i <arys.length; i ++) {
-            for (var j = 0; j < n;j ++) {
-                res[j][i]= arys[i][j]
+        for (let i = 0 ; i <m; i ++) {
+            for (let j = 0; j < n;j ++) {
+                res[j][i] = arys[i][j]
             }
         }
         return res
