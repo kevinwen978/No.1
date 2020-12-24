@@ -550,6 +550,27 @@ var kevinwen978 = function () {
         }
         return res
     }
+    //
+    function unzip(...arys) {
+        var n = arys[0].length
+        var m = arys.length
+        var res = []
+        for (var i = 0;i < n ; i ++) {
+            res.push([])
+        }
+        for (var i = 0 ; i <arys.length; i ++) {
+            for (var j = 0; j < n;j ++) {
+                res[j][i]= arys[i][j]
+            }
+        }
+        return res
+    }
+    //
+    // function unzipWith(...arys) {
+    //     var predicate = processJudge(arys.pop())
+    //     arys = zip(arys)
+
+    // }
     //创建一个分组元素的数组，数组的第一个元素包含所有给定数组的第一个元素，
     //数组的第二个元素包含所有给定数组的第二个元素，以此类推。
     function zip(...arys) {
@@ -764,6 +785,7 @@ var kevinwen978 = function () {
         uniqBy,
         uniqWith,
         zip,
+        unzip,
 
     }
 
