@@ -546,14 +546,16 @@ var kevinwen978 = function () {
         return res
     }
     //
-    function unzip(...arys) {
-        let res = []
-        for (let i = 0; i < arys[0].length; i++) {
+    function unzip(arys) {
+        var n = arys[0].length
+        var m = arys.length
+        var res = []
+        for (var i = 0;i < n ; i ++) {
             res.push([])
         }
-        for (let i = 0; i < arys.length; i++) {
-            for (let j = 0; j < arys[i].length; j++) {
-                res[j][i] = arys[i][j]
+        for (var i = 0 ; i < m; i ++) {
+            for (var j = 0; j < n;j ++) {
+                res[j][i]= arys[i][j]
             }
         }
         return res
@@ -612,7 +614,7 @@ var kevinwen978 = function () {
         for (var i = 0;i < n ; i ++) {
             res.push([])
         }
-        for (var i = 0 ; i <arys.length; i ++) {
+        for (var i = 0 ; i < m; i ++) {
             for (var j = 0; j < n;j ++) {
                 res[j][i]= arys[i][j]
             }
