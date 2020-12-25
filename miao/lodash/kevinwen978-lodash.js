@@ -547,14 +547,23 @@ var kevinwen978 = function () {
     }
     //
     function unzip(...arys) {
-        return zip(flatten(arys))
+        let res = []
+        for (let i = 0; i < ary[0].length; i++) {
+            res.push([])
+        }
+        for (let i = 0; i < ary.length; i++) {
+            for (let j = 0; j < ary[i].length; j++) {
+                res[j][i] = ary[i][j]
+            }
+        }
+        return res
     }
     //
     function unzipWith(ary,predicate) {
         predicate = processJudge(predicate)
-        ary = zip(ary)
-        var res = ary.map((it) => predicate(...it));
-        return res;
+        ary = unzip(ary)
+        var res = ary.map((it) => predicate(...it))
+        return res
     }
     //返回过滤值后的新数组
     function without(ary,...val) {
