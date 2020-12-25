@@ -592,12 +592,10 @@ var kevinwen978 = function () {
             map[predicate(ary[i])] ? map[predicate(ary[i])] ++ : map[predicate(ary[i])] = 1
         }
         for (var key in map) {
-            if (map[key] == 1) {
-                for (var i = 0; i < ary.length; i ++) {
-                    if ((+key) == ary[i]) {
-                        res.push(ary[i])
-                        break
-                    }
+            for (var i = 0; i < ary.length; i ++) {
+                if ((+key) == predicate(ary[i])) {
+                    res.push(ary[i])
+                    break
                 }
             }
         }
