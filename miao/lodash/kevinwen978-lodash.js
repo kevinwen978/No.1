@@ -548,12 +548,12 @@ var kevinwen978 = function () {
     //
     function unzip(...arys) {
         let res = []
-        for (let i = 0; i < ary[0].length; i++) {
+        for (let i = 0; i < arys[0].length; i++) {
             res.push([])
         }
-        for (let i = 0; i < ary.length; i++) {
-            for (let j = 0; j < ary[i].length; j++) {
-                res[j][i] = ary[i][j]
+        for (let i = 0; i < arys.length; i++) {
+            for (let j = 0; j < arys[i].length; j++) {
+                res[j][i] = arys[i][j]
             }
         }
         return res
@@ -592,10 +592,12 @@ var kevinwen978 = function () {
             map[predicate(ary[i])] ? map[predicate(ary[i])] ++ : map[predicate(ary[i])] = 1
         }
         for (var key in map) {
-            for (var i = 0; i < ary.length; i ++) {
-                if ((+key) == predicate(ary[i])) {
-                    res.push(ary[i])
-                    break
+            if (map[key] == 1) {
+                for (var i = 0; i < ary.length; i ++) {
+                    if ((+key) == predicate(ary[i])) {
+                        res.push(ary[i])
+                        break
+                    }
                 }
             }
         }
