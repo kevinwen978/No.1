@@ -605,6 +605,21 @@ var kevinwen978 = function () {
         }
         return res
     }
+    //
+    function xorWith(ary,oth,comparator) {
+        var res = ary.slice()
+        var reso = oth.slice()
+        for (var i = 0; i < res.length; i ++) {
+            for (var j = 0; j < reso.length; j ++) {
+                if (comparator(res[i],reso[j])) {
+                    res.splice(i,1)
+                    reso.splice(j,1)
+                    j = -1
+                }
+            }
+        }
+        return res.concat(reso)
+    }
     //创建一个分组元素的数组，数组的第一个元素包含所有给定数组的第一个元素，
     //数组的第二个元素包含所有给定数组的第二个元素，以此类推。
     function zip(...arys) {
@@ -824,6 +839,7 @@ var kevinwen978 = function () {
         without,
         xor,
         xorBy,
+        xorWith,
 
     }
 
