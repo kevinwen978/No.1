@@ -563,7 +563,7 @@ var kevinwen978 = function () {
     //
     function unzipWith(ary,predicate) {
         predicate = processJudge(predicate)
-        ary = unzip(ary)
+        ary = zip(ary)
         var res = ary.map((it) => predicate(...it))
         return res
     }
