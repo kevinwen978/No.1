@@ -723,6 +723,15 @@ var kevinwen978 = function () {
         }
         return col
     }
+    //
+    function groupBy(col,iteratee) {
+        iteratee = processJudge(iteratee)
+        var res = {}
+        for (var a of col) {
+            res[iteratee(a)] ? res[iteratee(a)].push(a) : res[iteratee(a)] = [a]
+        }
+        return res
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -898,6 +907,7 @@ var kevinwen978 = function () {
         flatMapDepth,
         forEach,
         forEachRight,
+        groupBy,
 
     }
 
