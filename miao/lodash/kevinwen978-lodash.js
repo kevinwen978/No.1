@@ -694,6 +694,14 @@ var kevinwen978 = function () {
         iteratee = processJudge(iteratee)
         return flatten(col.map(it => iteratee(it)))
     }
+    //
+    function flatMapDeep(col, iteratee) {
+        return flattenDeep(col.map(it => iteratee(it)))
+    }
+    //
+    function flatMapDepth(col, iteratee,n) {
+        return flattenDepth(col.map(it => iteratee(it)),n)
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -864,6 +872,9 @@ var kevinwen978 = function () {
         xorWith,
         zipObject,
         zipWith,
+        countBy,
+        flatMapDeep,
+        flatMapDepth,
 
     }
 
