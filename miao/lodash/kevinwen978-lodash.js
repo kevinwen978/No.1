@@ -715,7 +715,13 @@ var kevinwen978 = function () {
             }
         }
         return col
-
+    }
+    //
+    function forEachRight(col,iteratee) {
+        for (var i = col.length -1;i >=0;i--) {
+            iteratee(col[i])
+        }
+        return col
     }
     // 转化为数组
     function toArray(val) {
@@ -891,6 +897,7 @@ var kevinwen978 = function () {
         flatMapDeep,
         flatMapDepth,
         forEach,
+        forEachRight,
 
     }
 
