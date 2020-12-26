@@ -644,6 +644,12 @@ var kevinwen978 = function () {
         }
         return res
     }
+    //
+    function zipWith(...arys) {
+        var predicate = arys.pop()
+        var res = zip(...arys)
+        return res.map(it => predicate(...it))
+    }
     function every (ary,predicate) {
         predicate = processJudge(predicate)
         for (var val of ary) {
@@ -849,6 +855,7 @@ var kevinwen978 = function () {
         xorBy,
         xorWith,
         zipObject,
+        zipWith,
 
     }
 
