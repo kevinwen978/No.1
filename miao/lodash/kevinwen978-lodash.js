@@ -650,6 +650,14 @@ var kevinwen978 = function () {
         var res = zip(...arys)
         return res.map(it => predicate(...it))
     }
+    //
+    function countBy(ary,iteratee) {
+        var res = {}
+        for (var k of ary) {
+            res[iteratee(k)] ?  res[iteratee(k)] ++ : res[iteratee(k)] = 1
+        }
+        return res
+    }
     function every (ary,predicate) {
         predicate = processJudge(predicate)
         for (var val of ary) {
