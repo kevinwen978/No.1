@@ -692,7 +692,6 @@ var kevinwen978 = function () {
         return undefined
     }
     function flatMap(col, iteratee) {
-        iteratee = processJudge(iteratee)
         return flatten(col.map(it => iteratee(it)))
     }
     //
@@ -702,6 +701,21 @@ var kevinwen978 = function () {
     //
     function flatMapDepth(col, iteratee,n) {
         return flattenDepth(col.map(it => iteratee(it)),n)
+    }
+    //
+    function forEach(col,iteratee) {
+        if (Array.isArray(col)) {
+            for (var k of col) {
+                iteratee(k)
+            }
+        }
+        if (typeof col == 'Object') {
+            for (var key of col) {
+                iteratee(key,col[key])
+            }
+        }
+        return col
+
     }
     // 转化为数组
     function toArray(val) {
@@ -876,6 +890,7 @@ var kevinwen978 = function () {
         countBy,
         flatMapDeep,
         flatMapDepth,
+        forEach,
 
     }
 
