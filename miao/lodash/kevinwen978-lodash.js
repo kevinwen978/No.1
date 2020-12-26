@@ -653,6 +653,7 @@ var kevinwen978 = function () {
     //
     function countBy(ary,iteratee) {
         var res = {}
+        var iteratee = processJudge(iteratee)
         for (var k of ary) {
             res[iteratee(k)] ?  res[iteratee(k)] ++ : res[iteratee(k)] = 1
         }
