@@ -636,6 +636,14 @@ var kevinwen978 = function () {
         }
         return res
     }
+    //第一个数组中的值作为属性标识符（属性名），第二个数组中的值作为相应的属性值。
+    function zipObject(key,val) {
+        var res = {}
+        for (var i = 0; i <key.length; i ++) {
+            res[key[i]] = val[i]
+        }
+        return res
+    }
     function every (ary,predicate) {
         predicate = processJudge(predicate)
         for (var val of ary) {
@@ -840,6 +848,7 @@ var kevinwen978 = function () {
         xor,
         xorBy,
         xorWith,
+        zipObject,
 
     }
 
