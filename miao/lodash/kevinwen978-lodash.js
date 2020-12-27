@@ -875,7 +875,7 @@ var kevinwen978 = function () {
             Array.isArray(col)? accumulator = 0 : accumulator = {}
         }
         if (Array.isArray(col)) {
-            for (let i = col.length; i >= 0; i--) {
+            for (let i = col.length -1; i >= 0; i--) {
                 accumulator = iteratee(accumulator, col[i], i, col)
             }
         } else {
