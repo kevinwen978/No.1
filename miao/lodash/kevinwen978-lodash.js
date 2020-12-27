@@ -766,13 +766,14 @@ var kevinwen978 = function () {
         }
     }
     //
-    function invokeMap(col,path,args) {
-        args = processJudge(args)
-        for (var val of col) {
-            path.bind(args(val))
+    function invokeMap(col,path,...args) {
+        if (typeUtils.isString(path)) {
+            return col.map(it => it[path](...args))
         }
-        return col
-    }
+        if (typeUtils.isFunction(path)) {
+            return col.map(it => path.call(it, ...args))
+        }
+    }        
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
