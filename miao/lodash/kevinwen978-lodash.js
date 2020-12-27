@@ -802,14 +802,12 @@ var kevinwen978 = function () {
         var res = []
         iteratee = processJudge(iteratee)
         if (Array.isArray(col)) {
-            for (var a of col) {
-                res.push(iteratee(a))
-            }
+            col.forEach((a,b,c) => 
+            res.push(iteratee(a,b,c)))
         }
         if (Object.prototype.toString.call(col) == "[object Object]") {
             for (var b in col) {
-                var val = col[b]
-                res.push(iteratee(val))
+                res.push(iteratee(col[b],b,col))
             }
         }
         return res
