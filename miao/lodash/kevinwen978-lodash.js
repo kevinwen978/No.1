@@ -856,23 +856,23 @@ var kevinwen978 = function () {
     //（迭代函数）第一个参数使用。) iteratee 
     //调用4个参数：accumulator, value, index|key, collection).
     function reduce (col,iteratee,accumulator) {
-            if (accumulator == undefined) {
-                accumulator = Array.isArray(col)? 0 : {}
+        if (accumulator == null) {
+             Array.isArray(col)? accumulator =0 : accumulator ={}
+        }
+        if (Array.isArray(col)) {
+            for (let i = 0; i < col.length; i++) {
+                accumulator = iteratee(accumulator, col[i], i, col)
             }
-            if (Array.isArray(col)) {
-                for (let i = 0; i < col.length; i++) {
-                    accumulator = iteratee(accumulator, col[i], i, col)
-                }
-            } else {
-                for (let key in col) {
-                    accumulator = iteratee(accumulator, col[key], key, col)
-                }
+        } else {
+            for (let key in col) {
+                accumulator = iteratee(accumulator, col[key], key, col)
             }
-            return accumulator
+        }
+        return accumulator
     }
     function reduceRight (col,iteratee,accumulator) {
-        if (accumulator == undefined) {
-            accumulator = Array.isArray(col)? 0 : {}
+        if (accumulator == null) {
+            Array.isArray(col)? accumulator = 0 : accumulator = {}
         }
         if (Array.isArray(col)) {
             for (let i = col.length; i >= 0; i--) {
