@@ -912,6 +912,15 @@ var kevinwen978 = function () {
         }
         return false
     }
+    //如果 value 不是数组, 那么强制转为数组
+    function castArray(val) {
+        if (!val) return []
+        if (Array.isArray(val)) {
+            return val
+        } else {
+            return [val]
+        }
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -1099,6 +1108,7 @@ var kevinwen978 = function () {
         reject,
         size,
         some,
+        castArray,
 
     }
 
