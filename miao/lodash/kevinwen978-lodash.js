@@ -644,13 +644,17 @@ var kevinwen978 = function () {
         }
         return res
     }
-    //
+    //这个方法类似于_.zip，不同之处在于它接受一个 iteratee（迭代函数），
+    //来 指定分组的值应该如何被组合。 该iteratee调用每个组的元素： (...group).
     function zipWith(...arys) {
         var predicate = arys.pop()
         var res = zip(...arys)
         return res.map(it => predicate(...it))
     }
-    //
+    //创建一个组成对象，key（键）是经过 iteratee（迭代函数） 
+    //执行处理collection中每个元素后返回的结果，每个key（键）对应的值
+    //是 iteratee（迭代函数）返回该key（键）的次数（注：迭代次数）。
+    // iteratee 调用一个参数：(value)。
     function countBy(ary,iteratee) {
         var res = {}
         var iteratee = processJudge(iteratee)
@@ -659,6 +663,7 @@ var kevinwen978 = function () {
         }
         return res
     }
+    //每个元素都为真返回真
     function every (ary,predicate) {
         predicate = processJudge(predicate)
         for (var val of ary) {
@@ -723,7 +728,9 @@ var kevinwen978 = function () {
         }
         return col
     }
-    //
+    //创建一个对象，key 是 iteratee 遍历 collection(集合) 中的每个元素返回的结果。
+    // 分组值的顺序是由他们出现在 collection(集合) 中的顺序确定的。每个键对应的值
+    //负责生成 key 的元素组成的数组。iteratee 调用 1 个参数： (value)。
     function groupBy(col,iteratee) {
         iteratee = processJudge(iteratee)
         var res = {}
@@ -765,7 +772,10 @@ var kevinwen978 = function () {
             return false
         }
     }
-    //
+    //调用path（路径）上的方法处理 collection(集合)中的每个元素，返回一个数组，
+    //包含每次调用方法得到的结果。任何附加的参数提供给每个被调用的方法。
+    //如果methodName（方法名）是一个函数，每次调用函数时，
+    //内部的 this 指向集合中的每个元素。
     function invokeMap(col,path,...args) {
         if (typeUtils.isString(path)) {
             return col.map(it => it[path](...args))
@@ -774,12 +784,14 @@ var kevinwen978 = function () {
             return col.map(it => path.call(it, ...args))
         }
     }
-    //
+    //创建一个对象组成， key（键） 是 collection（集合）中的每个元素经过
+    // iteratee（迭代函数） 处理后返回的结果。 每个 key（键）对应的值是生成key（键）
+    //的最后一个元素。iteratee（迭代函数）调用1个参数：(value)。
     function keyBy(col,iteratee) {
         iteratee = processJudge(iteratee)
         var res = {}
         for (var a of col) {
-            res[iteratee(a)] == a
+            res[iteratee(a)] = a
         }
         return res
     }       
