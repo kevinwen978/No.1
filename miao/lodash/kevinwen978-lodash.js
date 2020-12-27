@@ -884,7 +884,13 @@ var kevinwen978 = function () {
             }
         }
         return accumulator
-}
+    }
+    //_.filter的反向方法;此方法 返回 predicate（断言函数)
+    //不返回 truthy（真值）的collection（集合）元素（注释：非真）
+    function reject (col,predicate) {
+        predicate = processJudge(predicate)
+        return col.filter(it => !predicate(it))
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -1069,6 +1075,8 @@ var kevinwen978 = function () {
         partition,
         reduce,
         reduceRight,
+        reject,
+        
 
     }
 
