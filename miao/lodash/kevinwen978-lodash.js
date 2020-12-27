@@ -765,6 +765,14 @@ var kevinwen978 = function () {
             return false
         }
     }
+    //
+    function invokeMap(col,path,args) {
+        args = processJudge(args)
+        for (var val of col) {
+            path.bind(args(val))
+        }
+        return col
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -942,6 +950,7 @@ var kevinwen978 = function () {
         forEachRight,
         groupBy,
         includes,
+        invokeMap,
 
     }
 
