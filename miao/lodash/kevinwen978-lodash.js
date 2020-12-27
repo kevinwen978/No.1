@@ -794,7 +794,25 @@ var kevinwen978 = function () {
             res[iteratee(a)] = a
         }
         return res
-    }       
+    }  
+    //创建一个数组， value（值） 是 iteratee（迭代函数）遍历
+    // collection（集合）中的每个元素后返回的结果。 iteratee（迭代函数）
+    //调用3个参数:value, index|key, collection).  
+    function map(col,iteratee) {
+        var res = []
+        iteratee = processJudge(iteratee)
+        if (Array.isArray(col)) {
+            for (var a of col) {
+                res.push(iteratee(a))
+            }
+        }
+        if (typeof col == 'object') {
+            for (var b in col) {
+                res.push(iteratee(col[b],b,col))
+            }
+        }
+        return res
+    }    
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -974,6 +992,7 @@ var kevinwen978 = function () {
         includes,
         invokeMap,
         keyBy,
+        map,
 
     }
 
