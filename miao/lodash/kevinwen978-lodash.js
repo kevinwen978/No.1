@@ -732,6 +732,39 @@ var kevinwen978 = function () {
         }
         return res
     }
+    //
+    function includes(col,val,fromIndex = 0) {
+        if (Array.isArray(col)) {
+            if (fromIndex >= 0) {
+                for (var i = fromIndex;i < col.length; i ++ ) {
+                    if (col[i] == val) return true
+                }
+                return false
+            } else {
+                for (var i = fromIndex;i >= 0; i -- ) {
+                    if (col[i] == val) return true
+                }
+                return false                
+            }
+        }
+        if (typeof col == 'object') {
+            for (var key of col) {
+                if (col[key] == val) return true
+            }
+            return false
+        }
+        if (typeof col == 'string') {
+            var n = val.length
+            for (var i = 0; i < col.length - n; i ++ ) {
+                var x = ''
+                for (var j = i; j <= i + n -1; j ++) {
+                    x += val[j]
+                }
+                if (x == val) return true
+            } 
+            return false
+        }
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -908,6 +941,7 @@ var kevinwen978 = function () {
         forEach,
         forEachRight,
         groupBy,
+        includes,
 
     }
 
