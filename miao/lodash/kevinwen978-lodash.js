@@ -748,7 +748,7 @@ var kevinwen978 = function () {
             }
         }
         if (typeof col == 'object') {
-            for (var key of col) {
+            for (var key in col) {
                 if (col[key] == val) return true
             }
             return false
