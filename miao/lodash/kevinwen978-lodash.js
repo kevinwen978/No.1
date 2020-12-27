@@ -870,6 +870,21 @@ var kevinwen978 = function () {
             }
             return accumulator
     }
+    function reduceRight (col,iteratee,accumulator) {
+        if (accumulator == null) {
+            accumulator = Array.isArray(col)? 0 : {}
+        }
+        if (Array.isArray(col)) {
+            for (let i = col.length; i >= 0; i--) {
+                accumulator = iteratee(accumulator, col[i], i, col)
+            }
+        } else {
+            for (let key in col) {
+                accumulator = iteratee(accumulator, col[key], key, col)
+            }
+        }
+        return accumulator
+}
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -1053,6 +1068,7 @@ var kevinwen978 = function () {
         orderBy,
         partition,
         reduce,
+        reduceRight,
 
     }
 
