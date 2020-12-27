@@ -896,7 +896,7 @@ var kevinwen978 = function () {
     function size (col) {
         if (Object.prototype.toString.call(col) == "[object Object]") {
             var count = 0
-            for (var key of col) {
+            for (var key in col) {
                 count ++
             }
             return count
