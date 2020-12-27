@@ -808,7 +808,8 @@ var kevinwen978 = function () {
         }
         if (Object.prototype.toString.call(col) == "[object Object]") {
             for (var b in col) {
-                res.push(iteratee(col[b],b,col))
+                var val = col[b]
+                res.push(iteratee(val))
             }
         }
         return res
