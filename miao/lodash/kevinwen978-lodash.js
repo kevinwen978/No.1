@@ -806,7 +806,7 @@ var kevinwen978 = function () {
                 res.push(iteratee(a))
             }
         }
-        if (typeof col == 'object') {
+        if (Object.prototype.toString.call(col) == "[object Object]") {
             for (var b in col) {
                 res.push(iteratee(col[b],b,col))
             }
