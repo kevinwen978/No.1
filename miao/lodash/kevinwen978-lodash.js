@@ -904,6 +904,14 @@ var kevinwen978 = function () {
             return col.length
         }
     }
+    //
+    function some(ary, predicate) {
+        predicate = processJudge(predicate)
+        for (var val of ary) {
+            if (predicate(val)) return true
+        }
+        return false
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -1090,6 +1098,7 @@ var kevinwen978 = function () {
         reduceRight,
         reject,
         size,
+        some,
 
     }
 
