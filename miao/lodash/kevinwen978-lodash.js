@@ -773,7 +773,16 @@ var kevinwen978 = function () {
         if (typeUtils.isFunction(path)) {
             return col.map(it => path.call(it, ...args))
         }
-    }        
+    }
+    //
+    function keyBy(col,iteratee) {
+        iteratee = processJudge(iteratee)
+        var res = {}
+        for (var a of col) {
+            res[iteratee(a)] == a
+        }
+        return res
+    }       
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -952,6 +961,7 @@ var kevinwen978 = function () {
         groupBy,
         includes,
         invokeMap,
+        keyBy,
 
     }
 
