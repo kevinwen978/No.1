@@ -914,12 +914,11 @@ var kevinwen978 = function () {
     }
     //如果 value 不是数组, 那么强制转为数组
     function castArray(val) {
-        if (!val) return []
-        if (Array.isArray(val)) {
-            return val
-        } else {
-            return [val]
+        var res = []
+        for (var i = 0; i < arguments.length; i ++) {
+            res.push(arguments[i])
         }
+        return res
     }
     //通过调用断言source的属性与 object 的相应属性值，检查 object是否符合 source。
     //当source偏应用时，这种方法和_.conforms函数是等价的。
