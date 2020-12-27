@@ -811,7 +811,24 @@ var kevinwen978 = function () {
             }
         }
         return res
-    }    
+    }
+    //此方法类似于_.sortBy，除了它允许指定 iteratee（迭代函数）结果如何排序。
+    //如果没指定 orders（排序），所有值以升序排序。 否则，指定为"desc" 降序，
+    //或者指定为 "asc" 升序，排序对应值。
+    function orderBy(col,iteratee,orders) {
+        var n = iteratee.length
+        var res = col.slice()
+        if (!orders) orders = new Array(n).fill("asc")
+        for (var i = orders.length -1; i >=0; i --) {
+            var predicate = processJudge(iteratee[i])
+            if (orders[i] == "asc") {
+                res.sort((a,b)=> predicate(b) - predicate(a))
+            } else {
+                res.sort((a,b)=> predicate(a) - predicate(b))
+            }
+        }
+        return res
+    }   
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -992,6 +1009,7 @@ var kevinwen978 = function () {
         invokeMap,
         keyBy,
         map,
+        orderBy,
 
     }
 
