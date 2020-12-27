@@ -849,6 +849,27 @@ var kevinwen978 = function () {
         }
         return res
     }
+    //压缩 collection（集合）为一个值，通过 iteratee（迭代函数）遍历 collection
+    //（集合）中的每个元素，每次返回的值会作为下一次迭代使用(注：作为iteratee
+    //（迭代函数）的第一个参数使用)。 如果没有提供 accumulator，则 collection（集合）
+    //中的第一个元素作为初始值。(注：accumulator参数在第一次迭代的时候作为iteratee
+    //（迭代函数）第一个参数使用。) iteratee 
+    //调用4个参数：accumulator, value, index|key, collection).
+    function reduce (col,iteratee,accumulator) {
+            if (accumulator == null) {
+                accumulator = Array.isArray(col)? 0 : {}
+            }
+            if (Array.isArray(col)) {
+                for (let i = 0; i < col.length; i++) {
+                    accumulator = iteratee(accumulator, col[i], i, col)
+                }
+            } else {
+                for (let key in col) {
+                    accumulator = iteratee(accumulator, col[key], key, col)
+                }
+            }
+            return accumulator
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -1031,6 +1052,7 @@ var kevinwen978 = function () {
         map,
         orderBy,
         partition,
+        reduce,
 
     }
 
