@@ -828,7 +828,22 @@ var kevinwen978 = function () {
             }
         }
         return res
-    }   
+    }
+    //创建一个分成两组的元素数组，第一组包含predicate（断言函数）返回为 truthy（真值）
+    //的元素，第二组包含predicate（断言函数）返回为 falsey（假值）的元素。
+    //predicate 调用1个参数：(value) 
+    function partition(col,predicate) {
+        predicate = processJudge(predicate)
+        var res = [[],[]]
+        for (var a of col) {
+            if (predicate(a)) {
+                res[0].push(a)
+            } else {
+                res[1].push(a)
+            }
+        }
+        return res
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -1010,6 +1025,7 @@ var kevinwen978 = function () {
         keyBy,
         map,
         orderBy,
+        partition,
 
     }
 
