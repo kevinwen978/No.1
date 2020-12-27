@@ -921,6 +921,15 @@ var kevinwen978 = function () {
             return [val]
         }
     }
+    //通过调用断言source的属性与 object 的相应属性值，检查 object是否符合 source。
+    //当source偏应用时，这种方法和_.conforms函数是等价的。
+    function conformsTo(val,source) {
+        for (var key in source) {
+            var predicate = source[key]
+            if (predicate(val[key])) return true
+        }
+        return false
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -1109,6 +1118,7 @@ var kevinwen978 = function () {
         size,
         some,
         castArray,
+        conformsTo,
 
     }
 
