@@ -856,7 +856,7 @@ var kevinwen978 = function () {
     //（迭代函数）第一个参数使用。) iteratee 
     //调用4个参数：accumulator, value, index|key, collection).
     function reduce (col,iteratee,accumulator) {
-            if (accumulator == null) {
+            if (accumulator == undefined) {
                 accumulator = Array.isArray(col)? 0 : {}
             }
             if (Array.isArray(col)) {
@@ -871,7 +871,7 @@ var kevinwen978 = function () {
             return accumulator
     }
     function reduceRight (col,iteratee,accumulator) {
-        if (accumulator == null) {
+        if (accumulator == undefined) {
             accumulator = Array.isArray(col)? 0 : {}
         }
         if (Array.isArray(col)) {
