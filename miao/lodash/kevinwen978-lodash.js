@@ -891,6 +891,19 @@ var kevinwen978 = function () {
         predicate = processJudge(predicate)
         return col.filter(it => !predicate(it))
     }
+    //返回collection（集合）的长度，如果集合是类数组或字符串，
+    //返回其 length ；如果集合是对象，返回其可枚举属性的个数。
+    function size (col) {
+        if (Object.prototype.toString.call(col) == "[object Object]") {
+            var count = 0
+            for (var key of col) {
+                count ++
+            }
+            return count
+        } else {
+            return col.length
+        }
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -1076,7 +1089,7 @@ var kevinwen978 = function () {
         reduce,
         reduceRight,
         reject,
-        
+        size,
 
     }
 
