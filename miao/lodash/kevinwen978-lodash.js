@@ -818,7 +818,12 @@ var kevinwen978 = function () {
     function orderBy(col,iteratee,orders) {
         var n = iteratee.length
         var res = col.slice()
-        if (!orders) orders = new Array(n).fill("asc")
+        if (!orders) {
+            orders = []
+            for (var i = 1; i <= n;i ++) {
+                orders.push("asc")
+            }
+        }
         for (var i = orders.length -1; i >=0; i --) {
             var predicate = processJudge(iteratee[i])
             if (orders[i] == "asc") {
