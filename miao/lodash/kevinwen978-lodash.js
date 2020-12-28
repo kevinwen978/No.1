@@ -978,6 +978,9 @@ var kevinwen978 = function () {
     function isDate(val) {
        return Object.prototype.toString.call(val) == '[object Date]' 
     }
+    function isElement (val) {
+        return Object.prototype.toString.call(val) == '[object Element]' 
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -1172,6 +1175,7 @@ var kevinwen978 = function () {
         isArrayLikeObject,
         isBoolean,
         isDate,
+        isElement,
 
     }
 
