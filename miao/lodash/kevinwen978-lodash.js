@@ -973,7 +973,7 @@ var kevinwen978 = function () {
         return typeof val == 'object' && isArrayLike(val)
     } 
     function isBoolean(val) {
-        return typeof val == 'boolean'
+        return Object.prototype.toString.call(val) == '[object Boolean]'
     }
     function isDate(val) {
        return Object.prototype.toString.call(val) == '[object Date]' 
