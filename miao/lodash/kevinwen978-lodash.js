@@ -953,6 +953,20 @@ var kevinwen978 = function () {
     //判断输入是否为ArrayBuffer 
     function isArrayBuffer(val) {
         return Object.prototype.toString.call(val) == '[object ArrayBuffer]'
+    } 
+    //检查 value 是否是类数组。 如果一个值被认为是类数组，那么它不是一个函数，
+    //并且value.length是个整数，大于等于 0，小于或等于 Number.MAX_SAFE_INTEGER。
+    function isArrayLike(val) {
+        if (Object.prototype.toString.call(val) == '[object Function]') {
+            return false
+        } else {
+            var n = val.length
+            if (n % 1 == 0 && n >= 0 && n <=Number.MAX_SAFE_INTEGER) {
+                return true
+            } else {
+                return false
+            }
+        }
     }    
     // 转化为数组
     function toArray(val) {
@@ -1144,6 +1158,7 @@ var kevinwen978 = function () {
         gte,
         isArguments,
         isArrayBuffer,
+        isArrayLike,
 
     }
 
