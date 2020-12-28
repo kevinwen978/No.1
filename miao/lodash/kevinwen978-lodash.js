@@ -931,22 +931,8 @@ var kevinwen978 = function () {
     }
     //执行SameValueZero 比较两者的值，来确定它们是否相等。
     function eq(val,oth) {
-        if (val != val && oth != oth) return false
-        if (Object.prototype.toString.call(val) == "[object String]") {
-            if (val == oth)  {
-                return true
-            } else {
-                return false
-            }
-        }
-        if (Object.prototype.toString.call(val) == "[object Object]") {
-            if (val == oth)  {
-                return true
-            } else {
-                return false
-            }
-        }
-        return false
+         if (val != val && oth != oth) return true
+         return val === oth
     }
     //检查 value是否大于 other。
     function gt (val,oth) {
@@ -955,6 +941,10 @@ var kevinwen978 = function () {
     //检查 value是否大于或者等于 other
     function gte(val,oth) {
         return val >= oth
+    }
+    //检查 value 是否是一个类 arguments 对象
+    function isArguments(val) {
+
     }
     // 转化为数组
     function toArray(val) {
