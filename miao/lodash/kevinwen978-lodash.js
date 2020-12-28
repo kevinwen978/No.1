@@ -974,7 +974,10 @@ var kevinwen978 = function () {
     } 
     function isBoolean(val) {
         return typeof val == 'boolean'
-    }  
+    }
+    function isDate(val) {
+       return Object.prototype.toString.call(val) == '[object Date]' 
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -1168,6 +1171,7 @@ var kevinwen978 = function () {
         isArrayLike,
         isArrayLikeObject,
         isBoolean,
+        isDate,
 
     }
 
