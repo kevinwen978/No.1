@@ -946,6 +946,14 @@ var kevinwen978 = function () {
     function isArguments(val) {
         return Object.prototype.toString.call(val) == "[object Arguments]"
     }
+    //判断输入是否为数组
+    function isArray (value) {
+        return Object.prototype.toString.call(value) == '[object Array]'
+    }
+    //判断输入是否为ArrayBuffer 
+    function isArrayBuffer(val) {
+        return Object.prototype.toString.call(val) == '[object ArrayBuffer]'
+    }    
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -1001,10 +1009,6 @@ var kevinwen978 = function () {
     //否则返回 false
     function matches(obj) {
         return partialDeepEqual.bind(null, obj)
-    }
-    //判断输入是否为数组
-    function isArray (value) {
-        return Object.prototype.toString.call(value) == '[object Array]'
     }
     //判断两者是否完全相等
     function isEqual(x, y) {
@@ -1139,6 +1143,7 @@ var kevinwen978 = function () {
         gt,
         gte,
         isArguments,
+        isArrayBuffer,
 
     }
 
