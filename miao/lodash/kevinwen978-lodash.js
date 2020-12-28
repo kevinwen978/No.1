@@ -981,6 +981,15 @@ var kevinwen978 = function () {
     function isElement (val) {
         return Object.prototype.toString.call(val) == '[object Element]' 
     }
+    //检查 value 是否为一个空对象，集合，映射或者set。 判断的依据是
+    //除非是有枚举属性的对象，length 大于 0 的 arguments object, 
+    //array, string 或类jquery选择器。
+    function isEmpty (val) {
+        for (let p in val) {
+            return false
+        }
+        return true
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -1176,6 +1185,7 @@ var kevinwen978 = function () {
         isBoolean,
         isDate,
         isElement,
+        isEmpty,
 
     }
 
