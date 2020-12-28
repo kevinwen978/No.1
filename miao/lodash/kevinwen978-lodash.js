@@ -944,7 +944,7 @@ var kevinwen978 = function () {
     }
     //检查 value 是否是一个类 arguments 对象
     function isArguments(val) {
-
+        return Object.prototype.toString.call(val) == "[object Arguments]"
     }
     // 转化为数组
     function toArray(val) {
@@ -1138,6 +1138,7 @@ var kevinwen978 = function () {
         eq,
         gt,
         gte,
+        isArguments,
 
     }
 
