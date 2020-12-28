@@ -967,7 +967,14 @@ var kevinwen978 = function () {
                 return false
             }
         }
-    }    
+    }
+    //这个方法类似_.isArrayLike。除了它还检查value是否是个对象。
+    function isArrayLikeObject(val) {
+        return typeof val == 'object' && isArrayLike(val)
+    } 
+    function isBoolean(val) {
+        return typeof val == 'boolean'
+    }  
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -1159,6 +1166,8 @@ var kevinwen978 = function () {
         isArguments,
         isArrayBuffer,
         isArrayLike,
+        isArrayLikeObject,
+        isBoolean,
 
     }
 
