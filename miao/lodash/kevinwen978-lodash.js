@@ -952,6 +952,10 @@ var kevinwen978 = function () {
     function gt (val,oth) {
         return val > oth
     }
+    //检查 value是否大于或者等于 other
+    function gte(val,oth) {
+        return val >= oth
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -1143,6 +1147,7 @@ var kevinwen978 = function () {
         conformsTo,
         eq,
         gt,
+        gte,
 
     }
 
