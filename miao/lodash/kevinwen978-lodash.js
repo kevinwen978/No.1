@@ -948,6 +948,10 @@ var kevinwen978 = function () {
         }
         return false
     }
+    //检查 value是否大于 other。
+    function gt (val,oth) {
+        return val > oth
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -1138,6 +1142,7 @@ var kevinwen978 = function () {
         castArray,
         conformsTo,
         eq,
+        gt,
 
     }
 
