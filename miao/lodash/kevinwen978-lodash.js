@@ -929,6 +929,25 @@ var kevinwen978 = function () {
         }
         return false
     }
+    //执行SameValueZero 比较两者的值，来确定它们是否相等。
+    function eq(val,oth) {
+        if (val != val && oth != oth) return false
+        if (Object.prototype.toString.call(val) == "[object String]") {
+            if (val == oth)  {
+                return true
+            } else {
+                return false
+            }
+        }
+        if (Object.prototype.toString.call(val) == "[object Object]") {
+            if (val == oth)  {
+                return true
+            } else {
+                return false
+            }
+        }
+        return false
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -1118,6 +1137,7 @@ var kevinwen978 = function () {
         some,
         castArray,
         conformsTo,
+        eq,
 
     }
 
