@@ -1110,6 +1110,16 @@ var kevinwen978 = function () {
     function isNumber (val) {
         return Object.prototype.toString.call(val) == "[object Number]"
     }
+    function isObject (val) {
+        return Object.prototype.toString.call(val) == "[object Object]"
+    }
+    //检查 value 是否是 类对象。 如果一个值是类对象，那么它不应该是 null，
+    //而且 typeof 后的结果是 "object"。
+    function isObjectLike(val) {
+        if (val === null) return false
+        if (typeof val == 'object') return true
+        return false
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -1306,8 +1316,8 @@ var kevinwen978 = function () {
         isNil,
         isNull,
         isNumber,
-        // isObject,
-        // isObjectLike,
+        isObject,
+        isObjectLike,
         // isPlainObject,
         // isRegExp,
         // isSafeInteger,
