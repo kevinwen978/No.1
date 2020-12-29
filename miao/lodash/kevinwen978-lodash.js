@@ -644,6 +644,10 @@ var kevinwen978 = function () {
         }
         return res
     }
+    //
+    function zipObjectDeep (val) {
+       
+    }
     //这个方法类似于_.zip，不同之处在于它接受一个 iteratee（迭代函数），
     //来 指定分组的值应该如何被组合。 该iteratee调用每个组的元素： (...group).
     function zipWith(...arys) {
@@ -891,6 +895,18 @@ var kevinwen978 = function () {
         predicate = processJudge(predicate)
         return col.filter(it => !predicate(it))
     }
+    //
+    function sample (val) {
+
+    }
+    //
+    function sampleSize (val) {
+
+    }
+    //
+    function shuffle (val) {
+
+    }
     //返回collection（集合）的长度，如果集合是类数组或字符串，
     //返回其 length ；如果集合是对象，返回其可枚举属性的个数。
     function size (col) {
@@ -911,6 +927,18 @@ var kevinwen978 = function () {
             if (predicate(val)) return true
         }
         return false
+    }
+    //
+    function sortBy (val) {
+
+    }
+    //
+    function defer (val) {
+
+    }
+    //
+    function delay (val) {
+
     }
     //如果 value 不是数组, 那么强制转为数组
     function castArray(val) {
@@ -1176,6 +1204,7 @@ var kevinwen978 = function () {
         zip,
         unzip,
         unzipWith,
+        zipObjectDeep,
         without,
         xor,
         xorBy,
@@ -1197,8 +1226,14 @@ var kevinwen978 = function () {
         reduce,
         reduceRight,
         reject,
+        sample,
+        sampleSize,
+        shuffle,
         size,
         some,
+        sortBy,
+        defer,
+        delay,
         castArray,
         conformsTo,
         eq,
