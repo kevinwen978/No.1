@@ -1063,7 +1063,7 @@ var kevinwen978 = function () {
     }
     //是否为整数
     function isInteger(val) {
-        return val % 1 == 0
+        return val % 1 == 0 && typeof val == 'number'
     }
     // 转化为数组
     function toArray(val) {
