@@ -1108,6 +1108,9 @@ var kevinwen978 = function () {
         if (val == null) return true
         return false
     }
+    function isNumber (val) {
+        return object.prototype.toString.call(val) == "[object Number]"
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -1303,7 +1306,7 @@ var kevinwen978 = function () {
         isNative,
         isNil,
         isNull,
-        // isNumber,
+        isNumber,
         // isObject,
         // isObjectLike,
         // isPlainObject,
