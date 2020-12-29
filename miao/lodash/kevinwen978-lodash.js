@@ -1033,6 +1033,10 @@ var kevinwen978 = function () {
     function isFunction (val) {
         return Object.prototype.toString.call(val) == '[object Function]'
     }
+    //是否为整数
+    function isInteger(val) {
+        return val % 1 == 0
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -1212,6 +1216,7 @@ var kevinwen978 = function () {
         isError,
         isFinite,
         isFunction,
+        isInteger,
 
     }
 
