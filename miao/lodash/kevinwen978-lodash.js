@@ -1075,12 +1075,9 @@ var kevinwen978 = function () {
     }
     //执行一个深度比较，来确定 object 是否含有和 source 完全相等的属性值。
     function isMatch (val,source) {
-        for (var v in val) {
-            for (var s in val) {
-                if (v == s && val[v] == source[s]) return true
-            }
+        for (var s in source) {
+            return isEqual(val[s],source[s])
         }
-        return false
     }
     //
     function isMatchWith (val,source,customizer) {
@@ -1090,6 +1087,12 @@ var kevinwen978 = function () {
             }
         }
         return false
+    }
+    function isNaN (val) {
+        if (typeof val == 'object') {
+            val = val.vaueOf()
+        }
+        return val != val
     }
     // 转化为数组
     function toArray(val) {
@@ -1282,7 +1285,7 @@ var kevinwen978 = function () {
         isMap,
         isMatch,
         isMatchWith,
-        // isNaN,
+        isNaN,
         // isNative,
         // isNil,
         // isNull,
