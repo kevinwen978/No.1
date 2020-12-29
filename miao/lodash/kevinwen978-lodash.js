@@ -1105,8 +1105,7 @@ var kevinwen978 = function () {
         return false
     }
     function isNull (val) {
-        if (val == null) return true
-        return false
+        return object.prototype.toString.call(val) == "[object Null]"
     }
     function isNumber (val) {
         return object.prototype.toString.call(val) == "[object Number]"
