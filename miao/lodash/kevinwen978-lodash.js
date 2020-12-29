@@ -1082,6 +1082,15 @@ var kevinwen978 = function () {
         }
         return false
     }
+    //
+    function isMatchWith (val,source,customizer) {
+        for (var v in val) {
+            for (var s in val) {
+                if (v == s && customizer(val[v], source[s])) return true
+            }
+        }
+        return false
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -1272,7 +1281,7 @@ var kevinwen978 = function () {
         isLength,
         isMap,
         isMatch,
-        // isMatchWith,
+        isMatchWith,
         // isNaN,
         // isNative,
         // isNil,
