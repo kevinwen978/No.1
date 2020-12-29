@@ -1096,7 +1096,7 @@ var kevinwen978 = function () {
     }
     //判断是否原生函数
     function isNative (val) {
-        return object.prototype.toString.call(val).includes("[native code]")
+        return Function.prototype.toString.call(val).includes("[native code]")
     }
     //检查 value 是否是 null 或者 undefined。
     function isNil (val) {
