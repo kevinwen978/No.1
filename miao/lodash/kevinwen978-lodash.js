@@ -1065,6 +1065,23 @@ var kevinwen978 = function () {
     function isInteger(val) {
         return val % 1 == 0 && typeof val == 'number'
     }
+    //检查 value 是否为有效的类数组长度
+    function isLength (val) {
+        return val % 1 == 0 && typeof val == 'number' &&  val < Infinity
+    }
+    //检查 value 是否为一个 Map 对象
+    function isMap (val) {
+        return Object.prototype.toString.call(val) == '[object Map]'
+    }
+    //执行一个深度比较，来确定 object 是否含有和 source 完全相等的属性值。
+    function isMatch (val,source) {
+        for (var v in val) {
+            for (var s in val) {
+                if (v == s && val[v] == source[s]) return true
+            }
+        }
+        return false
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -1252,6 +1269,30 @@ var kevinwen978 = function () {
         isFinite,
         isFunction,
         isInteger,
+        isLength,
+        isMap,
+        isMatch,
+        isMatchWith,
+        isNaN,
+        isNative,
+        isNil,
+        isNull,
+        isNumber,
+        isObject,
+        isObjectLike,
+        isPlainObject,
+        isRegExp,
+        isSafeInteger,
+        isSet,
+        isString,
+
+
+
+        
+
+
+
+
 
     }
 
