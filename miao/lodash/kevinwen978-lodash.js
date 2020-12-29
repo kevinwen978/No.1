@@ -1090,7 +1090,7 @@ var kevinwen978 = function () {
     }
     function isNaN (val) {
         if (typeof val == 'object') {
-            val = val.vaueOf()
+            val = val.valueOf()
         }
         return val != val
     }
