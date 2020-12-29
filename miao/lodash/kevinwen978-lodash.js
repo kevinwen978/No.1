@@ -990,6 +990,41 @@ var kevinwen978 = function () {
         }
         return true
     }
+    //判断两者是否完全相等
+    function isEqual(x, y) {
+        if (x === y) {
+            return true
+        }
+        if (x !== x && y !== y) {
+            return true
+        }
+        if (x === null || y === null || typeof x !== 'object' || typeof y !== 'object') {
+            return false
+        }
+        if (Object.keys(x).length !== Object.keys(y).length) {
+            return false
+        }
+        for (let key in x) {
+            if (!(key in y) || !isEqual(x[key], y[key])) {
+                return false
+            }
+        }
+        return true
+    }
+    //这个方法类似_.isEqual。 除了它接受一个 customizer 用来定制比较值.
+    //如果 customizer 返回 undefined 将会比较处理方法代替。 
+    //customizer 会传入6个参数：(objValue, othValue [, index|key, object, other, stack])
+    function isEqualWith(ary,oth,customizer) {
+        for (var i = 0; i < ary.length; i ++) {
+            if (customizer(ary[i],oth[i]) == false) return false
+        }
+        return true
+    }
+    //检查 value 是否是 Error, EvalError, RangeError, ReferenceError,
+    //SyntaxError, TypeError, 或者 URIError对象。
+    function isError(val) {
+        return Object.prototype.toString.call(val) == '[object Error]'
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -1045,27 +1080,6 @@ var kevinwen978 = function () {
     //否则返回 false
     function matches(obj) {
         return partialDeepEqual.bind(null, obj)
-    }
-    //判断两者是否完全相等
-    function isEqual(x, y) {
-        if (x === y) {
-            return true
-        }
-        if (x !== x && y !== y) {
-            return true
-        }
-        if (x === null || y === null || typeof x !== 'object' || typeof y !== 'object') {
-            return false
-        }
-        if (Object.keys(x).length !== Object.keys(y).length) {
-            return false
-        }
-        for (let key in x) {
-            if (!(key in y) || !isEqual(x[key], y[key])) {
-                return false
-            }
-        }
-        return true
     }
     //deepequal
     function partialDeepEqual(s, t) {
@@ -1186,6 +1200,8 @@ var kevinwen978 = function () {
         isDate,
         isElement,
         isEmpty,
+        isEqualWith,
+        isError,
 
     }
 
