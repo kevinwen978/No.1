@@ -1027,7 +1027,7 @@ var kevinwen978 = function () {
     }
     //检查 value 是否是原始有限数值。
     function isFinite (val) {
-        return val < Infinity
+        return val < Infinity && typeof val == 'number'
     }
     //检查 value 是否是 Function 对象。
     function isFunction (val) {
