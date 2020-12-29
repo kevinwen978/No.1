@@ -1098,6 +1098,16 @@ var kevinwen978 = function () {
     function isNative (val) {
         return object.prototype.toString.call(val).includes("[native code]")
     }
+    //检查 value 是否是 null 或者 undefined。
+    function isNil (val) {
+        if (val == undefined) return true
+        if (val == null) return true
+        return false
+    }
+    function isNull (val) {
+        if (val == null) return true
+        return false
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -1291,8 +1301,8 @@ var kevinwen978 = function () {
         isMatchWith,
         isNaN,
         isNative,
-        // isNil,
-        // isNull,
+        isNil,
+        isNull,
         // isNumber,
         // isObject,
         // isObjectLike,
