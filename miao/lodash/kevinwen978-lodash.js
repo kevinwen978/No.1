@@ -1120,6 +1120,10 @@ var kevinwen978 = function () {
         if (typeof val == 'object') return true
         return false
     }
+    //检查 value 是否是普通对象。 也就是说该对象由 Object 构造函数创建或者 [[Prototype]] 为空。
+    function isPlainObject (val) {
+        return val._proto_ == Object.prototype
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -1318,7 +1322,7 @@ var kevinwen978 = function () {
         isNumber,
         isObject,
         isObjectLike,
-        // isPlainObject,
+        isPlainObject,
         // isRegExp,
         // isSafeInteger,
         // isSet,
