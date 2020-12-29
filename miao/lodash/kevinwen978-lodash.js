@@ -1029,6 +1029,10 @@ var kevinwen978 = function () {
     function isFinite (val) {
         return val < Infinity
     }
+    //检查 value 是否是 Function 对象。
+    function isFunction (val) {
+        return Object.prototype.toString.call(val) == '[object Function]'
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -1207,6 +1211,7 @@ var kevinwen978 = function () {
         isEqualWith,
         isError,
         isFinite,
+        isFunction,
 
     }
 
