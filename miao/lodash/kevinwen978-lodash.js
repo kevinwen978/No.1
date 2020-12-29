@@ -1025,6 +1025,10 @@ var kevinwen978 = function () {
     function isError(val) {
         return Object.prototype.toString.call(val) == '[object Error]'
     }
+    //检查 value 是否是原始有限数值。
+    function isFinite (val) {
+        return val < Infinity
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -1202,6 +1206,7 @@ var kevinwen978 = function () {
         isEmpty,
         isEqualWith,
         isError,
+        isFinite,
 
     }
 
