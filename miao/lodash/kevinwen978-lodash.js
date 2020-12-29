@@ -1094,6 +1094,10 @@ var kevinwen978 = function () {
         }
         return val != val
     }
+    //判断是否原生函数
+    function isNative (val) {
+        return object.prototype.toString.call(val).includes("[native code]")
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -1286,7 +1290,7 @@ var kevinwen978 = function () {
         isMatch,
         isMatchWith,
         isNaN,
-        // isNative,
+        isNative,
         // isNil,
         // isNull,
         // isNumber,
