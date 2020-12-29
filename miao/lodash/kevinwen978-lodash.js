@@ -1105,10 +1105,10 @@ var kevinwen978 = function () {
         return false
     }
     function isNull (val) {
-        return object.prototype.toString.call(val) == "[object Null]"
+        return Object.prototype.toString.call(val) == "[object Null]"
     }
     function isNumber (val) {
-        return object.prototype.toString.call(val) == "[object Number]"
+        return Object.prototype.toString.call(val) == "[object Number]"
     }
     // 转化为数组
     function toArray(val) {
