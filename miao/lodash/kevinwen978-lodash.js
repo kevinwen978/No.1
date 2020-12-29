@@ -1124,6 +1124,9 @@ var kevinwen978 = function () {
     function isPlainObject (val) {
         return val._proto_ == Object.prototype
     }
+    function isRegExp (val) {
+        return Object.prototype.toString.call(val) == "[object RegExp]"
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -1323,7 +1326,7 @@ var kevinwen978 = function () {
         isObject,
         isObjectLike,
         isPlainObject,
-        // isRegExp,
+        isRegExp,
         // isSafeInteger,
         // isSet,
         // isString,
