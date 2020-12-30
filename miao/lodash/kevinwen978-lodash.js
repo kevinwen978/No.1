@@ -1127,6 +1127,18 @@ var kevinwen978 = function () {
     function isRegExp (val) {
         return Object.prototype.toString.call(val) == "[object RegExp]"
     }
+    //检查 value 是否是一个安全整数。 一个安全整数应该是符合 IEEE-754 标准的非双精度浮点数。
+    function isSafeInteger(val) {
+        return isNumber(val) && Math.abs(val) < Number.MAX_SAFE_INTEGER && Math.abs(val) > Number.MIN_VALUE
+    }
+    //检查 value 是否是一个Set对象
+    function isSet (val) {
+        return Object.prototype.toString.call(val) == "[object Set]"
+    }
+    //
+    function isString (val) {
+        return Object.prototype.toString.call(val) == "[object String]"
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
