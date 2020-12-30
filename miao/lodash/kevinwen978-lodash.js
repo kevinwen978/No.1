@@ -1142,6 +1142,18 @@ var kevinwen978 = function () {
     function isSymbol(val) {
         return Object.prototype.toString.call(val) == "[object Symbol]"
     }
+    function isTypedArray (val) {
+        return Object.prototype.toString.call(val) == "[object Uint8Array]"
+    }
+    function isUndefined(val) {
+        return Object.prototype.toString.call(val) == "[object Undefined]"
+    }
+    function isWeakMap(val) {
+        return Object.prototype.toString.call(val) == "[object WeakMap]"
+    }
+    function isWeakSet(val) {
+        return Object.prototype.toString.call(val) == "[object WeakSet]"
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -1346,6 +1358,10 @@ var kevinwen978 = function () {
         isSet,
         isString,
         isSymbol,
+        isTypedArray,
+        isUndefined,
+        isWeakMap,
+        isWeakSet,
 
 
 
