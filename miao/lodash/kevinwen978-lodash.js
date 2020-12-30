@@ -1111,7 +1111,7 @@ var kevinwen978 = function () {
         return Object.prototype.toString.call(val) == "[object Number]"
     }
     function isObject (val) {
-        return Object.prototype.toString.call(val) == "[object Object]"
+        return Object.prototype.toString.call(val) == "[object Object]" || typeof val == 'function'
     }
     //检查 value 是否是 类对象。 如果一个值是类对象，那么它不应该是 null，
     //而且 typeof 后的结果是 "object"。
@@ -1122,7 +1122,7 @@ var kevinwen978 = function () {
     }
     //检查 value 是否是普通对象。 也就是说该对象由 Object 构造函数创建或者 [[Prototype]] 为空。
     function isPlainObject (val) {
-        return val._proto_ == Object.prototype
+        return val._proto_ == Object.prototype || val._proto_ == null
     }
     function isRegExp (val) {
         return Object.prototype.toString.call(val) == "[object RegExp]"
