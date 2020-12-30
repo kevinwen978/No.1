@@ -1111,7 +1111,7 @@ var kevinwen978 = function () {
         return Object.prototype.toString.call(val) == "[object Number]"
     }
     function isObject (val) {
-        return typeof val == 'object' || typeof val == 'function'
+        return val != null && typeof val == 'object' || typeof val == 'function'
     }
     //检查 value 是否是 类对象。 如果一个值是类对象，那么它不应该是 null，
     //而且 typeof 后的结果是 "object"。
