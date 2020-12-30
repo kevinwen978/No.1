@@ -1139,6 +1139,9 @@ var kevinwen978 = function () {
     function isString (val) {
         return Object.prototype.toString.call(val) == "[object String]"
     }
+    function isSymbol(val) {
+        return Object.prototype.toString.call(val) == "[object Symbol]"
+    }
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -1339,9 +1342,10 @@ var kevinwen978 = function () {
         isObjectLike,
         isPlainObject,
         isRegExp,
-        // isSafeInteger,
-        // isSet,
-        // isString,
+        isSafeInteger,
+        isSet,
+        isString,
+        isSymbol,
 
 
 
