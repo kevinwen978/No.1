@@ -1154,6 +1154,14 @@ var kevinwen978 = function () {
     function isWeakSet(val) {
         return Object.prototype.toString.call(val) == "[object WeakSet]"
     }
+    //检查 value 是否小于 other。
+    function It (val,oth) {
+        return val < oth
+    }
+    //检查 value 是否小于等于 other。
+    function Ite (val,oth) {
+        return val <= oth
+    }    
     // 转化为数组
     function toArray(val) {
         if (typeof val == "array") {
@@ -1169,6 +1177,13 @@ var kevinwen978 = function () {
             return []
         }
         return res
+    }
+    //转换 value 为一个有限数字。
+    function toFinite (val) {
+        val = Number(val)
+        if (val == Infinity) return Number.MAX_VALUE
+        if (val == -Infinity) return Number.MIN_VALUE
+        return val
     }
     //计算 array 中的最大值
     function max (ary) {
@@ -1362,6 +1377,9 @@ var kevinwen978 = function () {
         isUndefined,
         isWeakMap,
         isWeakSet,
+        It,
+        Ite,
+        toFinite,
 
 
 
