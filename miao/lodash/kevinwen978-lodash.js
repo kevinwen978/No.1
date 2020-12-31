@@ -1207,6 +1207,16 @@ var kevinwen978 = function () {
     function toNumber (val) {
         return Number(val)
     }
+    //分配来源对象的可枚举属性到目标对象上。 来源对象的应用规则是从左到右，
+    //随后的下一个对象的属性会覆盖上一个对象的属性。
+    function assign (val,...oth) {
+        for (var i = 0; i < oth.length; i ++) {
+            for (var key in oth[i]) {
+                val[key] = oth[i][key]
+            }
+        }
+        return val
+    }
     //计算 array 中的最大值
     function max (ary) {
         if (!ary || ary.length < 1) return undefined
@@ -1405,6 +1415,7 @@ var kevinwen978 = function () {
         toInteger,
         toLength,
         toNumber,
+        assign,
 
 
 
