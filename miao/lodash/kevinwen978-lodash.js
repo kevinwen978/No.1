@@ -1187,21 +1187,12 @@ var kevinwen978 = function () {
     }
     //转换 value 为一个整数
     function toInteger (val) {
-        if (val >= Number.MAX_VALUE) return Number.MAX_VALUE
-        if (val <= Number.MIN_VALUE) return Number.MIN_VALUE
-        return Math.floor(Number(val))
+        return Math.floor(toFinite(val))
     }
     function toLength (val) {
-         if (!val) {//如果value为假，返回0
-           return 0
-         }
-         val = toInteger(val)//将value转换成整数
-         if (val < 0) {//如果是负数，返回0
-           return 0
-         }
-         if (val > Number.MAX_ARRAY_LENGTH) {//如果数字大于最大允许的数组长度，返回最大允许的数组长度
-           return Number.MAX_ARRAY_LENGTH
-         }
+         val = toInteger(val)
+         if (val < 0) return 0
+         if (val > 4294967295) return 4294967295
          return val
     }
     function toNumber (val) {
