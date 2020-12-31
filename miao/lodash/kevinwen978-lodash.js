@@ -1155,11 +1155,11 @@ var kevinwen978 = function () {
         return Object.prototype.toString.call(val) == "[object WeakSet]"
     }
     //检查 value 是否小于 other。
-    function It (val,oth) {
+    function lt (val,oth) {
         return val < oth
     }
     //检查 value 是否小于等于 other。
-    function Ite (val,oth) {
+    function lte (val,oth) {
         return val <= oth
     }    
     // 转化为数组
@@ -1377,8 +1377,8 @@ var kevinwen978 = function () {
         isUndefined,
         isWeakMap,
         isWeakSet,
-        It,
-        Ite,
+        lt,
+        lte,
         toFinite,
 
 
