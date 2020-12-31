@@ -1217,6 +1217,13 @@ var kevinwen978 = function () {
         }
         return val
     }
+    //转换 value 为安全整数。 安全整数可以用于比较和准确的表示。
+    function toSafeInteger (val) {
+        val = toInteger(val)
+        if (val > Number.MAX_SAFE_INTEGER) return Number.MAX_SAFE_INTEGER
+        if (val < Number.MIN_SAFE_INTEGER) return Number.MIN_SAFE_INTEGER
+        return val
+    }
     //计算 array 中的最大值
     function max (ary) {
         if (!ary || ary.length < 1) return undefined
@@ -1416,6 +1423,7 @@ var kevinwen978 = function () {
         toLength,
         toNumber,
         assign,
+        toSafeInteger,
 
 
 
