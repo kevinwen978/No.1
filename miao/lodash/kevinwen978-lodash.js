@@ -1185,6 +1185,10 @@ var kevinwen978 = function () {
         if (val == -Infinity) return Number.MIN_VALUE
         return val
     }
+    //转换 value 为一个整数
+    function toInteger (val) {
+        return Math.floor(Number(val))
+    }
     //计算 array 中的最大值
     function max (ary) {
         if (!ary || ary.length < 1) return undefined
@@ -1380,6 +1384,7 @@ var kevinwen978 = function () {
         lt,
         lte,
         toFinite,
+        toInteger,
 
 
 
