@@ -1189,6 +1189,19 @@ var kevinwen978 = function () {
     function toInteger (val) {
         return Math.floor(Number(val))
     }
+    function toLength (val) {
+         if (!val) {//如果value为假，返回0
+           return 0
+         }
+         val = toInteger(val)//将value转换成整数
+         if (val < 0) {//如果是负数，返回0
+           return 0
+         }
+         if (val > MAX_ARRAY_LENGTH) {//如果数字大于最大允许的数组长度，返回最大允许的数组长度
+           return MAX_ARRAY_LENGTH
+         }
+         return val
+    }
     //计算 array 中的最大值
     function max (ary) {
         if (!ary || ary.length < 1) return undefined
@@ -1385,6 +1398,7 @@ var kevinwen978 = function () {
         lte,
         toFinite,
         toInteger,
+        toLength,
 
 
 
