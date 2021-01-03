@@ -1201,11 +1201,11 @@ var kevinwen978 = function () {
     //分配来源对象的可枚举属性到目标对象上。 来源对象的应用规则是从左到右，
     //随后的下一个对象的属性会覆盖上一个对象的属性。
     function assign (val,...oth) {
-        for (var i = 0; i < oth.length; i ++) {
-            for (var key in oth[i]) {
-                val[key] = oth[i][key]
+        oth.forEach((it) => {
+            for (let key of Object.keys(it)) {
+                val[key] = it[key];
             }
-        }
+        })
         return val
     }
     //转换 value 为安全整数。 安全整数可以用于比较和准确的表示。
@@ -1214,6 +1214,13 @@ var kevinwen978 = function () {
         if (val > Number.MAX_SAFE_INTEGER) return Number.MAX_SAFE_INTEGER
         if (val < Number.MIN_SAFE_INTEGER) return Number.MIN_SAFE_INTEGER
         return val
+    }
+    function add (val,oth) {
+        return val + oth
+    }
+    //根据 precision（精度） 向上舍入 number。（注： precision（精度）可以理解为保留几位小数。）
+    function ceil (val,precision = 0) {
+
     }
     //计算 array 中的最大值
     function max (ary) {
@@ -1415,6 +1422,8 @@ var kevinwen978 = function () {
         toNumber,
         assign,
         toSafeInteger,
+        add,
+        ceil,
 
 
 
