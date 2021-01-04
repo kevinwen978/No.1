@@ -1333,7 +1333,7 @@ var kevinwen978 = function () {
     function defaults(obj,source) {
         var map = {}
         for (var key in obj) {
-            if (!map.has(key)) map[key] = obj[key]
+            map[key] ? map[key]:map[key] = obj[key]
         }
         return map
     }
