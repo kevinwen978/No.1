@@ -1354,6 +1354,12 @@ var kevinwen978 = function () {
         })
         return obj
     }
+    function findKey(obj, predicate) {
+        predicate = processJudge(predicate)
+        for (var key in obj) {
+            if (predicate(obj[key])) return key
+        }
+    }
     function get(obj, paths, defaultval) {
         if (isString(paths)) {
             paths = paths.match(/\w+/g)
@@ -1562,6 +1568,7 @@ var kevinwen978 = function () {
         at,
         defaults,
         defaultsDeep,
+        findKey,
     
     }
 
