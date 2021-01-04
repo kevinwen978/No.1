@@ -1238,6 +1238,16 @@ var kevinwen978 = function () {
             max = Math.max(max,ary[i])
         } return max
     }
+    function maxBy (ary,iteratee) {
+        iteratee = processJudge(iteratee)
+        var map = [ary[0]]
+        var max = iteratee(ary[0])
+        for (var i = 1; i < ary.length; i ++) {
+            if (iteratee(ary[i]) > max) map.push(ary[i])
+            max = Math.max(max,iteratee(ary[i]))
+        }
+        return map.pop()
+    }
     //计算 array 中的最小值
     function min (ary) {
         if (!ary || ary.length < 1) return undefined
@@ -1433,8 +1443,8 @@ var kevinwen978 = function () {
         add,
         ceil,
         divide,
-        ceil,
-        
+        floor,
+        maxBy,
 
 
 
