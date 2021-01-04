@@ -1263,6 +1263,22 @@ var kevinwen978 = function () {
             min = Math.min(min,ary[i])
         } return min
     }
+    function minBy (ary,iteratee) {
+        iteratee = processJudge(iteratee)
+        var map = [ary[0]]
+        var min = iteratee(ary[0])
+        for (var i = 1; i < ary.length; i ++) {
+            if (iteratee(ary[i]) < min) map.push(ary[i])
+            min = Math.min(min,iteratee(ary[i]))
+        }
+        return map.pop()
+    }
+    function multiply(val,oth) {
+        return val * oth
+    }
+    function round (val,precision = 0) {
+        return Math.round(val * (10 ** precision)) / (10 ** precision)
+    }  
     // 计算array的总和
     function sum(ary) {
         var sum = 0
@@ -1454,6 +1470,9 @@ var kevinwen978 = function () {
         maxBy,
         mean,
         meanBy,
+        minBy,
+        multiply,
+        round,
 
 
 
