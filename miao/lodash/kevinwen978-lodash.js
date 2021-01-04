@@ -1330,10 +1330,15 @@ var kevinwen978 = function () {
         })
     }
     //
-    function defaults(obj,source) {
+    function defaults(obj,...source) {
         var map = {}
         for (var key in obj) {
-            map[key] ? map[key]:map[key] = obj[key]
+            map[key] = obj[key]
+        }
+        for (var ary of source) {
+            for (var key in ary) {
+              if (!map[key]) map[key] = obj[key]  
+            }
         }
         return map
     }
