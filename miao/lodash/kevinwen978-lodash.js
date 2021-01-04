@@ -1311,6 +1311,17 @@ var kevinwen978 = function () {
             }
         }
     }
+    function random(...val) {
+    }
+    //
+    function assignIn(obj,...source) {
+        source.forEach(it => {
+          for (var key in it) {
+              obj[key] =  it[key]
+          }
+        })
+        return obj
+    }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -1502,8 +1513,8 @@ var kevinwen978 = function () {
         sumBy,
         clamp,
         inRange,
-
-
+        random,
+        assignIn,
     
     }
 
