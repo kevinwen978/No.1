@@ -1342,6 +1342,18 @@ var kevinwen978 = function () {
         }
         return map
     }
+    function defaultsDeep(obj, ...source) {
+        source.forEach((it) => {
+            for (let key in it) {
+                if (!isObject(obj[key])) {
+                    if (!obj[key]) obj[key] = it[key]
+                } else {
+                    defaultsDeep(obj[key], it[key])
+                }
+            }
+        })
+        return obj
+    }
     function get(obj, paths, defaultval) {
         if (isString(paths)) {
             paths = paths.match(/\w+/g)
@@ -1549,6 +1561,7 @@ var kevinwen978 = function () {
         get,
         at,
         defaults,
+        defaultsDeep,
     
     }
 
