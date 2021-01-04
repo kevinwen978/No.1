@@ -1368,6 +1368,11 @@ var kevinwen978 = function () {
         }
         return res.pop()
     }
+    function forIn(obj, iteratee) {
+        for (var key in obj) {
+            iteratee(obj[key],key)
+        }
+    }
     function get(obj, paths, defaultval) {
         if (isString(paths)) {
             paths = paths.match(/\w+/g)
@@ -1578,6 +1583,7 @@ var kevinwen978 = function () {
         defaultsDeep,
         findKey,
         findLastKey,
+        forIn,
     
     }
 
