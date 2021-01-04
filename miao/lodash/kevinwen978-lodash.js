@@ -1220,8 +1220,16 @@ var kevinwen978 = function () {
     }
     //根据 precision（精度） 向上舍入 number。（注： precision（精度）可以理解为保留几位小数。）
     function ceil (val,precision = 0) {
-
+        return Math.ceil(val * (10 ** precision)) / (10 ** precision)
     }
+    //
+    function divide (val,oth) {
+        return val / oth
+    }
+    //
+    function floor (val,precision = 0) {
+        return Math.floor(val * (10 ** precision)) / (10 ** precision)
+    }    
     //计算 array 中的最大值
     function max (ary) {
         if (!ary || ary.length < 1) return undefined
@@ -1424,15 +1432,13 @@ var kevinwen978 = function () {
         toSafeInteger,
         add,
         ceil,
-
-
-
+        divide,
+        ceil,
         
 
 
 
-
-
+    
     }
 
 } ();
