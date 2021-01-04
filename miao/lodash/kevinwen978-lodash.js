@@ -1253,7 +1253,7 @@ var kevinwen978 = function () {
     }
     function meanBy (ary,iteratee) {
         iteratee = processJudge(iteratee)
-        return ary.reduce((pre,val)=> iteratee(pre) + iteratee(val)) /ary.length
+        return ary.reduce((pre,val)=> pre + iteratee(val),0) /ary.length
     }
     //计算 array 中的最小值
     function min (ary) {
@@ -1291,7 +1291,7 @@ var kevinwen978 = function () {
     }
     function sumBy (ary,iteratee) {
         iteratee = processJudge(iteratee)
-        return ary.reduce((pre,val)=> iteratee(pre) + iteratee(val))
+        return ary.reduce((pre,val)=> pre + iteratee(val),0)
     }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
