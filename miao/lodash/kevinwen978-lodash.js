@@ -1312,6 +1312,7 @@ var kevinwen978 = function () {
         }
     }
     function random(...val) {
+
     }
     //
     function assignIn(obj,...source) {
@@ -1321,6 +1322,21 @@ var kevinwen978 = function () {
           }
         })
         return obj
+    }
+    //
+    function at (obj,paths) {
+        return paths.map( it => {
+            return get(obj,it)
+        })
+    }
+    function get(obj, paths, defaultval) {
+        paths = processJudge(paths)
+        let res = obj
+        for (let key of paths) {
+            if (isUndefined(res[key])) return defaultval
+            res = res[key]
+        }
+        return res
     }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
@@ -1515,6 +1531,8 @@ var kevinwen978 = function () {
         inRange,
         random,
         assignIn,
+        get,
+        at,
     
     }
 
