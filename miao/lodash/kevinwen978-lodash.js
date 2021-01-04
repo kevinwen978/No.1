@@ -1374,6 +1374,17 @@ var kevinwen978 = function () {
         }
         return obj
     }
+    function forInRight(obj, iteratee) {
+        var right = []
+        for (var key in obj) {
+            right.push(key)
+        }
+        right.reverse()
+        for (var i = 0; i < right.length; i++) {
+            if (!iteratee(obj[right[i]],right[i],obj)) break
+        }
+        return obj
+    }
     function get(obj, paths, defaultval) {
         if (isString(paths)) {
             paths = paths.match(/\w+/g)
@@ -1585,6 +1596,7 @@ var kevinwen978 = function () {
         findKey,
         findLastKey,
         forIn,
+        forInRight,
     
     }
 
