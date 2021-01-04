@@ -1329,8 +1329,18 @@ var kevinwen978 = function () {
             return get(obj,it)
         })
     }
+    //
+    function defaults(obj,source) {
+        var map = {}
+        for (var key in obj) {
+            if (!map.has(key)) map[key] = obj[key]
+        }
+        return map
+    }
     function get(obj, paths, defaultval) {
-        paths = processJudge(paths)
+        if (isString(paths)) {
+            paths = paths.match(/\w+/g)
+        }
         let res = obj
         for (let key of paths) {
             if (isUndefined(res[key])) return defaultval
@@ -1533,6 +1543,7 @@ var kevinwen978 = function () {
         assignIn,
         get,
         at,
+        defaults,
     
     }
 
