@@ -1248,6 +1248,13 @@ var kevinwen978 = function () {
         }
         return map.pop()
     }
+    function mean (ary) {
+        return ary.reduce((pre,val)=> pre + val) /ary.length
+    }
+    function meanBy (ary,iteratee) {
+        iteratee = processJudge(iteratee)
+        return ary.reduce((pre,val)=> iteratee(pre) + iteratee(val)) /ary.length
+    }
     //计算 array 中的最小值
     function min (ary) {
         if (!ary || ary.length < 1) return undefined
@@ -1445,6 +1452,8 @@ var kevinwen978 = function () {
         divide,
         floor,
         maxBy,
+        mean,
+        meanBy,
 
 
 
