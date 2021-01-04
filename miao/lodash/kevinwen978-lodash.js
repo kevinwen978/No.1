@@ -1293,6 +1293,24 @@ var kevinwen978 = function () {
         iteratee = processJudge(iteratee)
         return ary.reduce((pre,val)=> pre + iteratee(val),0)
     }
+    function clamp(num, lower, upper) {
+        if (num < lower) return lower
+        if (num > upper) return upper
+        return num
+    }
+    function inRange(num,...val) {
+        var n = val.length
+        if (n == 1) {
+            return num >= 0 && num < val[0]
+        }
+        if (n == 2) {
+            if (val[0] < val[1]) {
+                return num >= val[0] && num < val[1] 
+            } else {
+                return num >= val[1] && num < val[0]
+            }
+        }
+    }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -1482,7 +1500,8 @@ var kevinwen978 = function () {
         round,
         subtract,
         sumBy,
-
+        clamp,
+        inRange,
 
 
     
