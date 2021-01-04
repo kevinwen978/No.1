@@ -1360,6 +1360,14 @@ var kevinwen978 = function () {
             if (predicate(obj[key])) return key
         }
     }
+    function findLastKey(obj, predicate) {
+        predicate = processJudge(predicate)
+        var res = []
+        for (var key in obj) {
+            if (predicate(obj[key])) res.push(key)
+        }
+        return res.pop()
+    }
     function get(obj, paths, defaultval) {
         if (isString(paths)) {
             paths = paths.match(/\w+/g)
@@ -1569,6 +1577,7 @@ var kevinwen978 = function () {
         defaults,
         defaultsDeep,
         findKey,
+        findLastKey,
     
     }
 
