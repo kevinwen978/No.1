@@ -1370,7 +1370,7 @@ var kevinwen978 = function () {
     }
     function forIn(obj, iteratee) {
         for (var key in obj) {
-            iteratee(obj[key],key)
+            iteratee(obj[key],key,obj)
         }
     }
     function get(obj, paths, defaultval) {
