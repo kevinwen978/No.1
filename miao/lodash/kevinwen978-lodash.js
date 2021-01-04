@@ -1278,6 +1278,9 @@ var kevinwen978 = function () {
     }
     function round (val,precision = 0) {
         return Math.round(val * (10 ** precision)) / (10 ** precision)
+    }
+    function subtract (val,oth) {
+        return val - oth
     }  
     // 计算array的总和
     function sum(ary) {
@@ -1285,6 +1288,10 @@ var kevinwen978 = function () {
         for (var i = 0; i < ary.length; i++) {
             sum += ary[i]
         } return sum
+    }
+    function sumBy (ary,iteratee) {
+        iteratee = processJudge(iteratee)
+        return ary.reduce((pre,val)=> iteratee(pre) + iteratee(val))
     }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
@@ -1473,6 +1480,8 @@ var kevinwen978 = function () {
         minBy,
         multiply,
         round,
+        subtract,
+        sumBy,
 
 
 
