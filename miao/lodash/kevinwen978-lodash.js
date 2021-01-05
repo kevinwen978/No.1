@@ -1411,7 +1411,7 @@ var kevinwen978 = function () {
     function functionsIn(obj) {
         var res = []
         for (var key in obj) {
-            res.push(key)
+            if (isFunction(obj[key])) res.push(key)
         }
         return res
     }
@@ -1425,6 +1425,19 @@ var kevinwen978 = function () {
             res = res[key]
         }
         return res
+    } 
+    function has(obj,paths) {
+        if (isString(paths)) {
+            paths = paths.match(/\w+/g)
+        }
+        for (let key of paths) {
+            if (obj[key]) {
+                obj = obj[key]
+            } else {
+                return false
+            }
+        }
+        return true
     }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
@@ -1631,6 +1644,7 @@ var kevinwen978 = function () {
         forOwnRight,
         functions,
         functionsIn,
+        has,
     
     }
 
