@@ -1456,7 +1456,7 @@ var kevinwen978 = function () {
     function invert (obj) {
         var res = {}
         for (var key in obj) {
-            res[obj[key]] = key
+            if (obj.hasOwnProperty(key)) res[obj[key]] = key
         }
         return res
     }
@@ -1464,7 +1464,12 @@ var kevinwen978 = function () {
     function invertBy(obj,iteratee) {
         var res = {}
         for (var key in obj) {
-            res[iteratee(obj[key])] ? res[iteratee(obj[key])].psuh(key) : res[iteratee(obj[key])] = [key]
+            if (isFunction(iteratee)) {
+                res[iteratee(obj[key])] ? res[iteratee(obj[key])].psuh(key) : res[iteratee(obj[key])] = [key]
+            } else {
+                res[obj[key]] ? res[obj[key]].psuh(key) : res[obj[key]] = [key]
+            }
+            
         }
         return res
     }
