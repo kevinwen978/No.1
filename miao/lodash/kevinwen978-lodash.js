@@ -1500,7 +1500,14 @@ var kevinwen978 = function () {
         for (var key in obj) {
             if (obj.hasOwnProperty(key)) res.push(key)
         }
-        return keys
+        return res
+    }
+    function keysIn(obj) {
+        var res = []
+        for (var key in obj) {
+            res.push(key)
+        }
+        return res
     }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
@@ -1713,6 +1720,7 @@ var kevinwen978 = function () {
         invertBy,
         invoke,
         keys,
+        keysIn,
     
     }
 
