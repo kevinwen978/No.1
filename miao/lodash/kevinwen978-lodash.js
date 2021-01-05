@@ -1546,6 +1546,14 @@ var kevinwen978 = function () {
             if (!predicate(obj[key])) res[key] = obj[key]
         }
         return res
+    }
+    //创建一个从 object 中选中的属性的对象。
+    function pick (obj,ary) {
+        var res = {}
+        for(var key in obj) {
+            if (ary.includes(key)) res[key] = obj[key]
+        }
+        return res
     }    
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
@@ -1765,6 +1773,8 @@ var kevinwen978 = function () {
         mergeWith,
         omit,
         omitBy,
+        pick,
+        
     
     }
 
