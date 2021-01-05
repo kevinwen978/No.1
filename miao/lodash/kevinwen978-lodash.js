@@ -1526,6 +1526,20 @@ var kevinwen978 = function () {
         }
         return res
     }
+    function merge (obj, sources) {
+
+    }
+    function mergeWith (obj) {
+
+    }
+    //反向版_.pick; 这个方法一个对象，这个对象由忽略属性之外的object自身和继承的可枚举属性组成
+    function omit (obj,ary) {
+        var res = {}
+        for (var key in obj) {
+            if (!ary.includes(key)) res[key] = obj[key]
+        }
+        return res
+    }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -1740,6 +1754,9 @@ var kevinwen978 = function () {
         keysIn,
         mapKeys,
         mapValues,
+        merge,
+        mergeWith,
+        omit,
     
     }
 
