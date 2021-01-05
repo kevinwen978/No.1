@@ -1494,6 +1494,14 @@ var kevinwen978 = function () {
         }
         return obj[func](...args)
     }
+    //创建一个 object 的自身可枚举属性名为数组
+    function keys(obj) {
+        var res = []
+        for (var key in obj) {
+            if (obj.hasOwnProperty(key)) res.push(key)
+        }
+        return keys
+    }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -1704,6 +1712,7 @@ var kevinwen978 = function () {
         invert,
         invertBy,
         invoke,
+        keys,
     
     }
 
