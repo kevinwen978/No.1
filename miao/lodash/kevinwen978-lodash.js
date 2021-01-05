@@ -1512,14 +1512,16 @@ var kevinwen978 = function () {
     //
     function mapKeys(obj,iteratee) {
         var res = {}
-        for (var key in obj) {
+        iteratee = processJudge(iteratee)
+        for (var key of Object.keys(obj)) {
             res[iteratee(obj[key],key,obj)] = obj[key]
         }
         return res
     }
     function mapValues(obj,iteratee) {
         var res = {} 
-        for (var key in obj) {
+        iteratee = processJudge(iteratee)
+        for (var key of Object.keys(obj)) {
             res[key] = iteratee(obj[key],key,obj)
         }
         return res
