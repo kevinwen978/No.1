@@ -28,6 +28,14 @@ var kevinwen978 = function () {
             }
         }
     }
+    //路径转换
+    function pathTo(paths) {
+        if (isString(paths)) {
+             return paths.match(/\w+/g)
+        } else {
+            return paths
+        }
+    }
 
 /** ----------------以下为函数实现----------------------**/ 
 
@@ -1416,9 +1424,10 @@ var kevinwen978 = function () {
         return res
     }
     function get(obj, paths, defaultval) {
-        if (isString(paths)) {
-            paths = paths.match(/\w+/g)
-        }
+        // if (isString(paths)) {
+        //     paths = paths.match(/\w+/g)
+        // }
+        paths = pathTo(paths)
         let res = obj
         for (let key of paths) {
             if (isUndefined(res[key])) return defaultval
@@ -1427,9 +1436,10 @@ var kevinwen978 = function () {
         return res
     } 
     function has(obj,paths) {
-        if (isString(paths)) {
-            paths = paths.match(/\w+/g)
-        }
+        // if (isString(paths)) {
+        //     paths = paths.match(/\w+/g)
+        // }
+        paths = pathTo(paths)
         for (let key of paths) {
             if (obj.hasOwnProperty(key)) {
                 obj = obj[key]
@@ -1440,9 +1450,10 @@ var kevinwen978 = function () {
         return true
     }
     function hasIn(obj,paths) {
-        if (isString(paths)) {
-            paths = paths.match(/\w+/g)
-        }
+        // if (isString(paths)) {
+        //     paths = paths.match(/\w+/g)
+        // }
+        paths = pathTo(paths)
         for (let key of paths) {
             if (obj[key] != undefined) {
                 obj = obj[key]
@@ -1473,6 +1484,15 @@ var kevinwen978 = function () {
             }  
         }
         return res
+    }
+    //调用object对象path上的方法
+    function invoke (obj,path,...args) {
+        path = pathTo(path)
+        var func = path.pop()
+        for (var key of path) {
+            obj = obj[key]
+        }
+        return obj[func](...args)
     }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
@@ -1683,6 +1703,7 @@ var kevinwen978 = function () {
         hasIn,
         invert,
         invertBy,
+        invoke,
     
     }
 
