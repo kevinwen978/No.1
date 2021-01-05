@@ -1600,7 +1600,8 @@ var kevinwen978 = function () {
         var n = path.length
         var p = obj
         for (var i = 0;i < n-1; i ++) {
-            p = p[customizer(obj[path[i]],path[i],obj)]
+            p[path[i]] = customizer(obj[path[i]],path[i],obj)
+            p = p[path[i]]
         }
         p[path[i]] = val
         return obj
