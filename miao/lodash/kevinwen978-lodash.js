@@ -1403,6 +1403,18 @@ var kevinwen978 = function () {
         }
         return obj
     }
+    //创建一个函数属性名称的数组，函数属性名称来自object对象自身可枚举属性。
+    function functions(obj) {
+        return Object.keys(obj)
+    }
+    //
+    function functionsIn(obj) {
+        var res = []
+        for (var key in obj) {
+            res.push(key)
+        }
+        return res
+    }
     function get(obj, paths, defaultval) {
         if (isString(paths)) {
             paths = paths.match(/\w+/g)
@@ -1617,6 +1629,8 @@ var kevinwen978 = function () {
         forInRight,
         forOwn,
         forOwnRight,
+        functions,
+        functionsIn,
     
     }
 
