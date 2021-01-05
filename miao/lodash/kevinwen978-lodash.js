@@ -1452,6 +1452,22 @@ var kevinwen978 = function () {
         }
         return true
     }
+    //创建一个object键值倒置后的对象。 如果 object 有重复的值，后面的值会覆盖前面的值。
+    function invert (obj) {
+        var res = {}
+        for (var key in obj) {
+            res[obj[key]] = key
+        }
+        return res
+    }
+    //
+    function invertBy(obj,iteratee) {
+        var res = {}
+        for (var key in obj) {
+            res[iteratee(obj[key])] ? res[iteratee(obj[key])].psuh(key) : res[iteratee(obj[key])] = [key]
+        }
+        return res
+    }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -1659,6 +1675,8 @@ var kevinwen978 = function () {
         functionsIn,
         has,
         hasIn,
+        invert,
+        invertBy,
     
     }
 
