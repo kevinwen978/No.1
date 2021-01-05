@@ -1465,9 +1465,9 @@ var kevinwen978 = function () {
         var res = {}
         for (var key in obj) {
             if (isFunction(iteratee)) {
-                res[iteratee(obj[key])] ? res[iteratee(obj[key])].psuh(key) : res[iteratee(obj[key])] = [key]
+                res[iteratee(obj[key])] ? res[iteratee(obj[key])].push(key) : res[iteratee(obj[key])] = [key]
             } else {
-                res[obj[key]] ? res[obj[key]].psuh(key) : res[obj[key]] = [key]
+                res[obj[key]] ? res[obj[key]].push(key) : res[obj[key]] = [key]
             }
             
         }
