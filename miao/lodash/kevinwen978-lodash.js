@@ -1576,7 +1576,25 @@ var kevinwen978 = function () {
             }
         }
         return obj
-    }  
+    }
+    function set (obj,path,val) {
+        path = pathTo(path)
+        var n = path.length
+        var p = obj
+        for (var i = 0 ; i < n - 1; i ++) {
+            if (p[path[i]] != undefined) {
+                p = p[path[i]]
+            } else {
+                if (!isNaN(Number(path[i]))) {
+                    p = p[path[i]] = [] 
+                } else {
+                    p = p[path[i]] = {}
+                }
+            }
+        }
+        p = p[path[n-1]] = val
+        return obj
+    }   
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -1798,6 +1816,7 @@ var kevinwen978 = function () {
         pick,
         pickBy,
         result,
+        set,
 
     
     }
