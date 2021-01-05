@@ -1595,7 +1595,17 @@ var kevinwen978 = function () {
         }
         p = p[path[n-1]] = val
         return obj
-    }   
+    }
+    function setWith(obj, path, val, customizer)  {
+        path = pathTo(path)
+        var n = path.length
+        var p = obj
+        for (var i = 0;i < n-1; i ++) {
+            p = p[customizer(obj[path[i]],path[i],obj)]
+        }
+        p[path[i]] = val
+        return obj
+    }  
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -1818,6 +1828,7 @@ var kevinwen978 = function () {
         pickBy,
         result,
         set,
+        setWith,
 
     
     }
