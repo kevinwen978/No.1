@@ -1557,7 +1557,7 @@ var kevinwen978 = function () {
     }
     function pickBy (obj,predicate)  {
         var res = {}
-        for (var key of Object.keys(obj)) {
+        for (var key in obj) {
             if (predicate(obj[key])) res[key] = obj[key]
         }
         return res        
