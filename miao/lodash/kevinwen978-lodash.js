@@ -1575,6 +1575,7 @@ var kevinwen978 = function () {
                 }
             }
         }
+        if (isFunction(obj)) return obj()
         return obj
     }
     function set (obj,path,val) {
