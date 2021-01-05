@@ -1509,6 +1509,14 @@ var kevinwen978 = function () {
         }
         return res
     }
+    //
+    function mapKeys(obj,iteratee) {
+        var res = {}
+        for (var key in obj) {
+            res[iteratee(obj[key],key,obj)] = obj[key]
+        }
+        return res
+    }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -1721,6 +1729,7 @@ var kevinwen978 = function () {
         invoke,
         keys,
         keysIn,
+        mapKeys,
     
     }
 
