@@ -1439,6 +1439,19 @@ var kevinwen978 = function () {
         }
         return true
     }
+    function hasIn(obj,paths) {
+        if (isString(paths)) {
+            paths = paths.match(/\w+/g)
+        }
+        for (let key of paths) {
+            if (obj[key] != undefined) {
+                obj = obj[key]
+            } else {
+                return false
+            }
+        }
+        return true
+    }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -1645,6 +1658,7 @@ var kevinwen978 = function () {
         functions,
         functionsIn,
         has,
+        hasIn,
     
     }
 
