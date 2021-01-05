@@ -1431,7 +1431,7 @@ var kevinwen978 = function () {
             paths = paths.match(/\w+/g)
         }
         for (let key of paths) {
-            if (obj[key]) {
+            if (obj.hasOwnProperty(key)) {
                 obj = obj[key]
             } else {
                 return false
