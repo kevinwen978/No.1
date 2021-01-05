@@ -1583,17 +1583,16 @@ var kevinwen978 = function () {
         var n = path.length
         var p = obj
         for (var i = 0 ; i < n - 1; i ++) {
-            if (p[path[i]] != undefined) {
-                p = p[path[i]]
-            } else {
-                if (!isNaN(Number(path[i]))) {
-                    p =p[path[i]] = [] 
+            if (p[path[i]] == undefined) {
+                if (!isNaN(Number(path[i+1]))) {
+                    p[path[i]] = [] 
                 } else {
-                    p = p[path[i]] = {}
+                   p[path[i]] = {}
                 }
             }
+            p = p[path[i]]
         }
-        p = p[path[n-1]] = val
+        p[path[n-1]] = val
         return obj
     }
     function setWith(obj, path, val, customizer)  {
