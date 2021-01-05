@@ -1587,7 +1587,7 @@ var kevinwen978 = function () {
                 p = p[path[i]]
             } else {
                 if (!isNaN(Number(path[i]))) {
-                    p = p[path[i]] = [] 
+                    p =p[path[i]] = [] 
                 } else {
                     p = p[path[i]] = {}
                 }
