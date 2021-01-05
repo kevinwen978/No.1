@@ -1561,6 +1561,21 @@ var kevinwen978 = function () {
             if (predicate(obj[key])) res[key] = obj[key]
         }
         return res        
+    }
+    function result (obj,path,defaultValue) {
+        path = pathTo(path)
+        for (var key of path) {
+            if (obj[key] != undefined) {
+                obj = obj[key]
+            } else {
+                if (isFunction(defaultValue)) {
+                    return defaultValue()
+                } else {
+                    return defaultValue
+                }
+            }
+        }
+        return obj
     }  
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
@@ -1782,6 +1797,7 @@ var kevinwen978 = function () {
         omitBy,
         pick,
         pickBy,
+        result,
 
     
     }
