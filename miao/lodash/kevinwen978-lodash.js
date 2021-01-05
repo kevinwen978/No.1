@@ -1385,6 +1385,24 @@ var kevinwen978 = function () {
         }
         return obj
     }
+    function forOwn(obj, iteratee = identity) {
+        for (let key of Object.keys(obj)) {
+            if (iteratee(obj[key], key, obj) == false) {
+                return obj
+            }
+        }
+        return obj
+    }
+    function forOwnRight(obj, iteratee = identity) {
+        var res = Object.keys(obj)
+        var n = res.length
+        for (var i = n-1; i >=0; i --) {
+            if (iteratee(obj[res[i]], res[i], obj) == false) {
+                return obj
+            }
+        }
+        return obj
+    }
     function get(obj, paths, defaultval) {
         if (isString(paths)) {
             paths = paths.match(/\w+/g)
@@ -1597,6 +1615,8 @@ var kevinwen978 = function () {
         findLastKey,
         forIn,
         forInRight,
+        forOwn,
+        forOwnRight,
     
     }
 
