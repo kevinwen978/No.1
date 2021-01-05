@@ -1540,6 +1540,13 @@ var kevinwen978 = function () {
         }
         return res
     }
+    function omitBy (obj,predicate) {
+        var res = {}
+        for (var key in obj) {
+            if (!predicate(obj[key])) res[key] = obj[key]
+        }
+        return res
+    }    
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -1757,6 +1764,7 @@ var kevinwen978 = function () {
         merge,
         mergeWith,
         omit,
+        omitBy,
     
     }
 
