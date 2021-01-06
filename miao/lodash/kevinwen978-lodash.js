@@ -1605,7 +1605,23 @@ var kevinwen978 = function () {
         }
         p[path[i]] = val
         return obj
-    }  
+    }
+    //创建一个object对象自身可枚举属性的键值对数组。这个数组可以通过_.fromPairs撤回。
+    //如果object 是 map 或 set，返回其条目。
+    function toPairs(obj)  {
+        var res = []
+        for (var key in obj) {
+            if (obj.hasOwnProperty(key)) res.push([key,obj[key]])
+        }
+        return res
+    }
+    function toPairsIn(obj)  {
+        var res = []
+        for (var key in obj) {
+           res.push([key,obj[key]])
+        }
+        return res
+    }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -1829,6 +1845,8 @@ var kevinwen978 = function () {
         result,
         set,
         setWith,
+        toPairs,
+        toPairsIn,
 
     
     }
