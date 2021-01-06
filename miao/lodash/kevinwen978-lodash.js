@@ -1622,6 +1622,16 @@ var kevinwen978 = function () {
         }
         return res
     }
+    function transform(obj, iteratee, type) {
+        if (type == undefined) type = new obj.constructor
+        let res = type
+        let keys = Object.keys(obj)
+        for (let i = 0; i < keys.length; i++) {
+            if (iteratee(res, obj[keys[i]], keys[i], obj) === false)
+                break
+        }
+        return res
+    }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -1847,7 +1857,7 @@ var kevinwen978 = function () {
         setWith,
         toPairs,
         toPairsIn,
-
+        transform,
     
     }
 
