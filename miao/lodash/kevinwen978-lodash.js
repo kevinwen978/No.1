@@ -1670,15 +1670,15 @@ var kevinwen978 = function () {
             return update(obj, path, updater)
         }
         path = pathTo(path)
-        let temp = obj,key
+        let p = obj,key
         for (var i = 0; i < path.length - 1; i++) {
             key = path[i]
-            if (temp[key] === undefined) {
-                temp[key] = new customizer
+            if (p[key] === undefined) {
+                p[key] = new customizer
             }
-            temp = temp[key]
+            p = p[key]
         }
-        temp[path[i]] = updater(temp[path[i]])
+        p[path[i]] = updater(p[path[i]])
         return obj
     }
     function values(obj) {
