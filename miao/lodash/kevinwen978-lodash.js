@@ -1678,6 +1678,13 @@ var kevinwen978 = function () {
         temp[path[i]] = updater(temp[path[i]])
         return obj
     }
+    function values(obj) {
+        let res = []
+        for (let key of Object.keys(object)) {
+            res.push(obj[key])
+        }
+        return res
+    }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -1907,6 +1914,7 @@ var kevinwen978 = function () {
         unset,
         update,
         updateWith,
+        values,
     
     }
 
