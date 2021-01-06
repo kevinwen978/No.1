@@ -1692,6 +1692,16 @@ var kevinwen978 = function () {
         }
         return res
     }
+    function camelCase(str) {
+        str = str.toLowerCase()
+        var ary = str.match(/[a-z]+/g)
+        var res = ary[0]
+        res += ary[1][0].toUpperCase()
+        for (var i = 1; i < ary[1].length; i++) {
+            res += ary[1][i]
+        }
+        return res
+    }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -1923,6 +1933,7 @@ var kevinwen978 = function () {
         updateWith,
         values,
         valuesIn,
+        camelCase,
     
     }
 
