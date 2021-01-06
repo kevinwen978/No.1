@@ -1705,6 +1705,16 @@ var kevinwen978 = function () {
         }
         return res
     }
+    //转换字符串string首字母为大写，剩下为小写
+    function capitalize(str) {
+        str = str.toLowerCase()
+        var res = ''
+        res += str[0].toUpperCase()
+        for (var i = 1; i < str.length; i++) {
+            res += str[i]
+        }
+        return res
+    }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -1937,6 +1947,7 @@ var kevinwen978 = function () {
         values,
         valuesIn,
         camelCase,
+        capitalize,
     
     }
 
