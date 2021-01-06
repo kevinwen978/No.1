@@ -1662,6 +1662,22 @@ var kevinwen978 = function () {
         return obj
 
     }
+    function updateWith(obj, path, updater, customizer) {
+        if (customizer == undefined) {
+            return update(obj, path, updater)
+        }
+        path = PathTo(path)
+        let temp = obj,key
+        for (var i = 0; i < path.length - 1; i++) {
+            key = path[i]
+            if (temp[key] === undefined) {
+                temp[key] = new customizer
+            }
+            temp = temp[key]
+        }
+        temp[path[i]] = updater(temp[path[i]])
+        return obj
+    }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -1890,6 +1906,7 @@ var kevinwen978 = function () {
         transform,
         unset,
         update,
+        updateWith,
     
     }
 
