@@ -1632,6 +1632,21 @@ var kevinwen978 = function () {
         }
         return res
     }
+    function unset(obj, path) {
+        path = pathTo(path)
+        var n = path.length
+        var p = obj
+        for (var i = 0 ; i < n; i ++) {
+            if (p[path[i]] == undefined)  return false
+            p = p[path[i]]
+        }
+        p = obj
+        for (var i = 0 ; i < n -2; i ++) {
+                p = p[path[i]]
+        }
+        p[path[n-2]]= {}
+        return true 
+    }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -1858,6 +1873,7 @@ var kevinwen978 = function () {
         toPairs,
         toPairsIn,
         transform,
+        unset,
     
     }
 
