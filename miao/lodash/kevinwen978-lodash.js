@@ -1680,7 +1680,14 @@ var kevinwen978 = function () {
     }
     function values(obj) {
         let res = []
-        for (let key of Object.keys(object)) {
+        for (let key of Object.keys(obj)) {
+            res.push(obj[key])
+        }
+        return res
+    }
+    function valuesIn(obj) {
+        let res = []
+        for (let key in obj) {
             res.push(obj[key])
         }
         return res
@@ -1915,6 +1922,7 @@ var kevinwen978 = function () {
         update,
         updateWith,
         values,
+        valuesIn,
     
     }
 
