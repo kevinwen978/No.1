@@ -1647,6 +1647,21 @@ var kevinwen978 = function () {
         p[path[n-2]]= {}
         return true 
     }
+    function update(obj, path, updater) {
+        path = pathTo(path)
+        var n = path.length
+        var p = obj
+        for (var i = 0; i < n; i ++) {
+            if (i != n-1) {
+                p = p[path[i]]
+            } else {
+                var q = p[path[i]]
+                p[path[i]] = updater(q)
+            }
+        }
+        return obj
+
+    }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -1874,6 +1889,7 @@ var kevinwen978 = function () {
         toPairsIn,
         transform,
         unset,
+        update,
     
     }
 
