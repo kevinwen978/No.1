@@ -1651,14 +1651,17 @@ var kevinwen978 = function () {
         path = pathTo(path)
         var n = path.length
         var p = obj
-        for (var i = 0; i < n; i ++) {
-            if (i != n-1) {
-                p = p[path[i]]
-            } else {
-                var q = p[path[i]]
-                p[path[i]] = updater(q)
+        for (var i = 0 ; i < n - 1; i ++) {
+            if (p[path[i]] == undefined) {
+                if (!isNaN(Number(path[i+1]))) {
+                    p[path[i]] = [] 
+                } else {
+                   p[path[i]] = {}
+                }
             }
+            p = p[path[i]]
         }
+        p[path[i]] = updater(p[path[i]])
         return obj
 
     }
@@ -1666,7 +1669,7 @@ var kevinwen978 = function () {
         if (customizer == undefined) {
             return update(obj, path, updater)
         }
-        path = PathTo(path)
+        path = pathTo(path)
         let temp = obj,key
         for (var i = 0; i < path.length - 1; i++) {
             key = path[i]
