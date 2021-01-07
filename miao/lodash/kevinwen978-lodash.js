@@ -1715,6 +1715,26 @@ var kevinwen978 = function () {
         }
         return res
     }
+    function endsWith(str, tar, pos=str.length) {
+        return str[pos -1] == tar
+    }
+    //转义string中的 "&", "<", ">", '"', "'", 和 "`" 字符为HTML实体字符。
+    function escape(str) {
+        return str.replace(/[\&\<\>\"\']/g,it => {
+            switch (it) {
+                case "&":
+                    return '&amp;'
+                case '"':
+                    return '&quot;'
+                case "'":
+                    return '&#39;'
+                case '<':
+                    return '&lt;'
+                case '>':
+                    return '&gt;'
+            }
+        })
+    }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -1948,6 +1968,9 @@ var kevinwen978 = function () {
         valuesIn,
         camelCase,
         capitalize,
+        endsWith,
+        escape,
+
     
     }
 
