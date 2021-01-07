@@ -1844,6 +1844,14 @@ var kevinwen978 = function () {
     function upperFirst(str) {
         return str[0].toUpperCase() + str.slice(1)
     }
+    function words(str = '', pattern) {
+        if (pattern == undefined) {
+            var re = new RegExp("[a-z]+", "g")
+        } else {
+            var re = new RegExp("${pattern}",'g')
+        }
+        return str.match(re)
+    }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -2100,6 +2108,7 @@ var kevinwen978 = function () {
         trimStart,
         upperCase,
         upperFirst,
+        words,
 
     
     }
