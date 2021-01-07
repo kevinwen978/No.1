@@ -1852,6 +1852,11 @@ var kevinwen978 = function () {
         }
         return str.match(re)
     }
+    function defaultTo(val, defaultVal) {
+        if (isNaN(val) || isNull(val) || isUndefined(val))
+            return defaultVal;
+        return val
+    }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -2109,7 +2114,7 @@ var kevinwen978 = function () {
         upperCase,
         upperFirst,
         words,
-
+        defaultTo,
     
     }
 
