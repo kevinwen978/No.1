@@ -1739,13 +1739,13 @@ var kevinwen978 = function () {
         return str.replace(/[\^\$\.\*\+\?\(\)\[\]\,\|]/g, (it) => `\\${it}`);
     }
     function kebabCase(str = "") {
-        return str.match(/[a-z]|[A-Z]+[a-z]*/g).join("-").toLowerCase()
+        return str.match(/[a-z]+|[A-Z]+[a-z]*/g).join("-").toLowerCase()
     }
     function lowerCase(str='') {
-        return str.match(/[a-z]|[A-Z]+[a-z]*/g).join(" ").toLowerCase()
+        return str.match(/[a-z]+|[A-Z]+[a-z]*/g).join(" ").toLowerCase()
     }
     function lowerFirst(str='') {
-        return str[0].toUpperCase() + str.slice(1)
+        return str[0].toLowerCase() + str.slice(1)
     }
     function pad(str='', l = 0, chars=' ') {
         if (str.length >= l) return str
