@@ -1735,6 +1735,9 @@ var kevinwen978 = function () {
             }
         })
     }
+    function escapeRegExp(str = "") {
+        return str.replace(/[\^\$\.\*\+\?\(\)\[\]\,\|]/g, (it) => `\\${it}`);
+    }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -1970,6 +1973,7 @@ var kevinwen978 = function () {
         capitalize,
         endsWith,
         escape,
+        escapeRegExp,
 
     
     }
