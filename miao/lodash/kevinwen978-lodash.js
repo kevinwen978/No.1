@@ -1738,6 +1738,9 @@ var kevinwen978 = function () {
     function escapeRegExp(str = "") {
         return str.replace(/[\^\$\.\*\+\?\(\)\[\]\,\|]/g, (it) => `\\${it}`);
     }
+    function kebabCase(str = "") {
+        return str.match(/[a-z]|[A-Z]+[a-z]*/g).join("-").toLowerCase();
+    }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -1974,6 +1977,7 @@ var kevinwen978 = function () {
         endsWith,
         escape,
         escapeRegExp,
+        kebabCase,
 
     
     }
