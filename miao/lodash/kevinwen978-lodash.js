@@ -1838,6 +1838,12 @@ var kevinwen978 = function () {
         let re = new RegExp("^[" + char + "]+")
         return str.replace(re, "")
     }
+    function upperCase(str = '')  {
+        return str.match(/[a-z]+|[A-Z]+[a-z]*/g).join(" ").toUpperCase()
+    }
+    function upperFirst(str) {
+        return str[0].toUpperCase() + str.slice(1)
+    }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -2092,6 +2098,8 @@ var kevinwen978 = function () {
         trim,
         trimEnd,
         trimStart,
+        upperCase,
+        upperFirst,
 
     
     }
