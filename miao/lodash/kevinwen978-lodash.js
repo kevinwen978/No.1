@@ -1769,10 +1769,11 @@ var kevinwen978 = function () {
     }
     function padStart(str='', l = 0, chars=' ') {
         if (str.length >= l) return str
-        while (str.length < l) {
-                str = chars + str
+        var res = ''
+        while (str.length + res.length< l) {
+                res += chars 
         }
-        return str.slice(str.length - l) 
+        return res.slice(0,l-str.length) + str
     }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
