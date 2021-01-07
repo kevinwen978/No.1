@@ -1747,6 +1747,19 @@ var kevinwen978 = function () {
     function lowerFirst(str='') {
         return str[0].toUpperCase() + str.slice(1)
     }
+    function pad(str='', l = 0, chars=' ') {
+        if (str.length >= l) return str
+        var n = 1
+        while (str.length < l) {
+            if (n % 2 == 1) {
+                str += chars
+            } else {
+                str = chars + str
+            }
+            n ++
+        }
+        return  n % 2 == 1 ? str.slice(str.length - l) : str.slice(0,l)
+    }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -1986,6 +1999,7 @@ var kevinwen978 = function () {
         kebabCase,
         lowerCase,
         lowerFirst,
+        pad,
 
     
     }
