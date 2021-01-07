@@ -1820,6 +1820,12 @@ var kevinwen978 = function () {
     function startsWith(str, target, pos=0) {
         return str[pos] == target
     }
+    function toLower(str) {
+        return str.toLowerCase()
+    }
+    function toUpper(str) {
+        return str.toUpperCase()
+    }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -2069,6 +2075,8 @@ var kevinwen978 = function () {
         split,
         startCase,
         startsWith,
+        toLower,
+        toUpper,
 
     
     }
