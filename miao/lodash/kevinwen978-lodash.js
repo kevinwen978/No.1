@@ -1846,9 +1846,9 @@ var kevinwen978 = function () {
     }
     function words(str = '', pattern) {
         if (pattern == undefined) {
-            var re = new RegExp("[a-z]+", "g")
+            var re = /[a-z]+/g
         } else {
-            var re = new RegExp("${pattern}",'g')
+            var re = pattern
         }
         return str.match(re)
     }
