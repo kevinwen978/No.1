@@ -1775,6 +1775,22 @@ var kevinwen978 = function () {
         }
         return res.slice(0,l-str.length) + str
     }
+    function parseInt(str, radix = 10) {
+        return Number.parseInt(str, radix);
+    }
+    function repeat(str = '', n = 1)  {
+        var res = ''
+        for (var i = 1; i <= n; i ++) {
+            res += str
+        }
+        return res
+    }
+    function replace(string = "", pattern, replacement) {
+        return string.replace(pattern, replacement);
+    }
+    function snakeCase(str = '')  {
+        return str.match(/[a-z]+|[A-Z]+[a-z]*/g).join("_").toLowerCase()
+    }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -2017,6 +2033,10 @@ var kevinwen978 = function () {
         pad,
         padEnd,
         padStart,
+        parseInt,
+        repeat,
+        replace,
+        snakeCase,
 
     
     }
