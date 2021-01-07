@@ -1805,6 +1805,18 @@ var kevinwen978 = function () {
         }
         return res
     }
+    function startCase(str = '') {
+        var ary = str.match(/[a-z]+|[A-Z]+[a-z]*/g)
+        var res = ''
+        for (var i = 0; i < ary.length; i ++) {
+            res += ary[i][0].toUpperCase()
+            for (var j = 1; j <ary[i].length; j ++) {
+                res += ary[i][j]
+            }
+            if (i < ary.length - 1) res += ' '
+        }
+        return res
+    }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -2052,6 +2064,7 @@ var kevinwen978 = function () {
         replace,
         snakeCase,
         split,
+        startCase,
 
     
     }
