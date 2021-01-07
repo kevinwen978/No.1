@@ -1739,7 +1739,13 @@ var kevinwen978 = function () {
         return str.replace(/[\^\$\.\*\+\?\(\)\[\]\,\|]/g, (it) => `\\${it}`);
     }
     function kebabCase(str = "") {
-        return str.match(/[a-z]|[A-Z]+[a-z]*/g).join("-").toLowerCase();
+        return str.match(/[a-z]|[A-Z]+[a-z]*/g).join("-").toLowerCase()
+    }
+    function lowerCase(str='') {
+        return str.match(/[a-z]|[A-Z]+[a-z]*/g).join(" ").toLowerCase()
+    }
+    function lowerFirst(str='') {
+        return str[0].toUpperCase() + str.slice(1)
     }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
@@ -1978,6 +1984,8 @@ var kevinwen978 = function () {
         escape,
         escapeRegExp,
         kebabCase,
+        lowerCase,
+        lowerFirst,
 
     
     }
