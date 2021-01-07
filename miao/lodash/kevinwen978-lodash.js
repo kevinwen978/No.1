@@ -1817,6 +1817,9 @@ var kevinwen978 = function () {
         }
         return res
     }
+    function startsWith(str, target, pos=0) {
+        return str[pos] == target
+    }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -2065,6 +2068,7 @@ var kevinwen978 = function () {
         snakeCase,
         split,
         startCase,
+        startsWith,
 
     
     }
