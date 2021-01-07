@@ -1767,6 +1767,13 @@ var kevinwen978 = function () {
         }
         return  str.slice(0,l)      
     }
+    function padStart(str='', l = 0, chars=' ') {
+        if (str.length >= l) return str
+        while (str.length < l) {
+                str = chars + str
+        }
+        return str.slice(str.length - l) 
+    }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -2008,6 +2015,7 @@ var kevinwen978 = function () {
         lowerFirst,
         pad,
         padEnd,
+        padStart,
 
     
     }
