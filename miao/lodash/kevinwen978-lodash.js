@@ -1826,6 +1826,18 @@ var kevinwen978 = function () {
     function toUpper(str) {
         return str.toUpperCase()
     }
+    function trim(str, char = "\\s") {
+        let reg = new RegExp("[" + char + "]+", "g")
+        return str.replace(reg, "")
+    }
+    function trimEnd(str, char = "\\s") {
+        let re = new RegExp("[" + char + "]+$")
+        return str.replace(re, "")
+    }
+    function trimStart(str, char = "\\s") {
+        let re = new RegExp("^[" + char + "]+")
+        return str.replace(re, "")
+    }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -2077,6 +2089,9 @@ var kevinwen978 = function () {
         startsWith,
         toLower,
         toUpper,
+        trim,
+        trimEnd,
+        trimStart,
 
     
     }
