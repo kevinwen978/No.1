@@ -1931,7 +1931,7 @@ var kevinwen978 = function () {
     function pullAt(ary, index) {
         let res = []
         index.forEach(it => {
-            result.push(ary[it])
+            res.push(ary[it])
         })
         return res
     }
