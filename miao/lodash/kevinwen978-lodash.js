@@ -1953,6 +1953,35 @@ var kevinwen978 = function () {
     function unary(f) {
         return ary(f, 1)
     }
+    function negate(predicate) {
+        return function(...args) {
+            return !predicate(...args)
+        }
+    }
+    function spread(func, start = 0) {
+        return function(ary) {
+            return func(...ary.slice(start));
+        }
+    }
+    function flip(f) {
+        return function(...args) {
+            return f(...(args.reverse()))
+        }
+    }
+    function conforms(source) {
+        return function(object) {
+            let keys = Object.keys(source);
+            for (let key of keys) {
+                if (!source[key].call(null, object[key])) return false;
+            }
+            return true;
+        };
+    }
+    function constant(value) {
+        return function(arg) {
+            return value
+        }
+    }
     //deepequal
     function partialDeepEqual(s, t) {
         if (s === t) return true;
@@ -2204,6 +2233,11 @@ var kevinwen978 = function () {
         property,
         ary,
         unary,
+        negate,
+        spread,
+        flip,
+        conforms,
+        constant,
     
     }
 
