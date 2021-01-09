@@ -1838,6 +1838,21 @@ var kevinwen978 = function () {
         let re = new RegExp("^[" + char + "]+")
         return str.replace(re, "")
     }
+    function unescape(str) {
+        return str.replace(/&amp;|&lt;| &gt;|&quot;|&#39/g,
+            x => {
+                if (x == "&amp;")
+                    return "&";
+                if (x == "&lt;")
+                    return "<";
+                if (x == "&gt;")
+                    return ">";
+                if (x == "&quot;")
+                    return '"'
+                if (x == "&#39")
+                    return "'"
+            })
+    }
     function upperCase(str = '')  {
         return str.match(/[a-z]+|[A-Z]+[a-z]*/g).join(" ").toUpperCase()
     }
@@ -2142,6 +2157,7 @@ var kevinwen978 = function () {
         trim,
         trimEnd,
         trimStart,
+        unescape,
         upperCase,
         upperFirst,
         words,
