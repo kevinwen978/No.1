@@ -1857,6 +1857,37 @@ var kevinwen978 = function () {
             return defaultVal;
         return val
     }
+    function range(...args) {
+        var n = args.length
+        var res = []
+        var step = 1
+        if (n == 1) {
+            var start = 0
+            var end = args[0]
+            if (args[0] < 0) step = -1
+        }
+        if (n == 2) {
+            if (args[0]>args[1]) return res
+            var start = args[0]
+            var end = args[1]
+        }
+        if (n == 3 ) {
+            var start = args[0]
+            var end = args[1]
+            step = args[2] 
+        }
+        var p = start
+        var s = step
+        if (s== 0) s = 1
+        for (var i = 1; i <= Math.abs((start - end)/s); i ++) {
+            res.push(p)
+           p += step
+        }
+        return res
+    }
+    function rangeRight (...args) {
+        return range(...args).reverse()
+    }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -2115,6 +2146,8 @@ var kevinwen978 = function () {
         upperFirst,
         words,
         defaultTo,
+        range,
+        rangeRight,
     
     }
 
