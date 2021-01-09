@@ -1940,6 +1940,19 @@ var kevinwen978 = function () {
     function matches(obj) {
         return partialDeepEqual.bind(null, obj)
     }
+    function property(path) {
+        return function(obj) {
+            return get(obj, path)
+        }
+    }
+    function ary(f, n = f.length) {
+        return function(...args) {
+            return f(args.slice(0, n))
+        }
+    }
+    function unary(f) {
+        return ary(f, 1)
+    }
     //deepequal
     function partialDeepEqual(s, t) {
         if (s === t) return true;
@@ -2188,6 +2201,9 @@ var kevinwen978 = function () {
         toPath,
         identity,
         pullAt,
+        property,
+        ary,
+        unary,
     
     }
 
