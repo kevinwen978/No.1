@@ -1913,6 +1913,9 @@ var kevinwen978 = function () {
     function toPath(str) {
         return pathTo(str)
     }
+    function identity(val) {
+        return val
+    }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -1923,6 +1926,13 @@ var kevinwen978 = function () {
                 res.push(values[i])
             }
         }
+        return res
+    }
+    function pullAt(ary, index) {
+        let res = []
+        index.forEach(it => {
+            result.push(ary[it])
+        })
         return res
     }
     //创建一个深比较的方法来比较给定的对象和 source 对象。 如果给定的对象拥有相同的属性值返回 true，
@@ -2176,6 +2186,8 @@ var kevinwen978 = function () {
         rangeRight,
         times,
         toPath,
+        identity,
+        pullAt,
     
     }
 
