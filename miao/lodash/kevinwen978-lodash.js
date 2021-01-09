@@ -1910,6 +1910,9 @@ var kevinwen978 = function () {
         }
         return res
     }
+    function toPath(str) {
+        return pathTo(str)
+    }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -2172,6 +2175,7 @@ var kevinwen978 = function () {
         range,
         rangeRight,
         times,
+        toPath,
     
     }
 
