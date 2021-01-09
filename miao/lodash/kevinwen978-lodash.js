@@ -1903,6 +1903,13 @@ var kevinwen978 = function () {
     function rangeRight (...args) {
         return range(...args).reverse()
     }
+    function times(n, iteratee) {
+        let res = []
+        for (let i = 0; i < n; i++) {
+            res.push(iteratee(i))
+        }
+        return res
+    }
     // 将array与任何数组 或 值连接在一起
     function concat(ary, ...values) {
         let res = ary
@@ -2164,6 +2171,7 @@ var kevinwen978 = function () {
         defaultTo,
         range,
         rangeRight,
+        times,
     
     }
 
